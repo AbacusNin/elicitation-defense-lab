@@ -10,7 +10,14 @@ from dataclasses import dataclass, fields
 from pathlib import Path
 
 FAMILIES = {"elicitation", "interrogation", "se_vector", "collection_method"}
-TECHNIQUE_CLASSES = {"ego", "reciprocity", "social_pressure", "cognitive_cue", "composite"}
+TECHNIQUE_CLASSES = {
+    "ego",
+    "reciprocity",
+    "social_pressure",
+    "cognitive_cue",
+    "composite",
+    "none",
+}
 
 DEFAULT_PATH = Path(__file__).resolve().parent.parent / "taxonomy" / "techniques.json"
 
