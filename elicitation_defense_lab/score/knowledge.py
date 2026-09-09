@@ -41,6 +41,44 @@ def _dimension_score(item: dict, dimension: str, chosen: str | None, correct_id:
     return 0.0
 
 
+def _choice_text(item: dict, dimension: str, choice_id: str | None) -> str | None:
+    """Text for a choice id within one dimension of one item, or None if unset."""
+    if choice_id is None:
+        return None
+    for choice in item["choices"][dimension]:
+        if choice["id"] == choice_id:
+            return choice["text"]
+    return choice_id
+
+
+def _dimension_feedback(
+    item: dict, dimension: str, chosen_id: str | None, correct_id: str, score: float
+) -> dict:
+    """Per-dimension feedback keyed off the user's own choice, mirroring web/app.js's
+    scoreKnowledge: what was chosen, what was correct, and the explanation for the
+    choice actually made (not always the correct choice's explanation).
+    """
+    if chosen_id is None:
+        status = "unanswered"
+    elif score == 1.0:
+        status = "correct"
+    elif score == 0.5:
+        status = "partial"
+    else:
+        status = "incorrect"
+
+    explanation_id = chosen_id if chosen_id is not None else correct_id
+    return {
+        "chosen_id": chosen_id,
+        "chosen_text": _choice_text(item, dimension, chosen_id),
+        "correct_id": correct_id,
+        "correct_text": _choice_text(item, dimension, correct_id),
+        "score": score,
+        "status": status,
+        "explanation": item["feedback"][dimension].get(explanation_id),
+    }
+
+
 def score_knowledge(
     answers: dict[str, dict],
     config: Config,
@@ -73,20 +111,24 @@ def score_knowledge(
         }
 
         item_scores = {}
+        per_dimension = {}
         for dimension in DIMENSIONS:
-            score = _dimension_score(item, dimension, answer.get(dimension), correct_ids[dimension])
+            chosen_id = answer.get(dimension)
+            score = _dimension_score(item, dimension, chosen_id, correct_ids[dimension])
             item_scores[dimension] = score
             dim_sums[dimension] += score
             dim_counts[dimension] += 1
+            per_dimension[dimension] = _dimension_feedback(
+                item, dimension, chosen_id, correct_ids[dimension], score
+            )
 
         hits[item["technique_id"]] = sum(item_scores.values()) / len(DIMENSIONS)
 
         feedback.append(
             {
                 "item_id": item["id"],
-                "recognition": item["feedback"]["recognition"][correct_ids["recognition"]],
-                "countermeasure": item["feedback"]["countermeasure"][correct_ids["countermeasure"]],
-                "response": item["feedback"]["response"][correct_ids["response"]],
+                "technique_id": item["technique_id"],
+                **per_dimension,
             }
         )
 

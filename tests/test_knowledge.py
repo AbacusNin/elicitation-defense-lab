@@ -120,6 +120,34 @@ def test_feedback_has_one_entry_per_item():
     assert len(res["feedback"]) == len(bank)
 
 
+def test_wrong_recognition_choice_keys_feedback_to_the_chosen_id():
+    # A wrong pick must report the user's own choice as incorrect, not
+    # silently repeat the correct answer's explanation under the correct id.
+    techs = load_taxonomy()
+    c = default_config()
+    bank = load_bank()
+    item = next(i for i in bank if "partial" in i and "recognition" in i["partial"])
+    wrong_choice = next(
+        choice["id"]
+        for choice in item["choices"]["recognition"]
+        if choice["id"] != item["correct"]["recognition"]
+        and choice["id"] != item["partial"]["recognition"]
+    )
+    answers = {
+        item["id"]: {
+            "recognition": wrong_choice,
+            "countermeasure": item["correct"]["countermeasure"],
+            "response": item["report_paths"]["general"],
+        }
+    }
+    res = score_knowledge(answers, c, techs, bank, context="general")
+    entry = res["feedback"][0]["recognition"]
+    assert entry["status"] == "incorrect"
+    assert entry["chosen_id"] == wrong_choice
+    assert entry["correct_id"] == item["correct"]["recognition"]
+    assert entry["explanation"] == item["feedback"]["recognition"][wrong_choice]
+
+
 def test_bank_items_have_four_org_contexts_and_general():
     bank = load_bank()
     assert len(bank) > 0
