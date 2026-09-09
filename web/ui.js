@@ -287,7 +287,7 @@ export function renderCompetencyScorecard(result, config, techniques) {
 // modules describe the same channels the same way.
 const REPORT_TO = {
   general: "Report it through your organization's designated security or CI reporting channel.",
-  dod: "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP.",
+  dod: "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR).",
   federal: "Report it to your agency's security officer or Inspector General hotline.",
   cleared_contractor: "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117).",
   private_industry: "Report it to your company's security, compliance, or corporate security team.",

@@ -5,12 +5,14 @@
 // (see responseChoicesForContext below) which response options are shown at
 // all, so switching it re-renders the drawn items without resampling.
 
-import { DIMENSIONS, scoreKnowledge } from "./app.js";
+import { DIMENSIONS, RESPONSE_DISTRACTORS, scoreKnowledge } from "./app.js";
 import { renderCompetencyScorecard, sampleBank, shuffle, showResult } from "./ui.js";
 
 const STORAGE_KEY = "edl-knowledge-progress";
 const CONTEXT_KEY = "edl-context";
 const SAMPLE_COUNT = 9;
+const DISTRACTOR_MIN = 3;
+const DISTRACTOR_MAX = 4;
 const el = (id) => document.getElementById(id);
 
 function loadState() {
@@ -47,19 +49,23 @@ function saveContext(context) {
 
 const state = loadState();
 
-// The response dimension's option list, filtered to the selected reporting
-// context: the correct channel for this context (item.report_paths[context],
-// falling back to general the same way scoreKnowledge does) plus whichever
-// choices aren't anyone's reporting channel at all (the confront/let-it-go
-// distractors). Every other context's channel (AR 381-12, FSO, agency IG,
-// and so on) is dropped, so a private-industry taker never sees a military
-// or cleared-contractor option and vice versa. Grading is untouched: it
-// still compares the chosen id to report_paths[context] in scoreKnowledge.
+// The response dimension's option list for the selected reporting context:
+// the correct channel for this context (item.report_paths[context], falling
+// back to general the same way scoreKnowledge does) plus a random 3-4 of the
+// shared wrong-behavior distractors (RESPONSE_DISTRACTORS in app.js). Every
+// other context's channel (DoD, FSO, agency IG, and so on) is dropped, so a
+// private-industry taker never sees a military or cleared-contractor option
+// and vice versa, and the distractors themselves are the same regardless of
+// context, so they never leak which regime is correct. Grading is untouched:
+// it still compares the chosen id to report_paths[context] in scoreKnowledge.
+// Called fresh on every render, so the distractor draw varies visit to visit
+// and on each context switch.
 function responseChoicesForContext(item, context) {
   const correctId = item.report_paths[context] ?? item.report_paths.general;
-  const otherChannelIds = new Set(Object.values(item.report_paths));
-  otherChannelIds.delete(correctId);
-  return item.choices.response.filter((choice) => !otherChannelIds.has(choice.id));
+  const correctChoice = item.choices.response.find((choice) => choice.id === correctId);
+  const distractorCount = DISTRACTOR_MIN + Math.floor(Math.random() * (DISTRACTOR_MAX - DISTRACTOR_MIN + 1));
+  const distractors = shuffle(RESPONSE_DISTRACTORS).slice(0, distractorCount);
+  return [correctChoice, ...distractors];
 }
 
 const contextSelect = el("context");

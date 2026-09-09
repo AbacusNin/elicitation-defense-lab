@@ -47,7 +47,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -60,14 +60,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -94,12 +86,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go without telling anyone skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person signals you noticed and can tip off a trained collector without accomplishing anything a report wouldn't."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -159,7 +149,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -172,14 +162,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -206,12 +188,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -271,7 +251,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -284,14 +264,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -318,12 +290,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -383,7 +353,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -396,14 +366,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -430,12 +392,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -495,7 +455,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -508,14 +468,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -542,12 +494,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -607,7 +557,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -620,14 +570,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -654,12 +596,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -719,7 +659,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -732,14 +672,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -766,12 +698,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -831,7 +761,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -844,14 +774,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -878,12 +800,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -943,7 +863,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -956,14 +876,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -990,12 +902,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -1055,7 +965,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -1068,14 +978,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -1102,12 +1004,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -1167,7 +1067,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -1180,14 +1080,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -1214,12 +1106,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -1279,7 +1169,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -1292,14 +1182,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -1326,12 +1208,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -1391,7 +1271,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -1404,14 +1284,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -1438,12 +1310,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -1503,7 +1373,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -1516,14 +1386,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -1550,12 +1412,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -1615,7 +1475,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -1628,14 +1488,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -1662,12 +1514,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -1727,7 +1577,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -1740,14 +1590,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -1774,12 +1616,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -1839,7 +1679,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -1852,14 +1692,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -1886,12 +1718,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -1951,7 +1781,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -1964,14 +1794,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -1998,12 +1820,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -2063,7 +1883,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -2076,14 +1896,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -2110,12 +1922,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -2175,7 +1985,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -2188,14 +1998,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -2222,12 +2024,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -2287,7 +2087,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -2300,14 +2100,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -2334,12 +2126,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -2399,7 +2189,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -2412,14 +2202,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -2446,12 +2228,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -2511,7 +2291,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -2524,14 +2304,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -2558,12 +2330,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -2623,7 +2393,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -2636,14 +2406,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -2670,12 +2432,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -2735,7 +2495,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -2748,14 +2508,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -2782,12 +2534,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -2847,7 +2597,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -2860,14 +2610,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -2894,12 +2636,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -2959,7 +2699,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -2972,14 +2712,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -3006,12 +2738,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -3071,7 +2801,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -3084,14 +2814,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -3118,12 +2840,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -3183,7 +2903,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -3196,14 +2916,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -3230,12 +2942,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {
@@ -3295,7 +3005,7 @@
         },
         {
           "id": "resp_dod_ci",
-          "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."
+          "text": "Report it to your servicing counterintelligence element or supporting Military Department CI organization (or your security officer, supervisor, or commander if none is available), per DoD Directive 5240.06 (CIAR)."
         },
         {
           "id": "resp_federal_security",
@@ -3308,14 +3018,6 @@
         {
           "id": "resp_private_security",
           "text": "Report it to your company's security, compliance, or corporate security team."
-        },
-        {
-          "id": "resp_ignore_it",
-          "text": "Let it go without telling anyone; it wasn't a big deal."
-        },
-        {
-          "id": "resp_confront_directly",
-          "text": "Confront the person on the spot and accuse them of trying to extract information."
         }
       ]
     },
@@ -3342,12 +3044,10 @@
       },
       "response": {
         "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
-        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your servicing counterintelligence element or supporting Military Department CI organization, or your security officer, supervisor, or commander if none is available, per DoD Directive 5240.06 (CIAR).",
         "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
         "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
-        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
-        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
-        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team."
       }
     },
     "report_paths": {

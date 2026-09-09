@@ -19,6 +19,61 @@
 export const BASE_CLASSES = ["ego", "reciprocity", "social_pressure", "cognitive_cue"];
 export const DIMENSIONS = ["recognition", "countermeasure", "response"];
 
+// Wrong-behavior distractors for the knowledge check's response dimension,
+// shared across every item instead of duplicated into each item's bank
+// entry: the doctrine's response guidance (remain noncommittal, do not
+// investigate or confront, report promptly) is the same regardless of which
+// reporting context the taker picked, so these do not leak or depend on a
+// regime the way the report_paths channels do. knowledge.js draws a random
+// subset of these alongside the context-correct channel on each render; the
+// feedback map below is what dimensionFeedback falls back to when the user
+// picks one of these instead of the item's own choices.
+export const RESPONSE_DISTRACTORS = [
+  {
+    id: "resp_investigate_yourself",
+    text: "Try to find out who they are, or follow up yourself to gather more information.",
+    feedback:
+      "Investigating or identifying the person yourself is not the taught response; note the details and report them rather than running your own inquiry.",
+  },
+  {
+    id: "resp_keep_engaging",
+    text: "Play along and keep the conversation going to see what else they ask about.",
+    feedback:
+      "Continuing to engage keeps you exposed to further elicitation and delays the one action that actually matters, which is reporting the contact.",
+  },
+  {
+    id: "resp_mention_coworker",
+    text: "Mention it casually to a coworker and leave it there.",
+    feedback:
+      "Telling a coworker informally is not a report; it has to go through your actual reporting channel, not word of mouth.",
+  },
+  {
+    id: "resp_wait_for_repeat",
+    text: "Report it only if the same person approaches you again.",
+    feedback:
+      "The first contact is already reportable on its own; waiting for a repeat approach just delays a report that should happen promptly.",
+  },
+  {
+    id: "resp_confront_directly",
+    text: "Confront the person directly and accuse them of trying to extract information.",
+    feedback:
+      "Confronting the person tips off a trained collector that you noticed, without accomplishing anything a report wouldn't.",
+  },
+  {
+    id: "resp_ignore_it",
+    text: "Let it go; it was not a big deal.",
+    feedback: "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+  },
+  {
+    id: "resp_handle_quietly",
+    text: "Handle it quietly yourself and decide later whether it is worth reporting.",
+    feedback:
+      "Deciding on your own whether it's worth reporting substitutes your judgment for the process; the doctrine calls for reporting promptly, not self-adjudicating.",
+  },
+];
+
+const RESPONSE_DISTRACTOR_FEEDBACK = new Map(RESPONSE_DISTRACTORS.map((d) => [d.id, d.feedback]));
+
 export function tierFor(score, config) {
   if (score >= config.tier_thresholds.high) return "high";
   if (score >= config.tier_thresholds.elevated) return "elevated";
@@ -154,11 +209,19 @@ function dimensionScore(item, dimension, chosen, correctId) {
 }
 
 // Text for a choice id within one dimension of one item. Used to render what
-// the user actually picked, not just the correct choice.
+// the user actually picked, not just the correct choice. The response
+// dimension's choice list no longer carries the shared wrong-behavior
+// distractors (see RESPONSE_DISTRACTORS above), so a response id missing
+// from the item falls back to that shared pool before giving up.
 function choiceText(item, dimension, choiceId) {
   if (choiceId === undefined || choiceId === null) return null;
   const choice = item.choices[dimension].find((c) => c.id === choiceId);
-  return choice ? choice.text : choiceId;
+  if (choice) return choice.text;
+  if (dimension === "response") {
+    const distractor = RESPONSE_DISTRACTORS.find((d) => d.id === choiceId);
+    if (distractor) return distractor.text;
+  }
+  return choiceId;
 }
 
 // Per-dimension feedback for one scored item: what the user chose (id and
@@ -176,6 +239,11 @@ function dimensionFeedback(item, dimension, chosenId, correctId, score) {
   else status = "incorrect";
 
   const explanationId = chosenId ?? correctId;
+  // Item-level feedback covers the item's own choices; a response id not
+  // found there is one of the shared wrong-behavior distractors, whose
+  // explanation lives in RESPONSE_DISTRACTOR_FEEDBACK instead (see
+  // RESPONSE_DISTRACTORS above).
+  const fallback = dimension === "response" ? RESPONSE_DISTRACTOR_FEEDBACK.get(explanationId) : undefined;
   return {
     chosen_id: chosenId ?? null,
     chosen_text: choiceText(item, dimension, chosenId),
@@ -183,7 +251,7 @@ function dimensionFeedback(item, dimension, chosenId, correctId, score) {
     correct_text: choiceText(item, dimension, correctId),
     score,
     status,
-    explanation: item.feedback[dimension][explanationId] ?? null,
+    explanation: item.feedback[dimension][explanationId] ?? fallback ?? null,
   };
 }
 
