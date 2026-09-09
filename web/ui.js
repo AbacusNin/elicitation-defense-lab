@@ -24,19 +24,37 @@ export function shuffle(array) {
   return out;
 }
 
+// Split a pool into two lists by whether opts.balanceKey is truthy on each
+// item, draw half of n from each side (shuffled), and concatenate. Used to
+// keep a drawn subset balanced forward/reverse so a constant-answer run
+// still lands neutral (see sampleBank's balanceKey option below).
+function drawBalanced(pool, n, balanceKey) {
+  const half = Math.floor(n / 2);
+  const trueItems = pool.filter((item) => item[balanceKey]);
+  const falseItems = pool.filter((item) => !item[balanceKey]);
+  const drawn = shuffle(trueItems).slice(0, half);
+  drawn.push(...shuffle(falseItems).slice(0, n - half));
+  return drawn;
+}
+
 // Draw a subset of a bank for display. Two modes, usable together:
 //   - stratified: opts.groupKey names the field to group by (e.g.
 //     "technique_class"); opts.perGroup caps how many items are drawn from
 //     each group value present in the bank. Items missing that field are
-//     skipped by this pass.
+//     skipped by this pass. With opts.balanceKey set (e.g. "reverse"), each
+//     group draws an even split of perGroup between items where that field
+//     is truthy and where it is falsy, instead of a plain random slice, so
+//     every drawn group carries the same forward/reverse mix as the full
+//     bank (see self.js: this is what keeps a constant-answer run neutral).
 //   - extra: opts.extraFilter picks a side pool (e.g. exposure items) drawn
 //     up to opts.extraCount items (all of them if extraCount is omitted).
+//     opts.extraBalanceKey applies the same even split to this pool.
 //   - plain random: opts.count alone, with neither groupKey nor extraFilter,
 //     draws N items from the whole bank.
 // The result is shuffled once more before it is returned, so the stratified
 // and extra items are not blocked together.
 export function sampleBank(bank, opts = {}) {
-  const { groupKey, perGroup, extraFilter, extraCount, count } = opts;
+  const { groupKey, perGroup, balanceKey, extraFilter, extraCount, extraBalanceKey, count } = opts;
   let drawn = [];
 
   if (groupKey && perGroup) {
@@ -48,14 +66,22 @@ export function sampleBank(bank, opts = {}) {
       groups.get(key).push(item);
     }
     for (const items of groups.values()) {
-      drawn.push(...shuffle(items).slice(0, perGroup));
+      if (balanceKey) {
+        drawn.push(...drawBalanced(items, perGroup, balanceKey));
+      } else {
+        drawn.push(...shuffle(items).slice(0, perGroup));
+      }
     }
   }
 
   if (extraFilter) {
     const pool = bank.filter(extraFilter);
     const n = extraCount ?? pool.length;
-    drawn.push(...shuffle(pool).slice(0, n));
+    if (extraBalanceKey) {
+      drawn.push(...drawBalanced(pool, n, extraBalanceKey));
+    } else {
+      drawn.push(...shuffle(pool).slice(0, n));
+    }
   }
 
   if (!groupKey && !extraFilter && count) {

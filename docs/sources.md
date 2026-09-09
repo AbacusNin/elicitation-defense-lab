@@ -62,6 +62,20 @@ The self-assessment bank (`taxonomy/banks/self_assessment.json`) cites eleven it
 40. `cdse-elicitation-offering-assistance-a25` - CDSE/DCSA, Accidental Conversations (2025), the Offering assistance (A25) technique entry.
 41. `cdse-elicitation-hypothetical-situation-a26` - CDSE/DCSA, Accidental Conversations (2025), the Hypothetical situation (A26) technique entry.
 42. `cdse-elicitation-setting-manipulation-a27` - CDSE/DCSA, Accidental Conversations (2025), the Setting manipulation (A27) technique entry.
+43. `cdse-elicitation-criticism-a4` - CDSE/DCSA, Accidental Conversations (2025), the Criticism (A4) technique entry.
+44. `cdse-elicitation-one-upper-a5` - CDSE/DCSA, Accidental Conversations (2025), the One-upper / can-you-top-this (A5) technique entry.
+45. `cdse-elicitation-confidential-bait-a7` - CDSE/DCSA, Accidental Conversations (2025), the Confidential bait (A7) technique entry.
+46. `cdse-elicitation-quid-pro-quo-a8` - CDSE/DCSA, Accidental Conversations (2025), the Quid pro quo / volunteering / trading confidences (A8) technique entry.
+47. `cdse-elicitation-mutual-interest-a10` - CDSE/DCSA, Accidental Conversations (2025), the Mutual interest (A10) technique entry.
+48. `cdse-elicitation-mirroring-a11` - CDSE/DCSA, Accidental Conversations (2025), the Mirroring (A11) technique entry.
+49. `cdse-elicitation-feigned-ignorance-a6` - CDSE/DCSA, Accidental Conversations (2025), the Feigned ignorance (A6) technique entry.
+50. `cdse-elicitation-questionnaires-a20` - CDSE/DCSA, Accidental Conversations (2025), the Questionnaires and surveys (A20) technique entry.
+51. `cdse-elicitation-ruse-interview-a21` - CDSE/DCSA, Accidental Conversations (2025), the Ruse interview (A21) technique entry.
+52. `cdse-elicitation-academic-solicitation-a24` - CDSE/DCSA, Accidental Conversations (2025), the Paper review / academic solicitation (A24) technique entry.
+53. `cdse-elicitation-leading-question-a14` - CDSE/DCSA, Accidental Conversations (2025), the Leading question / embedded presumption (A14) technique entry.
+54. `cdse-elicitation-macro-micro-a15` - CDSE/DCSA, Accidental Conversations (2025), the Macro to micro (to macro) (A15) technique entry.
+55. `cdse-elicitation-oblique-reference-a16` - CDSE/DCSA, Accidental Conversations (2025), the Oblique reference / analogy (A16) technique entry.
+56. `cdse-elicitation-word-repetition-a18` - CDSE/DCSA, Accidental Conversations (2025), the Word repetition (A18) technique entry.
 
 ## Adjacent sources not tied to a specific technique id
 

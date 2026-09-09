@@ -1,7 +1,12 @@
 // Page script for self.html. Draws a stratified random subset of the
-// self-assessment bank on each load (about 4 items per technique class plus
-// a couple of exposure items), renders it with the shared labels, and scores
-// it with scoreSelf from app.js against exactly that shown subset.
+// self-assessment bank on each load (4 items per technique class, split 2
+// forward + 2 reverse, plus a couple of exposure items split 1 + 1), renders
+// it with the shared labels, and scores it with scoreSelf from app.js
+// against exactly that shown subset. The forward/reverse split matters: the
+// full bank is balanced per class so a constant answer scores neutral (see
+// tests/test_self_assess.py), and drawing an even split each session keeps
+// that anti-gaming property true of every sample shown, not just the bank
+// as a whole.
 
 import { scoreSelf } from "./app.js";
 import { sampleBank, showResult } from "./ui.js";
@@ -53,8 +58,10 @@ function render(config, techniques, selfBank) {
   const shown = sampleBank(selfBank, {
     groupKey: "technique_class",
     perGroup: PER_CLASS,
+    balanceKey: "reverse",
     extraFilter: (item) => item.exposure === true,
     extraCount: EXPOSURE_COUNT,
+    extraBalanceKey: "reverse",
   });
 
   const sampleNote = el("sample-note");
