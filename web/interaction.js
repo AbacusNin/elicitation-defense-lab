@@ -1,9 +1,9 @@
 // Page script for interaction.html. Renders every item in the interaction
 // indicator bank, grouped into five collapsible sections (the four
 // psychological classes plus conversational-control patterns), and scores
-// it with scoreInteraction from app.js against the full bank. No sampling:
-// every load shows all 34 items, and every item is answerable regardless of
-// which section is expanded.
+// it with scoreInteraction from app.js against the full bank. Every load
+// shows the whole bank, and every item is answerable regardless of which
+// section is expanded.
 
 import { scoreInteraction } from "./app.js";
 import { CLASS_LABELS, showResult } from "./ui.js";
@@ -24,6 +24,58 @@ const GROUP_ORDER = ["ego", "reciprocity", "social_pressure", "cognitive_cue", "
 const GROUP_LABELS = {
   ...CLASS_LABELS,
   patterns: "Conversational-control patterns",
+};
+
+// One or two sentences per group naming the lever it covers. Grounded in
+// elicitation-catalog-comprehensive.md: Catalog A rows for the four
+// technique classes, and the cross-cutting detection paragraph after A28 for
+// the pattern items.
+const GROUP_INTRO = {
+  ego: "Ego techniques praise you, doubt you, or criticize your work so you defend it, expand on it, or try to top what they said.",
+  reciprocity: "Reciprocity techniques share a confidence, do you a favor, or build rapport fast. The debt that creates gets paid back in information more often than people expect.",
+  social_pressure: "Social pressure techniques ask you directly, play ignorant so you teach them, or route a question through someone close to you. Each one banks on the plain habit of answering when asked.",
+  cognitive_cue: "Cognitive cue techniques assume you already know something, offer a range for you to correct, ask a question that assumes its own answer, or narrow a broad topic to one detail. Each one makes confirming feel like the natural next thing to do.",
+  patterns: "These six items track the shape of a conversation, not one line in it: unusual interest in a topic, deliberate bridging toward it, a high density of questions on the same subject, persistence and circling back, reformulation of a question you didn't answer, and steering paired with mirroring.",
+};
+
+// Detection-framed per-class copy for the scorecard, distinct from the
+// susceptibility copy ui.js ships for self-assessment (self and interaction
+// ask fundamentally different questions: self asks how you would react,
+// interaction asks what already happened). A high score here means several
+// techniques on that lever were marked as having happened, a signal the
+// conversation looked like a deliberate attempt on that lever, not a
+// measure of what got disclosed.
+const INTERACTION_CLASS_INFO = {
+  ego: {
+    low: "Praise, doubt, or criticism aimed at your work did not show up here as a pattern.",
+    elevated: "Praise, doubt, or criticism aimed at your work showed up a few times in this conversation.",
+    high: "Flattery, feigned doubt, criticism, and one-upping showed up together in this conversation. That is a signal this looked like a deliberate attempt on your ego. It does not mean you overshared.",
+  },
+  reciprocity: {
+    low: "Confided secrets, favors, or fast rapport did not show up here as a pattern.",
+    elevated: "A confided secret, an unprompted favor, or quick rapport showed up a few times in this conversation.",
+    high: "Confided secrets, unprompted favors, attentive listening, and fast rapport showed up together in this conversation. That is a signal this looked like a deliberate attempt to build a felt debt. It does not mean you overshared.",
+  },
+  social_pressure: {
+    low: "Direct questions, surveys, and informal settings did not show up here as a pattern.",
+    elevated: "A blunt question, a survey, or a relaxed setting showed up a few times in this conversation.",
+    high: "Direct questions, surveys, unverified recruiters, venting, and relaxed off-site settings showed up together in this conversation. That is a signal this looked like a deliberate attempt to press past your judgment. It does not mean you overshared.",
+  },
+  cognitive_cue: {
+    low: "Assumed knowledge, estimates, leading questions, and hypotheticals did not show up here as a pattern.",
+    elevated: "An assumed-knowledge opener, a rough estimate, or a leading question showed up a few times in this conversation.",
+    high: "Assumed knowledge, bracketed estimates, leading questions, and hypotheticals showed up together in this conversation. That is a signal this looked like a deliberate attempt to draw a confirmation out of you. It does not mean you overshared.",
+  },
+};
+
+// Overall reading for the interaction scorecard: whether the pattern looks
+// like an elicitation attempt and whether it clears the reporting bar, plus
+// an explicit reminder that the score reflects observed techniques, not
+// disclosure.
+const INTERACTION_OVERALL_READING = {
+  low: "Few or none of these techniques showed up in this conversation. This does not look like a deliberate elicitation attempt. The result reflects the techniques you marked as happening. It does not measure how much you disclosed.",
+  elevated: "Some of these techniques showed up in this conversation. Review the flagged classes below to see which lever they lean on. The result reflects the techniques you marked as happening. It does not measure how much you disclosed.",
+  high: "Several of these techniques showed up together in this conversation. That is the pattern a deliberate elicitation attempt leaves. Check the reporting flag below. The result reflects the techniques you marked as happening. It does not measure how much you disclosed.",
 };
 
 // A28 (the Scharff technique) carries technique_class "composite" in
@@ -156,11 +208,6 @@ function renderItem(item, container) {
 }
 
 function render(config, techniques, interactionBank) {
-  const sampleNote = el("sample-note");
-  if (sampleNote) {
-    sampleNote.textContent = `All ${interactionBank.length} indicators are shown, none sampled.`;
-  }
-
   const groups = groupItems(interactionBank, techniques);
 
   const groupsContainer = el("interaction-groups");
@@ -181,6 +228,11 @@ function render(config, techniques, interactionBank) {
     const summary = document.createElement("summary");
     summary.textContent = `${GROUP_LABELS[key]} (${items.length})`;
     details.appendChild(summary);
+
+    const intro = document.createElement("p");
+    intro.className = "note";
+    intro.textContent = GROUP_INTRO[key];
+    details.appendChild(intro);
 
     for (const item of items) {
       renderItem(item, details);
@@ -208,6 +260,15 @@ function render(config, techniques, interactionBank) {
     const present = interactionBank.map((item) => item.id).filter((id) => state[id] === "yes");
     // Score over the full bank: interaction shows every item, no sampling.
     const result = scoreInteraction(present, config, techniques, interactionBank);
-    showResult("interaction", result, context, config, techniques);
+    showResult(
+      "interaction",
+      result,
+      context,
+      config,
+      techniques,
+      undefined,
+      INTERACTION_CLASS_INFO,
+      INTERACTION_OVERALL_READING,
+    );
   });
 }

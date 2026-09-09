@@ -276,27 +276,37 @@ const REPORT_TO = {
 // the flag names who to report to, otherwise it falls back to the generic
 // wording. `techniques` is optional and only changes how matched_techniques
 // (module results that carry it, e.g. interaction) render: with it, ids are
-// shown as "A1 Flattery"; without it, as bare ids.
-export function renderScorecard(result, config, context, techniques) {
+// shown as "A1 Flattery"; without it, as bare ids. `classInfo` and
+// `overallReading` default to the self-assessment susceptibility copy
+// (CLASS_INFO/TIER_READING); interaction.js passes its own detection-framed
+// copy instead, since a high class score there means techniques were
+// observed, not that the user overshared.
+export function renderScorecard(result, config, context, techniques, classInfo = CLASS_INFO, overallReading = TIER_READING) {
   const wrap = document.createElement("div");
   wrap.className = "scorecard";
 
   const overall = document.createElement("p");
   const tierStrong = document.createElement("strong");
   tierStrong.textContent = `${result.tier} (${pct(result.overall_score)})`;
-  overall.append("Overall: ", tierStrong, ". ", TIER_READING[result.tier] ?? "");
+  overall.append("Overall: ", tierStrong, ". ", overallReading[result.tier] ?? "");
   wrap.appendChild(overall);
 
   // The reporting flag is the headline risk indicator: it goes right under
-  // the overall tier, ahead of the per-class breakdown, and names who to
-  // report to when the context is known.
-  if (result.reporting_flag) {
+  // the overall tier, ahead of the per-class breakdown. Only interaction's
+  // result carries a reporting_flag key at all (true or false); self and
+  // knowledge results have none, so this block never fires for them.
+  if (result.reporting_flag !== undefined) {
     const flag = document.createElement("p");
-    flag.className = "flag";
-    const reportTo = REPORT_TO[context];
-    flag.textContent = reportTo
-      ? `Reporting threshold met: this interaction meets the bar to report. ${reportTo}`
-      : "Reporting threshold met: this interaction meets the bar to report.";
+    if (result.reporting_flag) {
+      flag.className = "flag";
+      const reportTo = REPORT_TO[context];
+      flag.textContent = reportTo
+        ? `Reporting threshold met: this interaction meets the bar to report. ${reportTo}`
+        : "Reporting threshold met: this interaction meets the bar to report.";
+    } else {
+      flag.className = "note";
+      flag.textContent = "No report is indicated based on what you marked as happening.";
+    }
     wrap.appendChild(flag);
   }
 
@@ -311,7 +321,7 @@ export function renderScorecard(result, config, context, techniques) {
     head.textContent = `${CLASS_LABELS[cls]}: ${risk} (${pct(score)})`;
     li.appendChild(head);
     const line = document.createElement("p");
-    line.textContent = CLASS_INFO[cls][risk];
+    line.textContent = classInfo[cls][risk];
     li.appendChild(line);
     list.appendChild(li);
   }
@@ -342,12 +352,15 @@ export function renderScorecard(result, config, context, techniques) {
 // only used to name matched_techniques ids in the scorecard. `customSummary`,
 // if given, is a prebuilt DOM node (e.g. from renderCompetencyScorecard) used
 // in place of the default scorecard, for modules whose result shape needs
-// its own summary layout. This only renders the scorecard: the emitted event
-// and the KQL/SPL a defender would query never reach the page (see app.js's
+// its own summary layout. `classInfo` and `overallReading`, if given, are
+// forwarded to renderScorecard in place of its self-assessment defaults (see
+// renderScorecard above); interaction.js passes its own detection-framed
+// copy this way. This only renders the scorecard: the emitted event and the
+// KQL/SPL a defender would query never reach the page (see app.js's
 // buildEvent/detectionQueries for those, used by the CLI and the parity
 // test). `module` is accepted for a consistent call signature across pages
 // even though it is unused now that the event panel is gone.
-export function showResult(module, result, context, config, techniques, customSummary) {
+export function showResult(module, result, context, config, techniques, customSummary, classInfo, overallReading) {
   const el = (id) => document.getElementById(id);
   el("result").hidden = false;
 
@@ -357,7 +370,9 @@ export function showResult(module, result, context, config, techniques, customSu
   if (customSummary) {
     summary.appendChild(customSummary);
   } else if (config) {
-    summary.appendChild(renderScorecard(result, config, context, techniques));
+    const args = [result, config, context, techniques];
+    if (classInfo) args.push(classInfo, overallReading ?? TIER_READING);
+    summary.appendChild(renderScorecard(...args));
   } else {
     const head = document.createElement("p");
     const scoreStrong = document.createElement("strong");
