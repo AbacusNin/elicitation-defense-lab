@@ -74,3 +74,11 @@ pre { background: #f2f2f0; border: 1px solid var(--line); border-radius: 4px; pa
 .matched-techniques { margin-top: .8rem; }
 .class-profile { margin-top: .8rem; }
 .class-profile summary { cursor: pointer; font-weight: 600; }
+.item-group {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: .2rem 1rem .9rem;
+  margin: .9rem 0;
+}
+.item-group summary { cursor: pointer; font-weight: 600; padding: .7rem 0; font-size: 1.05rem; }

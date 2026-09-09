@@ -1,11 +1,14 @@
 // Shared UI helpers for the three module pages: sampling banks down to a
-// shown subset, and rendering a scored result. All three pages (self.js,
-// interaction.js, knowledge.js) draw their shown items with sampleBank and
-// render through showResult; knowledge.js supplies its own competency
-// scorecard (renderCompetencyScorecard) in place of the default one, since
-// its three dimensions score correctness, not susceptibility.
+// shown subset (self and knowledge; interaction now shows its whole bank),
+// and rendering a scored result. All three pages render through showResult;
+// knowledge.js supplies its own competency scorecard
+// (renderCompetencyScorecard) in place of the default one, since its three
+// dimensions score correctness, not susceptibility. The raw emitted event and
+// the KQL/SPL a defender would query are deliberately not shown here; those
+// stay available through buildEvent/detectionQueries in app.js for the CLI,
+// the detections, and the parity test, but the end user never sees them.
 
-import { BASE_CLASSES, DIMENSIONS, buildEvent, detectionQueries, tierFor } from "./app.js";
+import { BASE_CLASSES, DIMENSIONS, tierFor } from "./app.js";
 
 function pct(x) {
   return `${(x * 100).toFixed(1)}%`;
@@ -70,7 +73,9 @@ const TIER_READING = {
   high: "A strong pull to disclose under several of these techniques. Treat the flagged classes as a training priority.",
 };
 
-const CLASS_LABELS = {
+// Exported so interaction.js can label its psychological-class accordion
+// groups with the same wording the scorecard uses.
+export const CLASS_LABELS = {
   ego: "Ego",
   reciprocity: "Reciprocity",
   social_pressure: "Social pressure",
@@ -297,14 +302,18 @@ export function renderScorecard(result, config, context, techniques) {
   return wrap;
 }
 
-// Fill in the result/event-JSON/KQL/SPL panels every module page shares.
-// Pass config to get the scorecard rendering (per-class risk indicators);
-// without it this falls back to a plain score list, so pages that have not
-// moved onto renderScorecard yet still work unchanged. `techniques` is
-// optional and only used to name matched_techniques ids in the scorecard.
-// `customSummary`, if given, is a prebuilt DOM node (e.g. from
-// renderCompetencyScorecard) used in place of the default scorecard, for
-// modules whose result shape needs its own summary layout.
+// Fill in the result panel every module page shares. Pass config to get the
+// scorecard rendering (per-class risk indicators); without it this falls
+// back to a plain score list, so pages that have not moved onto
+// renderScorecard yet still work unchanged. `techniques` is optional and
+// only used to name matched_techniques ids in the scorecard. `customSummary`,
+// if given, is a prebuilt DOM node (e.g. from renderCompetencyScorecard) used
+// in place of the default scorecard, for modules whose result shape needs
+// its own summary layout. This only renders the scorecard: the emitted event
+// and the KQL/SPL a defender would query never reach the page (see app.js's
+// buildEvent/detectionQueries for those, used by the CLI and the parity
+// test). `module` is accepted for a consistent call signature across pages
+// even though it is unused now that the event panel is gone.
 export function showResult(module, result, context, config, techniques, customSummary) {
   const el = (id) => document.getElementById(id);
   el("result").hidden = false;
@@ -340,13 +349,6 @@ export function showResult(module, result, context, config, techniques, customSu
       summary.appendChild(flag);
     }
   }
-
-  const event = buildEvent(module, result, context);
-  el("event-json").textContent = JSON.stringify(event, null, 2);
-
-  const q = detectionQueries(event);
-  el("kql").textContent = q.kql;
-  el("spl").textContent = q.spl;
 
   el("result").scrollIntoView({ behavior: "smooth" });
 }

@@ -16,7 +16,7 @@ The interaction module scores a conversation someone else already had, so it wor
 
 Only the indicators that map to a specific technique feed the four class scores, through `weighted_class_scores`: pattern items and any technique outside the four base classes (composite, or one of the doctrinal-adjacent techniques carrying class `none`) count toward the overall likelihood but not toward a class bucket. When the overall score crosses `reporting_threshold`, the module sets `reporting_flag` and the result carries the list of matched technique ids.
 
-The bank (`taxonomy/banks/interaction.json`) holds 34 items, 28 technique questions and 6 conversational-control patterns. The web page draws a random subset of about 14 each session and scores against exactly that subset, so the diagnosticity denominator is the shown bank, not the full 34. The scorecard puts the reporting flag first, as the headline risk indicator, ahead of the per-class breakdown.
+The bank (`taxonomy/banks/interaction.json`) holds 34 items, 28 technique questions and 6 conversational-control patterns. The web page shows and scores the whole bank every time, no sampling, grouped into five collapsible sections (the four psychological classes plus conversational-control patterns) with a dropdown to jump between them. The scorecard puts the reporting flag first, as the headline risk indicator, ahead of the per-class breakdown.
 
 ## Knowledge: graded drills
 

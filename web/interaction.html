@@ -10,12 +10,12 @@
 <main>
   <p><a class="back-link" href="index.html">&larr; Elicitation Defense Lab</a></p>
   <h1>Interaction indicators</h1>
-  <p class="note">Walk through a conversation you are reviewing. For each item, answer whether it happened, then score the run. <span id="sample-note"></span></p>
+  <p class="note">Walk through a conversation you are reviewing. All 34 indicators are shown below, grouped by kind. For each item, answer whether it happened, then score the run. <span id="sample-note"></span></p>
 
   <div class="privacy">
-    Everything here runs in your browser. The drawn items and your answers are
-    scored locally and never leave the page. In-progress answers are kept only
-    in this browser's local storage.
+    Everything here runs in your browser. Your answers are scored locally and
+    never leave the page. In-progress answers are kept only in this browser's
+    local storage.
   </div>
 
   <p id="load-error" hidden></p>
@@ -31,19 +31,19 @@
     </select>
   </div>
 
-  <div id="interaction-items"></div>
+  <div class="context-row">
+    <label for="group-jump"><strong>Jump to group</strong>:</label><br>
+    <select id="group-jump">
+      <option value="">Choose a group&hellip;</option>
+    </select>
+  </div>
+
+  <div id="interaction-groups"></div>
   <button id="interaction-run">Score interaction</button>
 
   <section id="result" hidden>
     <h2>Result</h2>
     <div id="result-summary"></div>
-    <h3>Emitted event</h3>
-    <p class="note">The event a scoring run produces. On a deployment this is what a security team would receive; here it stays in the page.</p>
-    <pre id="event-json"></pre>
-    <h3>What a defender would query</h3>
-    <p class="note">The same event, seen from the detection side. These are the KQL and SPL a defender would run over the assessment feed.</p>
-    <pre id="kql"></pre>
-    <pre id="spl"></pre>
   </section>
 </main>
 <script type="module" src="interaction.js"></script>
