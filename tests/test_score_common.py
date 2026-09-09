@@ -1,6 +1,6 @@
-from elicitation_defense_lab.taxonomy import load_taxonomy
 from elicitation_defense_lab.config import default_config
-from elicitation_defense_lab.score.common import weighted_class_scores, tier_for
+from elicitation_defense_lab.score.common import tier_for, weighted_class_scores
+from elicitation_defense_lab.taxonomy import load_taxonomy
 
 
 def test_tiers_partition():
