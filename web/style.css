@@ -6,6 +6,8 @@
   --line: #ddd;
   --accent: #2a5d84;
   --flag: #8a3324;
+  --risk-low: #2a7d4f;
+  --risk-elevated: #b8860b;
 }
 body {
   margin: 0;
@@ -57,3 +59,15 @@ select { font: inherit; padding: .3rem; }
 pre { background: #f2f2f0; border: 1px solid var(--line); border-radius: 4px; padding: .7rem; overflow-x: auto; font-size: .85rem; }
 #load-error { color: var(--flag); }
 .context-row { margin: 1rem 0; }
+.scorecard-classes { list-style: none; margin: .8rem 0; padding: 0; }
+.scorecard-classes li {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line);
+  border-radius: 4px;
+  padding: .6rem .9rem;
+  margin: .5rem 0;
+}
+.scorecard-classes li.risk-low { border-left-color: var(--risk-low); }
+.scorecard-classes li.risk-elevated { border-left-color: var(--risk-elevated); }
+.scorecard-classes li.risk-high { border-left-color: var(--flag); }
+.scorecard-classes p { margin: .3rem 0 0; color: var(--muted); }

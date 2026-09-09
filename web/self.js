@@ -1,10 +1,21 @@
-// Page script for self.html. Loads the self-assessment bank, renders it, and
-// scores it with scoreSelf from app.js.
+// Page script for self.html. Draws a stratified random subset of the
+// self-assessment bank on each load (about 4 items per technique class plus
+// a couple of exposure items), renders it with the shared labels, and scores
+// it with scoreSelf from app.js against exactly that shown subset.
 
 import { scoreSelf } from "./app.js";
-import { showResult } from "./ui.js";
+import { sampleBank, showResult } from "./ui.js";
 
 const STORAGE_KEY = "edl-self-progress";
+const PER_CLASS = 4;
+const EXPOSURE_COUNT = 2;
+const LABELS = [
+  "0 strongly disagree",
+  "1 disagree",
+  "2 neutral",
+  "3 agree",
+  "4 strongly agree",
+];
 const el = (id) => document.getElementById(id);
 
 function loadState() {
@@ -39,10 +50,21 @@ Promise.all([
   });
 
 function render(config, techniques, selfBank) {
+  const shown = sampleBank(selfBank, {
+    groupKey: "technique_class",
+    perGroup: PER_CLASS,
+    extraFilter: (item) => item.exposure === true,
+    extraCount: EXPOSURE_COUNT,
+  });
+
+  const sampleNote = el("sample-note");
+  if (sampleNote) {
+    sampleNote.textContent = `Showing ${shown.length} of ${selfBank.length} items, drawn fresh each visit.`;
+  }
+
   const container = el("self-items");
   container.textContent = "";
-  const labels = ["0 strongly disagree", "1", "2", "3", "4 strongly agree"];
-  for (const item of selfBank) {
+  for (const item of shown) {
     const row = document.createElement("fieldset");
     row.className = "item";
     const legend = document.createElement("legend");
@@ -63,13 +85,15 @@ function render(config, techniques, selfBank) {
         saveState(state);
       });
       label.appendChild(input);
-      label.append(` ${labels[v]}`);
+      label.append(` ${LABELS[v]}`);
       row.appendChild(label);
     }
     container.appendChild(row);
   }
+
   el("self-run").addEventListener("click", () => {
-    const result = scoreSelf(state, config, techniques, selfBank);
-    showResult("self", result, "general");
+    // Normalize over exactly what was shown, not the full bank.
+    const result = scoreSelf(state, config, techniques, shown);
+    showResult("self", result, "general", config);
   });
 }

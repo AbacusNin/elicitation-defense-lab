@@ -1,170 +1,226 @@
 [
   {
     "id": "ego_flattery_pull",
-    "prompt": "When someone praises my expertise more than the situation calls for, I notice a pull to prove it by sharing more detail than I meant to.",
+    "prompt": "In the last year, when someone praised my expertise more than the situation called for, I ended up sharing more detail about my work than I meant to.",
     "technique_class": "ego",
     "reverse": false,
-    "source": "cdse_elicitation_flattery_a1"
+    "source": "cdse-elicitation-flattery-a1"
+  },
+  {
+    "id": "ego_resist_flattery_expansion",
+    "prompt": "In the last year, when someone praised my expertise more than the situation called for, I kept my answer brief and did not expand on it.",
+    "technique_class": "ego",
+    "reverse": true,
+    "source": "cdse-elicitation-flattery-a1"
   },
   {
     "id": "ego_correct_the_record",
-    "prompt": "If someone states something wrong about my work, I feel a strong urge to correct them with the accurate details.",
+    "prompt": "In the last year, when someone stated something wrong about my work, I corrected them with the accurate details rather than letting it go.",
     "technique_class": "ego",
     "reverse": false,
-    "source": "cdse_elicitation_false_statement_a3"
+    "source": "cdse-elicitation-false-statement-a3"
   },
   {
     "id": "ego_let_challenge_pass",
-    "prompt": "I can let a skeptical or dismissive comment about my work go unanswered without feeling the need to defend it in detail.",
+    "prompt": "In the last year, when someone acted skeptical or dismissive about my work, I let the comment pass without defending it in detail.",
     "technique_class": "ego",
     "reverse": true,
-    "source": "cdse_elicitation_provocation_a2"
+    "source": "cdse-elicitation-provocation-a2"
   },
   {
     "id": "ego_defend_criticism",
-    "prompt": "When someone criticizes my project, my team, or my employer, I feel a pull to respond with specific details that defend the work.",
+    "prompt": "In the last year, when someone criticized my project, my team, or my employer, I responded with specific details that defended the work.",
     "technique_class": "ego",
     "reverse": false,
     "source": "cdse-accidental-conversations-2025"
   },
   {
+    "id": "ego_hold_back_on_criticism",
+    "prompt": "In the last year, when someone criticized my project, my team, or my employer, I held back from offering defending detail.",
+    "technique_class": "ego",
+    "reverse": true,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
     "id": "ego_top_the_claim",
-    "prompt": "When someone mentions a modest accomplishment or figure from their own work, I feel a competitive urge to share something bigger or more specific about mine.",
+    "prompt": "In the last year, when someone mentioned a modest accomplishment or figure from their own work, I shared something bigger or more specific about mine.",
     "technique_class": "ego",
     "reverse": false,
     "source": "cdse-accidental-conversations-2025"
   },
   {
     "id": "ego_decline_expert_frame",
-    "prompt": "Even when a stranger treats me as the expert in the room, I can decline to go into detail about my work.",
+    "prompt": "In the last year, even when a stranger treated me as the expert in the room, I declined to go into detail about my work.",
     "technique_class": "ego",
     "reverse": true,
     "source": "haisq-sebis-ttat-instruments"
   },
   {
     "id": "recip_confide_for_confide",
-    "prompt": "When someone shares something that feels confidential with me first, I feel some obligation to offer something similarly candid in return.",
+    "prompt": "In the last year, when someone shared something that felt confidential with me first, I offered something similarly candid about my own work in return.",
     "technique_class": "reciprocity",
     "reverse": false,
-    "source": "van_der_kleij_2023_reciprocity"
+    "source": "van-der-kleij-2023-reciprocity"
+  },
+  {
+    "id": "recip_decline_confidence_trade",
+    "prompt": "In the last year, when someone offered a 'just between us' confidence, I did not match it with a candid detail about my own work.",
+    "technique_class": "reciprocity",
+    "reverse": true,
+    "source": "cdse-accidental-conversations-2025"
   },
   {
     "id": "recip_owed_after_favor",
-    "prompt": "If a new acquaintance does me an unprompted favor, I feel I owe them something in return, including information about my work.",
+    "prompt": "In the last year, when a new acquaintance did me an unprompted favor, I felt I owed them something in return, including information about my work.",
     "technique_class": "reciprocity",
     "reverse": false,
-    "source": "cdse_elicitation_offering_assistance_a25"
+    "source": "cdse-elicitation-offering-assistance-a25"
+  },
+  {
+    "id": "recip_no_debt_from_favor",
+    "prompt": "In the last year, when a new acquaintance did me an unprompted favor, I did not feel obligated to share work details in return.",
+    "technique_class": "reciprocity",
+    "reverse": true,
+    "source": "cdse-elicitation-offering-assistance-a25"
   },
   {
     "id": "recip_same_limits_with_good_listener",
-    "prompt": "Even when someone is unusually attentive and easy to talk to, I keep the same limits on what I share about my work as I would with anyone else.",
+    "prompt": "In the last year, even with someone who was unusually attentive and easy to talk to, I kept the same limits on what I shared about my work as I would with anyone else.",
     "technique_class": "reciprocity",
     "reverse": true,
-    "source": "cdse_elicitation_good_listener_a9"
+    "source": "cdse-elicitation-good-listener-a9"
   },
   {
     "id": "recip_fast_rapport_disclosure",
-    "prompt": "I have shared details about my work with someone I just met because we quickly discovered a lot in common.",
+    "prompt": "In the last year, I have shared details about my work with someone I had just met because we quickly discovered a lot in common.",
     "technique_class": "reciprocity",
     "reverse": false,
     "source": "cdse-accidental-conversations-2025"
   },
   {
     "id": "recip_unaffected_by_mirroring",
-    "prompt": "Noticing that someone is subtly matching my tone or body language does not make me more likely to keep talking about my work.",
+    "prompt": "In the last year, noticing that someone was subtly matching my tone or body language did not make me more likely to keep talking about my work.",
     "technique_class": "reciprocity",
     "reverse": true,
     "source": "cdse-accidental-conversations-2025"
   },
   {
     "id": "recip_general_obligation_norm",
-    "prompt": "When someone does something for me first, I generally feel obligated to return the favor, even with people I do not know well.",
+    "prompt": "In the last year, when someone did something for me first, I felt obligated to return the favor, even with people I did not know well.",
     "technique_class": "reciprocity",
     "reverse": false,
     "source": "van-der-kleij-2023-reciprocity"
   },
   {
     "id": "sp_uncomfortable_declining",
-    "prompt": "When someone asks me a direct, specific question about my work, I feel uncomfortable declining to answer even when I am not sure I should.",
+    "prompt": "In the last year, when someone asked me a direct, specific question about my work, I answered it even when I was not sure I should.",
     "technique_class": "social_pressure",
     "reverse": false,
-    "source": "cdse_elicitation_direct_question_a19"
+    "source": "cdse-elicitation-direct-question-a19"
   },
   {
     "id": "sp_vent_to_outsiders",
-    "prompt": "In an informal setting, I sometimes vent about deadlines, staffing, or project setbacks to people outside my organization.",
+    "prompt": "In the last year, in an informal setting, I have vented about deadlines, staffing, or project setbacks to people outside my organization.",
     "technique_class": "social_pressure",
     "reverse": false,
-    "source": "cdse_elicitation_urge_to_complain_a23"
-  },
-  {
-    "id": "sp_same_discretion_offsite",
-    "prompt": "I hold the same discretion about work topics in a relaxed, off-site setting that I do in the office.",
-    "technique_class": "social_pressure",
-    "reverse": true,
-    "source": "cdse_elicitation_setting_manipulation_a27"
+    "source": "cdse-elicitation-urge-to-complain-a23"
   },
   {
     "id": "sp_teach_the_novice",
-    "prompt": "When someone claims not to understand my field, I feel a pull to explain the details to them.",
+    "prompt": "In the last year, when someone claimed not to understand my field, I explained the details of my work to them.",
     "technique_class": "social_pressure",
     "reverse": false,
     "source": "cdse-accidental-conversations-2025"
   },
   {
     "id": "sp_unverified_recruiter_detail",
-    "prompt": "I have answered detailed questions about a recent project from a recruiter or headhunter I had not verified.",
+    "prompt": "In the last year, I have answered detailed questions about a recent project from a recruiter or headhunter I had not verified.",
     "technique_class": "social_pressure",
     "reverse": false,
     "source": "cdse-accidental-conversations-2025"
   },
   {
-    "id": "sp_answer_every_survey_item",
-    "prompt": "I answer every question on a survey that reaches my inbox, including ones about my employer or role, as long as most of it looks routine.",
+    "id": "sp_same_discretion_offsite",
+    "prompt": "In the last year, I held the same discretion about work topics in a relaxed, off-site setting that I hold in the office.",
     "technique_class": "social_pressure",
-    "reverse": false,
+    "reverse": true,
+    "source": "cdse-elicitation-setting-manipulation-a27"
+  },
+  {
+    "id": "sp_decline_survey_completion",
+    "prompt": "In the last year, I have skipped or declined a survey or intake form that asked about my employer, project, or role when I could not verify the sender.",
+    "technique_class": "social_pressure",
+    "reverse": true,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "sp_hold_third_party_line",
+    "prompt": "In the last year, I have declined to answer questions about a colleague's or family member's work when someone asked me instead of them.",
+    "technique_class": "social_pressure",
+    "reverse": true,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "sp_verify_before_reviewing",
+    "prompt": "In the last year, before reviewing or commenting on technical material sent by someone I could not verify, I checked with my security office first.",
+    "technique_class": "social_pressure",
+    "reverse": true,
     "source": "cdse-accidental-conversations-2025"
   },
   {
     "id": "cc_fill_assumed_gaps",
-    "prompt": "If someone speaks as though they already know details about my work, I tend to confirm or fill in the gaps rather than question how they know.",
+    "prompt": "In the last year, when someone spoke as though they already knew details about my work, I confirmed or filled in the gaps rather than question how they knew.",
     "technique_class": "cognitive_cue",
     "reverse": false,
-    "source": "cdse_elicitation_assumed_knowledge_a12"
+    "source": "cdse-elicitation-assumed-knowledge-a12"
   },
   {
     "id": "cc_correct_wrong_estimate",
-    "prompt": "When someone offers a rough estimate or range about my work that is off, I feel the urge to correct it with the more accurate figure.",
+    "prompt": "In the last year, when someone offered a rough estimate or range about my work that was off, I corrected it with the more accurate figure.",
     "technique_class": "cognitive_cue",
     "reverse": false,
-    "source": "cdse_elicitation_bracketing_a13"
-  },
-  {
-    "id": "cc_hold_line_on_hypothetical",
-    "prompt": "I can discuss a hypothetical scenario related to my work without letting it lead me into specifics I would not otherwise share.",
-    "technique_class": "cognitive_cue",
-    "reverse": true,
-    "source": "cdse_elicitation_hypothetical_situation_a26"
+    "source": "cdse-elicitation-bracketing-a13"
   },
   {
     "id": "cc_accept_leading_frame",
-    "prompt": "When a question is phrased so that a plain yes or no would confirm something about my work, I usually just answer it as asked.",
+    "prompt": "In the last year, when a question was phrased so that a plain yes or no would confirm something about my work, I answered it as asked.",
     "technique_class": "cognitive_cue",
     "reverse": false,
-    "source": "cdse-accidental-conversations-2025"
-  },
-  {
-    "id": "cc_unaffected_by_echo",
-    "prompt": "When someone repeats a phrase I just used back to me, I notice it and do not feel pulled to elaborate further.",
-    "technique_class": "cognitive_cue",
-    "reverse": true,
     "source": "cdse-accidental-conversations-2025"
   },
   {
     "id": "cc_fill_the_public_gap",
-    "prompt": "When someone cites a published detail about my organization and guesses at the rest, I tend to confirm or correct their guess.",
+    "prompt": "In the last year, when someone cited a published detail about my organization and guessed at the rest, I confirmed or corrected their guess.",
     "technique_class": "cognitive_cue",
     "reverse": false,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "cc_hold_line_on_hypothetical",
+    "prompt": "In the last year, I have discussed a hypothetical scenario related to my work without letting it lead me into specifics I would not otherwise share.",
+    "technique_class": "cognitive_cue",
+    "reverse": true,
+    "source": "cdse-elicitation-hypothetical-situation-a26"
+  },
+  {
+    "id": "cc_unaffected_by_echo",
+    "prompt": "In the last year, when someone repeated a phrase I had just used back to me, I noticed it and did not feel pulled to elaborate further.",
+    "technique_class": "cognitive_cue",
+    "reverse": true,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "cc_notice_the_funnel",
+    "prompt": "In the last year, I have noticed a conversation narrow from broad small talk down to one specific detail about my work, and redirected it.",
+    "technique_class": "cognitive_cue",
+    "reverse": true,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "cc_skip_the_analogy",
+    "prompt": "In the last year, when someone steered talk toward a system similar to mine, I avoided drawing direct comparisons to my own work.",
+    "technique_class": "cognitive_cue",
+    "reverse": true,
     "source": "cdse-accidental-conversations-2025"
   },
   {
@@ -172,25 +228,25 @@
     "prompt": "My public-facing profiles (professional networking sites, conference bios, social media) describe my current project or technical focus in enough detail that a stranger could tailor questions around it.",
     "exposure": true,
     "reverse": false,
-    "source": "enisa_threat_landscape_social_engineering"
+    "source": "enisa-threat-landscape-social-engineering"
   },
   {
     "id": "exposure_unverified_contact",
-    "prompt": "In the past year, I have discussed work specifics with a new contact I could not independently verify, at a conference, online forum, or social event.",
+    "prompt": "In the last year, I have discussed work specifics with a new contact I could not independently verify, at a conference, online forum, or social event.",
     "exposure": true,
     "reverse": false,
-    "source": "cdse_foreign_collection_methods_2024"
+    "source": "cdse-foreign-collection-methods-2024"
   },
   {
     "id": "exposure_conference_questions",
-    "prompt": "In the past year, I have answered detailed technical questions from a stranger at a conference, trade show, or industry event.",
+    "prompt": "In the last year, I have answered detailed technical questions from a stranger at a conference, trade show, or industry event.",
     "exposure": true,
     "reverse": false,
     "source": "cdse-foreign-collection-methods-2024"
   },
   {
     "id": "exposure_unfamiliar_survey",
-    "prompt": "I have completed a survey or intake form from an organization I did not recognize that asked about my employer, project, or role.",
+    "prompt": "In the last year, I have completed a survey or intake form from an organization I did not recognize that asked about my employer, project, or role.",
     "exposure": true,
     "reverse": false,
     "source": "cdse-foreign-collection-methods-2024"
@@ -201,5 +257,26 @@
     "exposure": true,
     "reverse": true,
     "source": "cdse-ci116-student-guide-2024"
+  },
+  {
+    "id": "exposure_social_media_project_detail",
+    "prompt": "In the last year, I have posted about a current project's specifics on social media or a professional forum before it was publicly announced.",
+    "exposure": true,
+    "reverse": false,
+    "source": "cdse-foreign-collection-methods-2024"
+  },
+  {
+    "id": "exposure_badge_challenge",
+    "prompt": "In the last year, I have challenged or reported someone without a visible badge who tried to follow me through a secure door.",
+    "exposure": true,
+    "reverse": true,
+    "source": "cisa-social-engineering-guidance"
+  },
+  {
+    "id": "exposure_verify_before_sharing",
+    "prompt": "Before discussing project specifics with a new professional contact, I typically verify their identity and organization through an independent channel.",
+    "exposure": true,
+    "reverse": true,
+    "source": "ncsc-elicitation-brochure"
   }
 ]
