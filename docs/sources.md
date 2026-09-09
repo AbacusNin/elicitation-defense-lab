@@ -47,6 +47,22 @@ The consolidated bibliography behind `taxonomy/techniques.json` and the three qu
 30. `alison-orbit-meissner-hig` - Alison and Alison, the ORBIT model; Meissner et al., the High-Value Detainee Interrogation Group (HIG) research program reviews.
 31. `elm-inoculation-reactance-influence-theory` - Petty and Cacioppo, the Elaboration Likelihood Model; McGuire, and Banas and Rains, inoculation theory; Brehm, reactance theory; Burkett, MICE to RASCLS (CIA Studies in Intelligence, 2013); Cialdini, principles of influence.
 
+## Self-assessment item-level citations
+
+The self-assessment bank (`taxonomy/banks/self_assessment.json`) cites eleven items against the specific technique write-up within source 5 (`cdse-accidental-conversations-2025`) rather than the document as a whole, since each item mirrors one technique from that job aid.
+
+32. `cdse-elicitation-flattery-a1` - CDSE/DCSA, Accidental Conversations (2025), the Flattery (A1) technique entry.
+33. `cdse-elicitation-provocation-a2` - CDSE/DCSA, Accidental Conversations (2025), the Provocation / feigned incredulity (A2) technique entry.
+34. `cdse-elicitation-false-statement-a3` - CDSE/DCSA, Accidental Conversations (2025), the Deliberate false statement (A3) technique entry.
+35. `cdse-elicitation-good-listener-a9` - CDSE/DCSA, Accidental Conversations (2025), the Good listener (A9) technique entry.
+36. `cdse-elicitation-assumed-knowledge-a12` - CDSE/DCSA, Accidental Conversations (2025), the Assumed knowledge (A12) technique entry.
+37. `cdse-elicitation-bracketing-a13` - CDSE/DCSA, Accidental Conversations (2025), the Bracketing (A13) technique entry.
+38. `cdse-elicitation-direct-question-a19` - CDSE/DCSA, Accidental Conversations (2025), the Direct question / survey (A19) technique entry.
+39. `cdse-elicitation-urge-to-complain-a23` - CDSE/DCSA, Accidental Conversations (2025), the Exploiting the urge to complain (A23) technique entry.
+40. `cdse-elicitation-offering-assistance-a25` - CDSE/DCSA, Accidental Conversations (2025), the Offering assistance (A25) technique entry.
+41. `cdse-elicitation-hypothetical-situation-a26` - CDSE/DCSA, Accidental Conversations (2025), the Hypothetical situation (A26) technique entry.
+42. `cdse-elicitation-setting-manipulation-a27` - CDSE/DCSA, Accidental Conversations (2025), the Setting manipulation (A27) technique entry.
+
 ## Adjacent sources not tied to a specific technique id
 
 The MITRE ATT&CK, CTID, ENISA, and NIST entries above (19, 20, 21, 22) also frame Catalog C and Catalog D in `taxonomy/reference.md`: the social-engineering and cyber vectors, and the collection methods, that carry technique class `none` because they are delivery mechanisms rather than one of the four psychological classes.

@@ -2,6 +2,10 @@
 // print the results as JSON, in the same order. test_parity.py diffs this
 // against tests/fixtures/parity_cases.json. Reads the shared web/data/ files so
 // the JS scores off the exact numbers build_data.py froze from the Python config.
+//
+// Prints the full result per case (everything but feedback, dropped the same
+// way tests/fixtures/make_parity_cases.py drops it), not just overall_score
+// and tier, so the class-score path (weightedClassScores) gets checked too.
 
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -33,7 +37,8 @@ const results = cases.map(({ module, input }) => {
   } else {
     throw new Error(`unknown module: ${module}`);
   }
-  return { overall_score: result.overall_score, tier: result.tier };
+  const { feedback, ...comparable } = result;
+  return comparable;
 });
 
 process.stdout.write(JSON.stringify(results));

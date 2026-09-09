@@ -21,5 +21,17 @@ def test_js_scoring_matches_python():
     js = json.loads(out.stdout)
     assert len(cases) == len(js)
     for case, got in zip(cases, js):
-        assert abs(case["expected"]["overall_score"] - got["overall_score"]) < 1e-9
-        assert case["expected"]["tier"] == got["tier"]
+        expected = case["expected"]
+        assert abs(expected["overall_score"] - got["overall_score"]) < 1e-9
+        assert expected["tier"] == got["tier"]
+        for cls, score in expected["class_scores"].items():
+            assert abs(score - got["class_scores"][cls]) < 1e-9
+        if "dimension_scores" in expected:
+            for dim, score in expected["dimension_scores"].items():
+                assert abs(score - got["dimension_scores"][dim]) < 1e-9
+        if "matched_techniques" in expected:
+            assert set(expected["matched_techniques"]) == set(got["matched_techniques"])
+        if "reporting_flag" in expected:
+            assert expected["reporting_flag"] == got["reporting_flag"]
+        if "exposure_score" in expected:
+            assert abs(expected["exposure_score"] - got["exposure_score"]) < 1e-9

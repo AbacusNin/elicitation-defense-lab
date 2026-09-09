@@ -99,6 +99,9 @@ def test_class_scores_exclude_composite_technique():
     }
     res = score_knowledge(answers, c, techs, bank, context="general")
     assert set(res["class_scores"]) == {"ego", "reciprocity", "social_pressure", "cognitive_cue"}
+    # A28 is a composite technique, not one of the four base classes, so a
+    # perfect score on it must not land in any class bucket.
+    assert all(value == 0.0 for value in res["class_scores"].values())
 
 
 def test_feedback_has_one_entry_per_item():

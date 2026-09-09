@@ -2,10 +2,15 @@
 
 Each case is {module, input, expected}. The Python scorers produce `expected`
 here; tests/parity/run_js.mjs runs the same `input` through the JavaScript
-scorers, and test_parity.py checks the two agree. Inputs are built to exercise
-the paths that matter for parity: empty runs, reverse and exposure self-items,
-composite and pattern interaction indicators that affect the overall score but
-not the class buckets, and every report-path context in the knowledge check.
+scorers, and test_parity.py checks the two agree. `expected` carries the full
+scorer result (overall_score, tier, class_scores, and whichever of
+dimension_scores / matched_techniques / reporting_flag / exposure_score the
+module returns), not just overall_score and tier, so the JS class-score path
+(weightedClassScores) is checked along with everything else. Inputs are built
+to exercise the paths that matter for parity: empty runs, reverse and exposure
+self-items, composite and pattern interaction indicators that affect the
+overall score but not the class buckets, and every report-path context in the
+knowledge check.
 """
 
 import json
