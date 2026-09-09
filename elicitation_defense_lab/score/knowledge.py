@@ -1,0 +1,112 @@
+"""Knowledge-check scorer: three-dimension scenario grading.
+
+Each bank item is a scenario with three graded dimensions: recognition (did
+they name the technique), countermeasure (did they pick the taught response),
+and response (did they pick the reporting channel correct for their org
+context). The first two have a single correct choice per item; the third is
+resolved per call from the item's report_paths, keyed by context and falling
+back to "general" for a context the item doesn't carry.
+"""
+
+import json
+from pathlib import Path
+
+from elicitation_defense_lab.config import Config
+from elicitation_defense_lab.score.common import tier_for, weighted_class_scores
+from elicitation_defense_lab.taxonomy import Technique
+
+DEFAULT_BANK_PATH = (
+    Path(__file__).resolve().parent.parent.parent / "taxonomy" / "banks" / "knowledge.json"
+)
+
+DIMENSIONS = ("recognition", "countermeasure", "response")
+
+
+def load_bank(path: str | None = None) -> list[dict]:
+    """Load the knowledge scenario bank from JSON."""
+    file_path = Path(path) if path is not None else DEFAULT_BANK_PATH
+    return json.loads(file_path.read_text(encoding="utf-8"))
+
+
+def _response_correct_id(item: dict, context: str) -> str:
+    report_paths = item["report_paths"]
+    return report_paths.get(context, report_paths["general"])
+
+
+def _dimension_score(item: dict, dimension: str, chosen: str | None, correct_id: str) -> float:
+    if chosen == correct_id:
+        return 1.0
+    if item.get("partial", {}).get(dimension) == chosen:
+        return 0.5
+    return 0.0
+
+
+def score_knowledge(
+    answers: dict[str, dict],
+    config: Config,
+    techniques: list[Technique],
+    bank: list[dict],
+    context: str,
+) -> dict:
+    """Score a knowledge-check run.
+
+    Each answered item is graded on all three dimensions against the item's
+    `correct` ids, with the response dimension resolved against
+    `report_paths[context]` (falling back to `report_paths["general"]`). A
+    defined `partial` near-miss scores 0.5; anything else scores 0.0. Items
+    with no answer are skipped entirely (not counted as wrong).
+    """
+    dim_sums = dict.fromkeys(DIMENSIONS, 0.0)
+    dim_counts = dict.fromkeys(DIMENSIONS, 0)
+    hits: dict[str, float] = {}
+    feedback = []
+
+    for item in bank:
+        answer = answers.get(item["id"])
+        if answer is None:
+            continue
+
+        correct_ids = {
+            "recognition": item["correct"]["recognition"],
+            "countermeasure": item["correct"]["countermeasure"],
+            "response": _response_correct_id(item, context),
+        }
+
+        item_scores = {}
+        for dimension in DIMENSIONS:
+            score = _dimension_score(item, dimension, answer.get(dimension), correct_ids[dimension])
+            item_scores[dimension] = score
+            dim_sums[dimension] += score
+            dim_counts[dimension] += 1
+
+        hits[item["technique_id"]] = sum(item_scores.values()) / len(DIMENSIONS)
+
+        feedback.append(
+            {
+                "item_id": item["id"],
+                "recognition": item["feedback"]["recognition"][correct_ids["recognition"]],
+                "countermeasure": item["feedback"]["countermeasure"][correct_ids["countermeasure"]],
+                "response": item["feedback"]["response"][correct_ids["response"]],
+            }
+        )
+
+    dimension_scores = {
+        dimension: dim_sums[dimension] / dim_counts[dimension] if dim_counts[dimension] else 0.0
+        for dimension in DIMENSIONS
+    }
+
+    weights = config.knowledge_dimension_weights
+    weight_total = sum(weights.get(d, 1.0) for d in DIMENSIONS)
+    overall_score = (
+        sum(dimension_scores[d] * weights.get(d, 1.0) for d in DIMENSIONS) / weight_total
+        if weight_total
+        else 0.0
+    )
+
+    return {
+        "overall_score": overall_score,
+        "tier": tier_for(overall_score, config),
+        "class_scores": weighted_class_scores(hits, techniques, config),
+        "dimension_scores": dimension_scores,
+        "feedback": feedback,
+    }
