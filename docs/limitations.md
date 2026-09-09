@@ -1,0 +1,25 @@
+# Limitations
+
+## This is a grounded assessment, not a validated psychometric instrument
+
+Every technique and question in this tool cites its source, and the taxonomy carries a confidence field so a low-confidence or single-source item is visible rather than hidden. Grounded means that: cited, sourced, transparent about confidence. It does not mean validated. No reliability testing, no construct validity study, and no correlation against real disclosure behavior has been run on this instrument. The tier a person lands in, the class scores, the weights in `config.py`, all of it is a structured, cited way to reason about elicitation exposure. None of it is a certified measure of anyone's actual susceptibility. `docs/validation-research-proposal.md` describes the study that would close that gap; until that study runs, treat every score this tool produces as a prompt for reflection and training, not a psychometric result.
+
+The weight philosophy in `docs/scoring.md` reflects the same posture at the level of individual dials: one weight (reciprocity's class weight) is anchored to a specific published effect size, and the rest are documented expert judgment pending real data.
+
+## Open verification items
+
+These come from the research pass behind `taxonomy/techniques.json` and `taxonomy/reference.md`. None of them block the tool from being useful today, but each is a specific, unresolved gap that should be closed before this instrument is treated as more authoritative than it currently is.
+
+- **The FBI elicitation brochure's full technique list**, read from the official PDF rather than a mirror. fbi.gov blocks automated fetching, so the current taxonomy entries citing `fbi-elicitation` were built from mirrors and corroborating sources (OSAC, NCSC, CDSE) rather than the primary document directly.
+- **DoDD 5240.06's exact item numbering.** The key item text behind `dodd-5240-06` is high confidence, but the precise Table 1/2/3 numbering in Enclosure 4, and the Article 92 cut-lines, still need verification against a clean PDF; two extractions during research disagreed on the numbering.
+- **AR 381-12's 2025 wording.** The regulation was retitled and reissued in July 2025. The taxonomy's `ar-381-12` entries are parsed from the 2016 edition; the 2025 edition's cell-level text in Tables 3-1 through 3-4 has not yet been checked against the current entries.
+- **The Van der Kleij (2023) and Luke and Granhag (2020) specifics.** The reciprocity class weight in `config.py` is anchored to Van der Kleij et al.'s finding that reciprocity drove real disclosure, but the precise effect size and its moderators have not been pulled from the full text. The Luke and Granhag meta-analysis of the Scharff technique studies is cited for the same reason: its pooled effect sizes have not been verified against the primary paper.
+- **A license check on any reused scale items.** The self-assessment module adapts item structure from the HAIS-Q, SeBIS, and TTAT literature (`haisq-sebis-ttat-instruments`). The current items paraphrase that structure with citation rather than reproducing scale text verbatim, which is the default assumption stated in the design spec unless a license is confirmed to permit direct reuse. No such license check has been run.
+
+## Other known gaps
+
+- **No behavioral criterion.** Nothing in phase 1 tests whether a high or low score predicts what a person actually does in a real elicitation attempt. That correlation is the subject of the validation proposal, not a claim this build makes.
+- **Self-report only, in the self-assessment module.** People are not reliable judges of their own susceptibility to techniques designed to work below conscious notice; the self-assessment measures stated attitude and stated exposure, not demonstrated behavior. The interaction and knowledge modules are closer to behavioral measures, but they still depend on an assessor's or taker's honest, accurate account of what happened or what they would do.
+- **Coverage is bounded by the research pass.** The taxonomy covers what the cited sources documented as of the research date. It is not exhaustive of every elicitation technique in use, and the single-source items (Mirroring, Quote reported facts) are explicitly flagged as candidates for revision rather than settled.
+- **No SIEM path exists in this repository.** The KQL and SPL in `detections/` run over the emitted event schema, not over questionnaire answers directly; see the README and `detections/deployable/README.md`. Nothing in this repository ingests events into a real SIEM. An organization that wants to run these detections live needs to build that ingestion path first.
+- **No real personal data collection by default.** The static page runs entirely client-side and transmits nothing. Any future consented data collection to seed the validation study, described in `docs/validation-research-proposal.md`, is an explicit future option with its own privacy design, not something this build does.
