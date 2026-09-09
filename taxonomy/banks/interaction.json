@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ind_a1_flattery",
+    "technique_id": "A1",
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a8_quid_pro_quo",
+    "technique_id": "A8",
+    "diagnosticity": 0.6,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a2_provocation",
+    "technique_id": "A2",
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a12_assumed_knowledge",
+    "technique_id": "A12",
+    "diagnosticity": 0.6,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a28_scharff",
+    "technique_id": "A28",
+    "diagnosticity": 0.7,
+    "source": "granhag-scharff"
+  },
+  {
+    "id": "pattern_disproportionate_interest",
+    "pattern": true,
+    "diagnosticity": 0.6,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "pattern_topic_bridging",
+    "pattern": true,
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "pattern_question_density",
+    "pattern": true,
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "pattern_persistence_circling",
+    "pattern": true,
+    "diagnosticity": 0.6,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "pattern_reformulation",
+    "pattern": true,
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "pattern_steering_mirroring",
+    "pattern": true,
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  }
+]
