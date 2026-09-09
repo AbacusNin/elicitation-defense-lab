@@ -1,0 +1,41 @@
+[
+  {
+    "id": "A1",
+    "name": "Flattery",
+    "family": "elicitation",
+    "technique_class": "ego",
+    "definition": "Praise aimed at a person's competence, expertise, or standing, offered to loosen their discretion before a follow-up question.",
+    "mechanism": "Praise competence or standing so pride loosens discretion",
+    "recognition_cue": "Praise out of proportion to the setting; being cast as the expert",
+    "countermeasure": "Acknowledge professionally, do not expand; notice praise that precedes a question",
+    "sources": ["fbi-elicitation", "osac-elicitation-guide-2018", "cdse-accidental-conversations-2025"],
+    "confidence": "high",
+    "default_weight": 1.0
+  },
+  {
+    "id": "A8",
+    "name": "Quid pro quo / volunteering / trading confidences",
+    "family": "elicitation",
+    "technique_class": "reciprocity",
+    "definition": "An offer of a fact, favor, or personal disclosure made first so the target feels a social debt to reciprocate with information of their own.",
+    "mechanism": "Give a fact or favor first so the target feels owed",
+    "recognition_cue": "An unsolicited disclosure tied to a follow-up ask",
+    "countermeasure": "Recognize the felt debt is not real; decline to trade",
+    "sources": ["fbi-elicitation", "ncsc-elicitation-brochure", "cdse-accidental-conversations-2025"],
+    "confidence": "high",
+    "default_weight": 1.0
+  },
+  {
+    "id": "A28",
+    "name": "The Scharff technique",
+    "family": "elicitation",
+    "technique_class": "composite",
+    "definition": "A structured approach that pairs a friendly, non-confrontational tone with the impression the interviewer already knows most of what is being discussed, drawing confirmation or denial without ever asking directly.",
+    "mechanism": "A friendly approach, an illusion of already knowing it all, never pressing, floating claims to confirm or deny, and downplaying what you reveal",
+    "recognition_cue": "A pleasant conversation where the other person seems to know most of it and never actually asks; you leave feeling you gave away nothing",
+    "countermeasure": "Recognize the profile; note that \"they already know it\" is a trap belief. Awareness alone is weak here, so this needs practiced response, not just a warning",
+    "sources": ["granhag-scharff", "luke-granhag-meta-analysis-2020"],
+    "confidence": "high",
+    "default_weight": 1.0
+  }
+]
