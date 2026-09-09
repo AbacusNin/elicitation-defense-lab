@@ -1,0 +1,206 @@
+[
+  {
+    "id": "ind_a1_flattery",
+    "technique_id": "A1",
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a8_quid_pro_quo",
+    "technique_id": "A8",
+    "diagnosticity": 0.6,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a2_provocation",
+    "technique_id": "A2",
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a12_assumed_knowledge",
+    "technique_id": "A12",
+    "diagnosticity": 0.6,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a28_scharff",
+    "technique_id": "A28",
+    "diagnosticity": 0.7,
+    "source": "granhag-scharff"
+  },
+  {
+    "id": "ind_a3_false_statement",
+    "technique_id": "A3",
+    "diagnosticity": 0.55,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a4_criticism",
+    "technique_id": "A4",
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a5_one_upper",
+    "technique_id": "A5",
+    "diagnosticity": 0.45,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a6_feigned_ignorance",
+    "technique_id": "A6",
+    "diagnosticity": 0.45,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a7_confidential_bait",
+    "technique_id": "A7",
+    "diagnosticity": 0.55,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a9_good_listener",
+    "technique_id": "A9",
+    "diagnosticity": 0.4,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a10_mutual_interest",
+    "technique_id": "A10",
+    "diagnosticity": 0.4,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a11_mirroring",
+    "technique_id": "A11",
+    "diagnosticity": 0.35,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a13_bracketing",
+    "technique_id": "A13",
+    "diagnosticity": 0.6,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a14_leading_question",
+    "technique_id": "A14",
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a15_macro_to_micro",
+    "technique_id": "A15",
+    "diagnosticity": 0.45,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a16_oblique_reference",
+    "technique_id": "A16",
+    "diagnosticity": 0.4,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a17_quote_reported_facts",
+    "technique_id": "A17",
+    "diagnosticity": 0.35,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a18_word_repetition",
+    "technique_id": "A18",
+    "diagnosticity": 0.4,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a19_direct_question",
+    "technique_id": "A19",
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a20_questionnaire_survey",
+    "technique_id": "A20",
+    "diagnosticity": 0.55,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a21_ruse_interview",
+    "technique_id": "A21",
+    "diagnosticity": 0.65,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a22_target_associates",
+    "technique_id": "A22",
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a23_urge_to_complain",
+    "technique_id": "A23",
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a24_paper_review",
+    "technique_id": "A24",
+    "diagnosticity": 0.6,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a25_offering_assistance",
+    "technique_id": "A25",
+    "diagnosticity": 0.45,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a26_hypothetical_situation",
+    "technique_id": "A26",
+    "diagnosticity": 0.45,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "ind_a27_setting_manipulation",
+    "technique_id": "A27",
+    "diagnosticity": 0.55,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "pattern_disproportionate_interest",
+    "pattern": true,
+    "diagnosticity": 0.6,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "pattern_topic_bridging",
+    "pattern": true,
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "pattern_question_density",
+    "pattern": true,
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "pattern_persistence_circling",
+    "pattern": true,
+    "diagnosticity": 0.6,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "pattern_reformulation",
+    "pattern": true,
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "pattern_steering_mirroring",
+    "pattern": true,
+    "diagnosticity": 0.5,
+    "source": "cdse-accidental-conversations-2025"
+  }
+]

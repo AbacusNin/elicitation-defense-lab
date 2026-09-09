@@ -1,0 +1,1458 @@
+[
+  {
+    "id": "know_a1_flattery",
+    "technique_id": "A1",
+    "scenario": "At a conference reception, someone you just met says, \"Wow, you clearly know more about your program's approach than anyone else on this floor. I bet you could sum up the whole strategy in two minutes.\" They wait, smiling, for you to answer.",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_praise_precedes_question",
+          "text": "This is flattery: praise about your expertise, offered right before an invitation to explain, meant to loosen what you'd normally hold back."
+        },
+        {
+          "id": "rec_genuine_compliment",
+          "text": "This is a genuine compliment from someone impressed by your reputation, unrelated to what they're asking next."
+        },
+        {
+          "id": "rec_provocation",
+          "text": "This is provocation: they are expressing doubt to bait you into proving yourself."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is ordinary conference small talk with no elicitation technique in play."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_acknowledge_no_expand",
+          "text": "Acknowledge the compliment professionally and do not expand into detail; notice that the praise arrived right before an ask."
+        },
+        {
+          "id": "cm_answer_briefly_comfortable",
+          "text": "Thank them and give a brief answer, sharing only what feels comfortable in the moment."
+        },
+        {
+          "id": "cm_full_detail",
+          "text": "Walk through the strategy in full, since they clearly respect your expertise."
+        },
+        {
+          "id": "cm_shut_down_rude",
+          "text": "Say nothing and walk away without acknowledging them."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_praise_precedes_question",
+      "countermeasure": "cm_acknowledge_no_expand"
+    },
+    "partial": {
+      "recognition": "rec_genuine_compliment",
+      "countermeasure": "cm_answer_briefly_comfortable"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_praise_precedes_question": "Correct. A1 flattery pairs praise with a follow-up ask; the compliment's job is to loosen discretion before the question lands.",
+        "rec_genuine_compliment": "Partly right: the compliment could be sincere, but treating it as unrelated to the ask that follows misses the pattern.",
+        "rec_provocation": "Not quite. Provocation (A2) uses staged doubt to bait a defensive explanation; this exchange used praise, not doubt.",
+        "rec_no_technique": "The praise is out of proportion to the setting and lands right before a direct ask, which is the A1 pattern, not plain small talk."
+      },
+      "countermeasure": {
+        "cm_acknowledge_no_expand": "Correct. Take the compliment at face value, then decline to expand past what the setting calls for.",
+        "cm_answer_briefly_comfortable": "Partial credit: keeping the answer short is better than expanding fully, but the taught response is to not engage the ask at all.",
+        "cm_full_detail": "This is the outcome flattery is built to produce; expanding into detail is the failure case, not the countermeasure.",
+        "cm_shut_down_rude": "Overcorrecting to silence is not the taught response and reads as evasive without giving you a clean way to redirect."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go without telling anyone skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person signals you noticed and can tip off a trained collector without accomplishing anything a report wouldn't."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "know_a8_quid_pro_quo",
+    "technique_id": "A8",
+    "scenario": "A new contact at a professional networking event leans in: \"Confidentially, my team just got burned by a vendor delay on a program a lot like yours, between us. What's your timeline looking like?\"",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_quid_pro_quo",
+          "text": "This is quid pro quo: they volunteer a confidence first so you feel a social debt to trade one back."
+        },
+        {
+          "id": "rec_confidential_bait",
+          "text": "This is confidential bait: a supposed confidence offered under a \"just between us\" opener to trigger a reciprocal one."
+        },
+        {
+          "id": "rec_good_listener",
+          "text": "This is the good-listener technique: warm, patient attention meant to keep you talking."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is ordinary professional shop talk with no technique involved."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_recognize_no_real_debt",
+          "text": "Recognize that the felt debt isn't real, and decline to trade information for their disclosure."
+        },
+        {
+          "id": "cm_reciprocate_briefly",
+          "text": "Offer a comparably vague detail so the exchange feels even."
+        },
+        {
+          "id": "cm_end_conversation_abruptly",
+          "text": "Say nothing further and end the conversation right away."
+        },
+        {
+          "id": "cm_share_full_timeline",
+          "text": "Share your timeline, since they were open with you first."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_quid_pro_quo",
+      "countermeasure": "cm_recognize_no_real_debt"
+    },
+    "partial": {
+      "recognition": "rec_confidential_bait",
+      "countermeasure": "cm_end_conversation_abruptly"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_quid_pro_quo": "Correct. A8 gives a fact or favor first so the target feels owed and returns the favor with information of their own.",
+        "rec_confidential_bait": "Partly right: A7 confidential bait is the close cousin, but here the disclosure is tied directly to a follow-up ask, which is the A8 pattern.",
+        "rec_good_listener": "Not quite. The good listener (A9) works through sustained attentive listening, not a first disclosure meant to be repaid.",
+        "rec_no_technique": "The unsolicited disclosure paired with an immediate ask is the A8 pattern, not plain shop talk."
+      },
+      "countermeasure": {
+        "cm_recognize_no_real_debt": "Correct. The sense of owing them something is manufactured; declining to trade breaks the exchange.",
+        "cm_reciprocate_briefly": "This is the response the technique is built to produce, even in a softened, vague form.",
+        "cm_end_conversation_abruptly": "Partial credit: leaving avoids trading information, but it isn't the taught skill of declining while staying in the conversation.",
+        "cm_share_full_timeline": "This is the failure case the technique aims for, not a countermeasure."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "van-der-kleij-2023-reciprocity"
+  },
+  {
+    "id": "know_a28_scharff",
+    "technique_id": "A28",
+    "scenario": "Over a long, pleasant lunch, a contact who seems to already know most of your project's timeline keeps floating specific claims, \"so you're on track for the fall milestone, right?\", without ever asking a direct question. You leave feeling like you barely said anything, but you confirmed two details along the way.",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_scharff",
+          "text": "This is the Scharff technique: a friendly tone, the impression they already know it all, and floated claims for you to confirm or deny, with no direct question asked."
+        },
+        {
+          "id": "rec_mutual_interest",
+          "text": "This is mutual interest: manufactured shared ground meant to make cooperation feel natural."
+        },
+        {
+          "id": "rec_direct_question",
+          "text": "This is a direct-question technique: blunt asks that bank on the norm that questions get answered."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This was just a friendly, low-key lunch with no technique in play."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_recognize_trap_belief",
+          "text": "Recognize the profile and treat \"they already know it\" as a trap belief; this technique needs a practiced response, not just awareness."
+        },
+        {
+          "id": "cm_confirm_to_be_polite",
+          "text": "Confirm the details since they seemed to know them already anyway."
+        },
+        {
+          "id": "cm_stay_silent_whole_lunch",
+          "text": "Stay silent for the rest of the meal to avoid saying anything else."
+        },
+        {
+          "id": "cm_challenge_them_directly",
+          "text": "Directly accuse them of trying to extract information."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_scharff",
+      "countermeasure": "cm_recognize_trap_belief"
+    },
+    "partial": {
+      "recognition": "rec_mutual_interest",
+      "countermeasure": "cm_stay_silent_whole_lunch"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_scharff": "Correct. The Scharff technique pairs a friendly approach with an illusion of already knowing it all, floating claims instead of asking directly.",
+        "rec_mutual_interest": "Partly right: A10 mutual interest also builds rapport fast, but the floated claims that never become direct questions are the Scharff signature.",
+        "rec_direct_question": "Not quite. This contact never asked directly; the whole point is that the claims stand in for the question.",
+        "rec_no_technique": "Leaving a pleasant conversation having confirmed two details you didn't mean to is the Scharff pattern, not a technique-free lunch."
+      },
+      "countermeasure": {
+        "cm_recognize_trap_belief": "Correct. Naming the belief that \"they already know it\" as a trap, and practicing a response to floated claims, is the taught defense here.",
+        "cm_confirm_to_be_polite": "This is exactly the response the technique is built to produce.",
+        "cm_stay_silent_whole_lunch": "Partial credit: going silent avoids further confirmation, but it isn't the practiced skill of neither confirming nor denying while staying in the conversation.",
+        "cm_challenge_them_directly": "Directly accusing a friendly contact over an ambiguous lunch is a disproportionate response and not the taught countermeasure."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "granhag-scharff"
+  },
+  {
+    "id": "know_a12_assumed_knowledge",
+    "technique_id": "A12",
+    "scenario": "A vendor rep mentions offhand, \"I know you all pushed the deployment back because of the integration issue,\" a detail they invented, and then waits, expecting you to correct or elaborate.",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_assumed_knowledge",
+          "text": "This is assumed knowledge: they state something as if already inside, so confirming or correcting it feels natural even though they don't actually know it."
+        },
+        {
+          "id": "rec_bracketing",
+          "text": "This is bracketing: they offer a numeric range to bait the exact figure."
+        },
+        {
+          "id": "rec_flattery",
+          "text": "This is flattery aimed at your expertise."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is an accurate observation with no technique behind it."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_verify_before_responding",
+          "text": "Verify what they actually know before responding, and do not correct a false assumption with the real detail."
+        },
+        {
+          "id": "cm_correct_them",
+          "text": "Correct the specific detail so they have accurate information."
+        },
+        {
+          "id": "cm_stay_silent_rest_of_meeting",
+          "text": "Say nothing for the rest of the meeting."
+        },
+        {
+          "id": "cm_agree_to_be_polite",
+          "text": "Agree with the assumption to keep the conversation friendly."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_assumed_knowledge",
+      "countermeasure": "cm_verify_before_responding"
+    },
+    "partial": {
+      "recognition": "rec_bracketing",
+      "countermeasure": "cm_stay_silent_rest_of_meeting"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_assumed_knowledge": "Correct. A12 states a fact, real or invented, as if already known, so confirming or correcting it both leak information.",
+        "rec_bracketing": "Partly right: A13 bracketing is the other cognitive-cue technique built on a wrong number, but here nothing was framed as a range to narrow.",
+        "rec_flattery": "Not quite. No praise was offered here; the pull is to correct or elaborate on a stated fact, not to prove expertise.",
+        "rec_no_technique": "The detail was invented, not accurate, and inviting a correction is exactly the A12 pattern."
+      },
+      "countermeasure": {
+        "cm_verify_before_responding": "Correct. Confirm what they actually know before saying anything, and never use the real detail to correct a wrong guess.",
+        "cm_correct_them": "This is the failure case the technique is built to produce: correcting the guess hands over the real detail.",
+        "cm_stay_silent_rest_of_meeting": "Partial credit: staying quiet avoids the trap, but it isn't the taught skill of verifying and responding without confirming.",
+        "cm_agree_to_be_polite": "Agreeing with an invented detail confirms it, which is just as much a leak as correcting it."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "know_a2_provocation",
+    "technique_id": "A2",
+    "scenario": "A colleague from another team says, \"I don't believe your group actually hit that deadline, there's no way you had the resources,\" with a skeptical smile, then waits to see how you respond.",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_provocation",
+          "text": "This is provocation: staged disbelief meant to make you elaborate or defend the claim in detail."
+        },
+        {
+          "id": "rec_flattery",
+          "text": "This is flattery: praise about your work meant to loosen your discretion."
+        },
+        {
+          "id": "rec_criticism",
+          "text": "This is criticism: an attack on your work meant to draw a defensive rebuttal."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is a genuine, honest doubt with no technique behind it."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_stay_composed",
+          "text": "Stay composed and do not prove your capability by supplying detail."
+        },
+        {
+          "id": "cm_prove_it",
+          "text": "Walk them through exactly how the team pulled it off, step by step."
+        },
+        {
+          "id": "cm_get_defensive",
+          "text": "Get visibly annoyed and insist they are wrong, repeating the claim loudly."
+        },
+        {
+          "id": "cm_change_subject_bluntly",
+          "text": "Ignore them completely and abruptly change the subject."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_provocation",
+      "countermeasure": "cm_stay_composed"
+    },
+    "partial": {
+      "recognition": "rec_criticism",
+      "countermeasure": "cm_change_subject_bluntly"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_provocation": "Correct. A2 provocation uses staged doubt so you elaborate to prove a claim or answer out of irritation.",
+        "rec_flattery": "Not quite. Flattery (A1) uses praise, not doubt, to loosen discretion; here the tactic is skepticism.",
+        "rec_criticism": "Partly right: criticism (A4) also provokes a defensive reaction, but here the target is doubting your claim specifically, which is the A2 pattern.",
+        "rec_no_technique": "The staged skepticism aimed at a specific claim, waiting for you to defend it, is the A2 pattern, not an honest doubt."
+      },
+      "countermeasure": {
+        "cm_stay_composed": "Correct. Staying composed and declining to prove capability with detail defeats the bait.",
+        "cm_prove_it": "This is exactly the outcome provocation is built to produce.",
+        "cm_get_defensive": "Escalating the argument does not protect information and can produce even more detail under irritation.",
+        "cm_change_subject_bluntly": "Partial credit: changing the subject avoids elaborating, but doing it abruptly is not the taught composed response."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "know_a4_criticism",
+    "technique_id": "A4",
+    "scenario": "At a happy hour, someone from a rival firm says, \"Honestly, your team's approach always seemed a generation behind ours,\" and leans back, watching for your reaction.",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_criticism",
+          "text": "This is criticism: an attack on your work or employer meant to provoke a defensive rebuttal that discloses detail."
+        },
+        {
+          "id": "rec_provocation",
+          "text": "This is provocation: staged doubt about a specific claim meant to make you prove it."
+        },
+        {
+          "id": "rec_one_upper",
+          "text": "This is one-upping: a lesser claim shared first to bait a bigger one from you."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is a rude but harmless opinion with no technique behind it."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_decline_defend",
+          "text": "Recognize the ego-bait and decline to defend the work with specifics."
+        },
+        {
+          "id": "cm_defend_with_specifics",
+          "text": "Correct them point by point with specific technical detail about your approach."
+        },
+        {
+          "id": "cm_agree_reluctantly",
+          "text": "Agree with them to avoid an argument, then change the subject."
+        },
+        {
+          "id": "cm_criticize_back",
+          "text": "Return the criticism with an equally pointed jab at their firm's work."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_criticism",
+      "countermeasure": "cm_decline_defend"
+    },
+    "partial": {
+      "recognition": "rec_provocation",
+      "countermeasure": "cm_agree_reluctantly"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_criticism": "Correct. A4 criticism attacks work, employer, or a rival to draw a defensive rebuttal that discloses detail.",
+        "rec_provocation": "Partly right: provocation (A2) also invites a defensive response, but this line attacks your work directly rather than doubting a specific claim.",
+        "rec_one_upper": "Not quite. One-upping (A5) shares a claim first to bait a bigger one; this is a direct attack, not a shared claim.",
+        "rec_no_technique": "An unprompted jab at your team's approach, timed to watch your reaction, fits the A4 pattern."
+      },
+      "countermeasure": {
+        "cm_decline_defend": "Correct. Recognizing the bait and declining to defend with specifics denies the technique its payoff.",
+        "cm_defend_with_specifics": "This is the failure case criticism is built to produce.",
+        "cm_agree_reluctantly": "Partial credit: agreeing avoids an argument, but it does not address the disclosure risk if pressed further.",
+        "cm_criticize_back": "Trading insults does not protect information and can escalate the exchange."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "know_a6_feigned_ignorance",
+    "technique_id": "A6",
+    "scenario": "A new acquaintance says, \"I've honestly never understood what your kind of work even involves, could you walk me through how it actually works?\" and looks genuinely lost.",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_feigned_ignorance",
+          "text": "This is feigned ignorance: a pose of not knowing, meant to draw out an explanatory answer aimed at a supposed novice."
+        },
+        {
+          "id": "rec_direct_question",
+          "text": "This is a direct question: a blunt ask that relies on the norm that questions get answered."
+        },
+        {
+          "id": "rec_good_listener",
+          "text": "This is the good-listener technique: sustained warm attention meant to keep you talking."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is an honest question from someone with no background in the field."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_refer_public_docs",
+          "text": "Refer them to public documentation and do not fill in the gaps yourself."
+        },
+        {
+          "id": "cm_full_walkthrough",
+          "text": "Walk them through the full technical process in detail since they asked in good faith."
+        },
+        {
+          "id": "cm_condescending_dismissal",
+          "text": "Tell them dismissively that it's too complicated to explain."
+        },
+        {
+          "id": "cm_partial_explanation",
+          "text": "Give a partial explanation, sharing whatever comes to mind."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_feigned_ignorance",
+      "countermeasure": "cm_refer_public_docs"
+    },
+    "partial": {
+      "recognition": "rec_direct_question",
+      "countermeasure": "cm_partial_explanation"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_feigned_ignorance": "Correct. A6 poses ignorance about a subject the target actually knows well, drawing out an instructive answer.",
+        "rec_direct_question": "Partly right: both rely on a social pull to answer, but here the frame is teaching a supposed novice, which is the A6 pattern.",
+        "rec_good_listener": "Not quite. Good listener (A9) works through sustained attentive listening, not a claim of not knowing.",
+        "rec_no_technique": "A stranger inviting a full walkthrough of your work fits the A6 pattern whether or not the ignorance is genuine."
+      },
+      "countermeasure": {
+        "cm_refer_public_docs": "Correct. Pointing to public documentation avoids filling the gap yourself for someone you do not know.",
+        "cm_full_walkthrough": "This is exactly the outcome feigned ignorance is built to produce.",
+        "cm_condescending_dismissal": "Overcorrecting to dismissiveness is not the taught response and can damage the relationship without protecting anything extra.",
+        "cm_partial_explanation": "Partial credit: keeping it brief is better than a full walkthrough, but the taught response is to redirect to public sources, not to explain further."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "know_a7_confidential_bait",
+    "technique_id": "A7",
+    "scenario": "A contact you barely know leans in and says, \"Just between us, I heard your division is about to lose funding,\" before pausing expectantly.",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_confidential_bait",
+          "text": "This is confidential bait: a supposed confidence offered first, under a \"just between us\" opener, to trigger a reciprocal one from you."
+        },
+        {
+          "id": "rec_quid_pro_quo",
+          "text": "This is quid pro quo: a fact or favor given first so you feel a social debt to trade something back."
+        },
+        {
+          "id": "rec_assumed_knowledge",
+          "text": "This is assumed knowledge: speech that presumes you already know a sensitive detail."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is idle gossip with no technique behind it."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_do_not_match",
+          "text": "Do not match confidences; treat the \"just between us\" framing as a cue, not an invitation."
+        },
+        {
+          "id": "cm_confirm_or_deny_rumor",
+          "text": "Confirm or deny the rumor so they have accurate information."
+        },
+        {
+          "id": "cm_share_something_bigger",
+          "text": "Share a bigger confidence of your own so the exchange feels fair."
+        },
+        {
+          "id": "cm_walk_away_silently",
+          "text": "Walk away without saying anything at all."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_confidential_bait",
+      "countermeasure": "cm_do_not_match"
+    },
+    "partial": {
+      "recognition": "rec_quid_pro_quo",
+      "countermeasure": "cm_walk_away_silently"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_confidential_bait": "Correct. A7 offers a supposed confidence first, under a \"just between us\" opener, so you feel invited to trade one back.",
+        "rec_quid_pro_quo": "Partly right: A8 quid pro quo is the close cousin built on the same reciprocity pull, but here the opener is framed specifically as a secret.",
+        "rec_assumed_knowledge": "Not quite. Assumed knowledge (A12) presumes you already know something; here they are offering you a new claim, not presuming your knowledge.",
+        "rec_no_technique": "A confidence offered first, with a pause that invites a matching disclosure, is the A7 pattern, not idle gossip."
+      },
+      "countermeasure": {
+        "cm_do_not_match": "Correct. Recognizing the felt invitation to trade and declining to match it defeats the bait.",
+        "cm_confirm_or_deny_rumor": "This still discloses information tied to your division, which is the outcome the technique is built to produce.",
+        "cm_share_something_bigger": "This is the failure case the technique aims for, matching or escalating the disclosure.",
+        "cm_walk_away_silently": "Partial credit: leaving avoids trading a confidence, but it isn't the practiced skill of declining while staying in the conversation."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "van-der-kleij-2023-reciprocity"
+  },
+  {
+    "id": "know_a9_good_listener",
+    "technique_id": "A9",
+    "scenario": "Over several conversations, a new contact is unusually attentive, remembers small details you mentioned, and keeps gently steering the talk back to your current project.",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_good_listener",
+          "text": "This is the good-listener technique: sustained, warm attention used to keep you talking and steer the conversation toward a topic of interest."
+        },
+        {
+          "id": "rec_mutual_interest",
+          "text": "This is mutual interest: a manufactured sense of shared background meant to make disclosure feel natural."
+        },
+        {
+          "id": "rec_mirroring",
+          "text": "This is mirroring: matching your body language and phrasing to build unconscious rapport."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is just a considerate person with no technique behind it."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_watch_momentum",
+          "text": "Watch the conversation's momentum and limit work talk with a relatively new contact."
+        },
+        {
+          "id": "cm_enjoy_the_attention",
+          "text": "Enjoy the attention and keep sharing, since they clearly care about what you have to say."
+        },
+        {
+          "id": "cm_stop_talking_entirely",
+          "text": "Stop talking to them altogether from now on."
+        },
+        {
+          "id": "cm_test_them",
+          "text": "Test whether they are genuine by seeing how much detail they push for."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_good_listener",
+      "countermeasure": "cm_watch_momentum"
+    },
+    "partial": {
+      "recognition": "rec_mutual_interest",
+      "countermeasure": "cm_test_them"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_good_listener": "Correct. A9 uses sustained attentive listening to keep the target talking and steer toward a topic of interest.",
+        "rec_mutual_interest": "Partly right: A10 mutual interest also builds fast rapport, but here the pull is sustained attentiveness across conversations, which is the A9 pattern.",
+        "rec_mirroring": "Not quite. Mirroring (A11) is about matching body language and phrasing; here the tell is memory and topic-steering, not imitation.",
+        "rec_no_technique": "Repeated attentiveness that keeps circling back to your current project across several conversations fits the A9 pattern."
+      },
+      "countermeasure": {
+        "cm_watch_momentum": "Correct. Noticing how the conversation's momentum and topic-steering interact with your own disclosure is the taught response.",
+        "cm_enjoy_the_attention": "This is exactly the outcome the good-listener technique is built to produce.",
+        "cm_stop_talking_entirely": "Overcorrecting to silence is not the taught response; the goal is limiting work talk, not cutting off the relationship.",
+        "cm_test_them": "Partial credit: noticing the pattern is a start, but deliberately testing them still risks disclosing more than the taught response calls for."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "van-der-kleij-2023-reciprocity"
+  },
+  {
+    "id": "know_a13_bracketing",
+    "technique_id": "A13",
+    "scenario": "A vendor asks, \"So is your team's budget for this closer to two million or five million?\" offering a range that is far off in both directions.",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_bracketing",
+          "text": "This is bracketing: a deliberately wide or wrong numeric range offered so you narrow it toward the true figure."
+        },
+        {
+          "id": "rec_leading_question",
+          "text": "This is a leading question: a question built around a hidden presumption."
+        },
+        {
+          "id": "rec_direct_question",
+          "text": "This is a direct question: a blunt ask that relies on the norm that questions get answered."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is a reasonable guess with no technique behind it."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_refuse_to_narrow",
+          "text": "Refuse to narrow the range or confirm either estimate."
+        },
+        {
+          "id": "cm_pick_closer_number",
+          "text": "Say which of the two numbers is closer to the real figure."
+        },
+        {
+          "id": "cm_give_exact_figure",
+          "text": "Give the exact figure so there is no confusion."
+        },
+        {
+          "id": "cm_deflect_rudely",
+          "text": "Tell them bluntly that it's none of their business and end the conversation."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_bracketing",
+      "countermeasure": "cm_refuse_to_narrow"
+    },
+    "partial": {
+      "recognition": "rec_leading_question",
+      "countermeasure": "cm_deflect_rudely"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_bracketing": "Correct. A13 offers a high-low range specifically to bait the exact figure as you narrow it.",
+        "rec_leading_question": "Partly right: both bait a specific answer through the question's framing, but a numeric range narrowing toward a figure is the A13 pattern.",
+        "rec_direct_question": "Not quite. A19 direct question is a blunt, unframed ask; here the question is built around a deliberately wrong range.",
+        "rec_no_technique": "A range that is far off in both directions, floated as a guess about your budget, fits the A13 pattern."
+      },
+      "countermeasure": {
+        "cm_refuse_to_narrow": "Correct. Declining to confirm or narrow either estimate denies the technique its payoff.",
+        "cm_pick_closer_number": "This is exactly the outcome bracketing is built to produce, even as an indirect confirmation.",
+        "cm_give_exact_figure": "This is the full failure case, handing over the real number the range was designed to extract.",
+        "cm_deflect_rudely": "Partial credit: declining to answer is the right instinct, but doing it abruptly is not the taught composed response."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "know_a14_leading_question",
+    "technique_id": "A14",
+    "scenario": "A contact asks, \"So you're still running the older version of the platform on that program, right?\" a claim you never actually confirmed.",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_leading_question",
+          "text": "This is a leading question: a question built around a hidden presumption, so any direct answer accepts a fact you never confirmed."
+        },
+        {
+          "id": "rec_bracketing",
+          "text": "This is bracketing: a numeric range offered to bait the exact figure."
+        },
+        {
+          "id": "rec_assumed_knowledge",
+          "text": "This is assumed knowledge: speech that presumes the listener already knows a sensitive detail."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is a reasonable, well-informed guess with no technique behind it."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_reject_the_frame",
+          "text": "Reject the frame and answer on your own terms rather than the yes or no it presumes."
+        },
+        {
+          "id": "cm_answer_yes_or_no",
+          "text": "Answer yes or no directly, since it's a simple question."
+        },
+        {
+          "id": "cm_explain_the_real_setup",
+          "text": "Explain what you're actually running so the record is accurate."
+        },
+        {
+          "id": "cm_ignore_the_question",
+          "text": "Ignore the question entirely and talk about something else."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_leading_question",
+      "countermeasure": "cm_reject_the_frame"
+    },
+    "partial": {
+      "recognition": "rec_assumed_knowledge",
+      "countermeasure": "cm_ignore_the_question"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_leading_question": "Correct. A14 builds a hidden presumption into the question so a direct answer accepts a fact you never confirmed.",
+        "rec_assumed_knowledge": "Partly right: A12 assumed knowledge also presumes a fact, but here it's built into a yes/no question rather than a flat statement.",
+        "rec_bracketing": "Not quite. Bracketing (A13) uses a numeric range; this question presumes a specific claim, not a range.",
+        "rec_no_technique": "A yes/no question built around a claim you never confirmed is the A14 pattern, not a neutral guess."
+      },
+      "countermeasure": {
+        "cm_reject_the_frame": "Correct. Rejecting the embedded presumption and answering on your own terms avoids confirming or denying the frame.",
+        "cm_answer_yes_or_no": "This is exactly the outcome a leading question is built to produce, since either answer accepts the presumption.",
+        "cm_explain_the_real_setup": "This is the full failure case, correcting the presumption with the accurate, sensitive detail.",
+        "cm_ignore_the_question": "Partial credit: not answering avoids confirming the frame, but ignoring it outright is not the taught skill of rejecting it while staying in the conversation."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "cdse-accidental-conversations-2025"
+  },
+  {
+    "id": "know_a19_direct_question",
+    "technique_id": "A19",
+    "scenario": "Someone you just met at a conference asks bluntly, \"What's the exact headcount on your program right now?\" with no preamble.",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_direct_question",
+          "text": "This is a direct question: a blunt ask that relies on the social norm that a question posed deserves an answer."
+        },
+        {
+          "id": "rec_bracketing",
+          "text": "This is bracketing: a numeric range offered to bait the exact figure."
+        },
+        {
+          "id": "rec_ruse_interview",
+          "text": "This is a ruse interview: a fabricated pretext staged to justify probing questions."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is ordinary professional curiosity with no technique behind it."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_pause_and_judge",
+          "text": "Pause and judge whether the disclosure is appropriate before answering."
+        },
+        {
+          "id": "cm_answer_immediately",
+          "text": "Answer immediately, since a direct question deserves a direct answer."
+        },
+        {
+          "id": "cm_lie_about_the_number",
+          "text": "Give a made-up number so they have something to write down."
+        },
+        {
+          "id": "cm_walk_away_no_reply",
+          "text": "Walk away without responding at all."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_direct_question",
+      "countermeasure": "cm_pause_and_judge"
+    },
+    "partial": {
+      "recognition": "rec_ruse_interview",
+      "countermeasure": "cm_walk_away_no_reply"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_direct_question": "Correct. A19 relies on the norm that a question posed deserves an answer, with no framing beyond bluntness.",
+        "rec_ruse_interview": "Partly right: A21 ruse interview also probes bluntly, but it does so under a fabricated pretext; here there's no pretext at all, just a blunt ask.",
+        "rec_bracketing": "Not quite. Bracketing (A13) offers a numeric range to narrow; this is a single, direct ask for the exact figure.",
+        "rec_no_technique": "A blunt, unprompted ask for a specific figure from a stranger fits the A19 pattern, not ordinary curiosity."
+      },
+      "countermeasure": {
+        "cm_pause_and_judge": "Correct. Pausing to judge appropriateness before answering breaks the norm the technique relies on.",
+        "cm_answer_immediately": "This is exactly the outcome a direct question is built to produce by leaning on social pressure to respond.",
+        "cm_lie_about_the_number": "Fabricating a number is not the taught response and can create its own problems if repeated to others.",
+        "cm_walk_away_no_reply": "Partial credit: not answering avoids disclosure, but leaving abruptly is not the taught skill of judging and declining while staying in the conversation."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "osac-elicitation-guide-2018"
+  },
+  {
+    "id": "know_a21_ruse_interview",
+    "technique_id": "A21",
+    "scenario": "You receive an unsolicited message from someone claiming to be a recruiter, asking detailed questions about the specific technical challenges on your current project before any formal interview process has started.",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_ruse_interview",
+          "text": "This is a ruse interview: a fabricated interview, often posing as a recruiter, staged to justify probing questions about recent work."
+        },
+        {
+          "id": "rec_direct_question",
+          "text": "This is a direct question: a blunt ask relying on the norm that questions get answered."
+        },
+        {
+          "id": "rec_paper_review",
+          "text": "This is paper review: an unsolicited request to review a paper or proposal."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is a normal step in an early-stage recruiting conversation."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_verify_independently",
+          "text": "Verify the recruiter's identity and authorization through an independent channel before answering."
+        },
+        {
+          "id": "cm_answer_to_seem_qualified",
+          "text": "Answer in detail to demonstrate your qualifications."
+        },
+        {
+          "id": "cm_ignore_the_message",
+          "text": "Ignore the message entirely without any follow-up."
+        },
+        {
+          "id": "cm_ask_for_company_name_only",
+          "text": "Ask which company they represent, then answer based on their reply."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_ruse_interview",
+      "countermeasure": "cm_verify_independently"
+    },
+    "partial": {
+      "recognition": "rec_direct_question",
+      "countermeasure": "cm_ask_for_company_name_only"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_ruse_interview": "Correct. A21 poses as a recruiter or headhunter to justify probing questions about recent, specific work.",
+        "rec_direct_question": "Partly right: both rely on you answering a direct ask, but here the ask is wrapped in a recruiting pretext, which is the A21 pattern.",
+        "rec_paper_review": "Not quite. Paper review (A24) uses a review request as the hook; here the hook is a job opportunity.",
+        "rec_no_technique": "Detailed technical questions about a current project before any real interview process has started fits the A21 pattern."
+      },
+      "countermeasure": {
+        "cm_verify_independently": "Correct. Verifying identity and authorization through a channel you sourced yourself, not the one they gave you, is the taught response.",
+        "cm_answer_to_seem_qualified": "This is exactly the outcome a ruse interview is built to produce.",
+        "cm_ignore_the_message": "Partial credit: not responding avoids disclosure, but it skips the verification step that would confirm whether this is a legitimate opportunity.",
+        "cm_ask_for_company_name_only": "A stated company name is easy to fabricate and does not amount to independent verification."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "ncsc-elicitation-brochure"
+  },
+  {
+    "id": "know_a27_setting_manipulation",
+    "technique_id": "A27",
+    "scenario": "After a long day at a conference, a contact suggests moving from the exhibit hall to the hotel bar, orders you a drink, and keeps the conversation on your program in the relaxed, informal setting.",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_setting_manipulation",
+          "text": "This is setting manipulation: a deliberate shift to a relaxed, off-work setting, sometimes with alcohol, to lower your guard."
+        },
+        {
+          "id": "rec_offering_assistance",
+          "text": "This is offering assistance: genuine help offered to build a sense of obligation."
+        },
+        {
+          "id": "rec_good_listener",
+          "text": "This is the good-listener technique: sustained attentive listening to keep you talking."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is a normal, harmless way to unwind after a long conference day."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_same_guard_offsite",
+          "text": "Treat the off-site setting with the same guard you would use in the office."
+        },
+        {
+          "id": "cm_relax_since_informal",
+          "text": "Relax and speak more freely, since it's an informal setting outside of work."
+        },
+        {
+          "id": "cm_leave_immediately",
+          "text": "Leave the moment the invitation is made, without any further interaction."
+        },
+        {
+          "id": "cm_have_one_drink_only",
+          "text": "Have one drink to be polite, then answer whatever comes up."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_setting_manipulation",
+      "countermeasure": "cm_same_guard_offsite"
+    },
+    "partial": {
+      "recognition": "rec_good_listener",
+      "countermeasure": "cm_have_one_drink_only"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_setting_manipulation": "Correct. A27 moves the exchange to a relaxed, off-work setting, sometimes with alcohol, specifically to lower your guard.",
+        "rec_good_listener": "Partly right: A9 good listener also keeps you talking, but here the tell is the deliberate venue shift, not just attentiveness.",
+        "rec_offering_assistance": "Not quite. Offering assistance (A25) surfaces your needs through genuine help; here the mechanism is the setting itself.",
+        "rec_no_technique": "A deliberate push toward a relaxed, private setting that keeps circling back to your program fits the A27 pattern, not ordinary unwinding."
+      },
+      "countermeasure": {
+        "cm_same_guard_offsite": "Correct. Holding the same discretion in an informal setting as you would in the office defeats the mechanism.",
+        "cm_relax_since_informal": "This is exactly the outcome setting manipulation is built to produce.",
+        "cm_leave_immediately": "Overcorrecting to leaving immediately is not the taught response; the goal is matching your office-level guard, not avoiding all informal settings.",
+        "cm_have_one_drink_only": "Partial credit: limiting alcohol reduces one part of the risk, but it does not address the guard you should keep on what you say."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "dcsa-elicitation-brochure-2021"
+  },
+  {
+    "id": "know_c1_pretexting",
+    "technique_id": "C1",
+    "scenario": "Someone calls claiming to be from your IT helpdesk, citing your manager's name and a recent ticket number, and asks you to confirm your login credentials \"to close out the ticket.\"",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_pretexting",
+          "text": "This is pretexting: a fabricated scenario or identity, built with just enough detail, constructed to justify the request."
+        },
+        {
+          "id": "rec_vishing",
+          "text": "This is vishing: voice-call social engineering, typically using spoofed caller ID, to extract information or codes."
+        },
+        {
+          "id": "rec_ruse_interview",
+          "text": "This is a ruse interview: a fabricated interview posing as a recruiter to justify probing."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is a normal, routine IT support call."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_verify_independent_channel",
+          "text": "Verify the caller's identity through an independently sourced channel, never the contact details they provide."
+        },
+        {
+          "id": "cm_give_partial_credentials",
+          "text": "Give a partial answer, like just your username, to move things along."
+        },
+        {
+          "id": "cm_confirm_ticket_number_only",
+          "text": "Confirm the ticket number is correct, then answer their other questions."
+        },
+        {
+          "id": "cm_provide_full_credentials",
+          "text": "Provide your login credentials so the ticket can be closed."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_pretexting",
+      "countermeasure": "cm_verify_independent_channel"
+    },
+    "partial": {
+      "recognition": "rec_vishing",
+      "countermeasure": "cm_confirm_ticket_number_only"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_pretexting": "Correct. C1 pretexting builds a fabricated scenario or identity, often with real-sounding detail like a name or ticket number, to justify a request.",
+        "rec_vishing": "Partly right: C5 vishing is the voice-channel delivery mechanism, and this call may use it, but the fabricated helpdesk backstory itself is the C1 pattern.",
+        "rec_ruse_interview": "Not quite. A21 ruse interview poses as a recruiter about your work; this call poses as internal IT support to get credentials.",
+        "rec_no_technique": "A caller citing your manager's name and a ticket number, then asking for credentials, is exactly the C1 pattern, not routine support."
+      },
+      "countermeasure": {
+        "cm_verify_independent_channel": "Correct. Verifying through a channel you sourced yourself, such as calling the helpdesk's known number, defeats the pretext.",
+        "cm_give_partial_credentials": "Any credential information handed over is the outcome the pretext is built to produce.",
+        "cm_confirm_ticket_number_only": "Partial credit: questioning the ticket number shows some skepticism, but it doesn't replace verifying the caller through an independent channel.",
+        "cm_provide_full_credentials": "This is the full failure case; legitimate IT support never needs your password to close a ticket."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "cisa-social-engineering-guidance"
+  },
+  {
+    "id": "know_d1_requests_for_information",
+    "technique_id": "D1",
+    "scenario": "An email arrives from an address you don't recognize, at a domain you can't place, asking detailed technical questions about a program you work on and requesting a call to \"discuss potential collaboration.\"",
+    "choices": {
+      "recognition": [
+        {
+          "id": "rec_requests_for_information",
+          "text": "This is a request for information: an unsolicited request arriving from an unknown or unverified source."
+        },
+        {
+          "id": "rec_spear_phishing",
+          "text": "This is spear-phishing: phishing personalized with open-source detail about your role."
+        },
+        {
+          "id": "rec_academic_solicitation",
+          "text": "This is academic solicitation: a request framed around academic collaboration to draw out sensitive expertise."
+        },
+        {
+          "id": "rec_no_technique",
+          "text": "This is a routine, low-risk business inquiry."
+        }
+      ],
+      "countermeasure": [
+        {
+          "id": "cm_verify_before_responding_ident",
+          "text": "Verify the sender's identity and authorization before responding, and do not respond if it cannot be verified."
+        },
+        {
+          "id": "cm_answer_the_technical_questions",
+          "text": "Answer the technical questions, since it might lead to a real partnership."
+        },
+        {
+          "id": "cm_reply_asking_more_context",
+          "text": "Reply asking for more context about the proposed collaboration, sharing a little detail to keep the conversation going."
+        },
+        {
+          "id": "cm_forward_to_a_coworker",
+          "text": "Forward the email to a coworker and let them decide how to respond."
+        }
+      ],
+      "response": [
+        {"id": "resp_general_security", "text": "Report it through your organization's designated security or CI reporting channel."},
+        {"id": "resp_dod_ci", "text": "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP."},
+        {"id": "resp_federal_security", "text": "Report it to your agency's security officer or Inspector General hotline."},
+        {"id": "resp_fso", "text": "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117)."},
+        {"id": "resp_private_security", "text": "Report it to your company's security, compliance, or corporate security team."},
+        {"id": "resp_ignore_it", "text": "Let it go without telling anyone; it wasn't a big deal."},
+        {"id": "resp_confront_directly", "text": "Confront the person on the spot and accuse them of trying to extract information."}
+      ]
+    },
+    "correct": {
+      "recognition": "rec_requests_for_information",
+      "countermeasure": "cm_verify_before_responding_ident"
+    },
+    "partial": {
+      "recognition": "rec_spear_phishing",
+      "countermeasure": "cm_reply_asking_more_context"
+    },
+    "feedback": {
+      "recognition": {
+        "rec_requests_for_information": "Correct. D1 covers unsolicited requests for information from an unknown or unverified, potentially foreign, source.",
+        "rec_spear_phishing": "Partly right: C3 spear-phishing also arrives personalized and unsolicited, but D1 is the broader collection-method pattern this specific email fits, an unverified request for technical detail.",
+        "rec_academic_solicitation": "Not quite. Academic solicitation (D4) is framed specifically around research or peer review; this message is framed as business collaboration.",
+        "rec_no_technique": "An unfamiliar sender at an unplaceable domain asking detailed technical questions is exactly the D1 pattern, not a routine inquiry."
+      },
+      "countermeasure": {
+        "cm_verify_before_responding_ident": "Correct. Verifying identity and authorization first, and not responding if it can't be verified, is the taught countermeasure.",
+        "cm_answer_the_technical_questions": "This is exactly the outcome the request is built to produce.",
+        "cm_reply_asking_more_context": "Partial credit: seeking more context shows some caution, but sharing any detail before verification still discloses information.",
+        "cm_forward_to_a_coworker": "Passing the decision along does not verify the sender and can still result in someone responding without proper vetting."
+      },
+      "response": {
+        "resp_general_security": "Correct for a general context: use your organization's designated security or CI reporting channel.",
+        "resp_dod_ci": "Correct for DoD: report suspicious elicitation to your supporting CI office (iSALUTE) within 24 hours.",
+        "resp_federal_security": "Correct for federal civilian: report to your agency's security officer or Inspector General hotline.",
+        "resp_fso": "Correct for a cleared contractor: report the contact to your Facility Security Officer under NISPOM.",
+        "resp_private_security": "Correct for private industry: report it to your company's security or compliance team.",
+        "resp_ignore_it": "Elicitation attempts are reportable; letting it go skips the primary countermeasure.",
+        "resp_confront_directly": "Confronting the person accomplishes nothing a report wouldn't and can tip off a trained collector."
+      }
+    },
+    "report_paths": {
+      "general": "resp_general_security",
+      "dod": "resp_dod_ci",
+      "federal": "resp_federal_security",
+      "cleared_contractor": "resp_fso",
+      "private_industry": "resp_private_security"
+    },
+    "source": "cdse-foreign-collection-methods-2024"
+  }
+]

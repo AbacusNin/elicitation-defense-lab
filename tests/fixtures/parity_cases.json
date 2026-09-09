@@ -1,0 +1,1158 @@
+[
+  {
+    "module": "self",
+    "input": {
+      "answers": {}
+    },
+    "expected": {
+      "overall_score": 0.0,
+      "tier": "low",
+      "class_scores": {
+        "ego": 0.0,
+        "reciprocity": 0.0,
+        "social_pressure": 0.0,
+        "cognitive_cue": 0.0
+      },
+      "exposure_score": 0.0
+    }
+  },
+  {
+    "module": "self",
+    "input": {
+      "answers": {
+        "ego_flattery_pull": 2,
+        "ego_correct_the_record": 2,
+        "ego_let_challenge_pass": 2,
+        "ego_defend_criticism": 2,
+        "ego_top_the_claim": 2,
+        "ego_decline_expert_frame": 2,
+        "recip_confide_for_confide": 2,
+        "recip_owed_after_favor": 2,
+        "recip_same_limits_with_good_listener": 2,
+        "recip_fast_rapport_disclosure": 2,
+        "recip_unaffected_by_mirroring": 2,
+        "recip_general_obligation_norm": 2,
+        "sp_uncomfortable_declining": 2,
+        "sp_vent_to_outsiders": 2,
+        "sp_same_discretion_offsite": 2,
+        "sp_teach_the_novice": 2,
+        "sp_unverified_recruiter_detail": 2,
+        "sp_answer_every_survey_item": 2,
+        "cc_fill_assumed_gaps": 2,
+        "cc_correct_wrong_estimate": 2,
+        "cc_hold_line_on_hypothetical": 2,
+        "cc_accept_leading_frame": 2,
+        "cc_unaffected_by_echo": 2,
+        "cc_fill_the_public_gap": 2,
+        "exposure_public_footprint": 2,
+        "exposure_unverified_contact": 2,
+        "exposure_conference_questions": 2,
+        "exposure_unfamiliar_survey": 2,
+        "exposure_travel_network_caution": 2
+      }
+    },
+    "expected": {
+      "overall_score": 0.5,
+      "tier": "elevated",
+      "class_scores": {
+        "ego": 0.5,
+        "reciprocity": 0.5,
+        "social_pressure": 0.5,
+        "cognitive_cue": 0.5
+      },
+      "exposure_score": 0.5
+    }
+  },
+  {
+    "module": "self",
+    "input": {
+      "answers": {
+        "ego_flattery_pull": 4,
+        "ego_correct_the_record": 4,
+        "ego_let_challenge_pass": 4,
+        "ego_defend_criticism": 4,
+        "ego_top_the_claim": 4,
+        "ego_decline_expert_frame": 4,
+        "recip_confide_for_confide": 4,
+        "recip_owed_after_favor": 4,
+        "recip_same_limits_with_good_listener": 4,
+        "recip_fast_rapport_disclosure": 4,
+        "recip_unaffected_by_mirroring": 4,
+        "recip_general_obligation_norm": 4,
+        "sp_uncomfortable_declining": 4,
+        "sp_vent_to_outsiders": 4,
+        "sp_same_discretion_offsite": 4,
+        "sp_teach_the_novice": 4,
+        "sp_unverified_recruiter_detail": 4,
+        "sp_answer_every_survey_item": 4,
+        "cc_fill_assumed_gaps": 4,
+        "cc_correct_wrong_estimate": 4,
+        "cc_hold_line_on_hypothetical": 4,
+        "cc_accept_leading_frame": 4,
+        "cc_unaffected_by_echo": 4,
+        "cc_fill_the_public_gap": 4,
+        "exposure_public_footprint": 4,
+        "exposure_unverified_contact": 4,
+        "exposure_conference_questions": 4,
+        "exposure_unfamiliar_survey": 4,
+        "exposure_travel_network_caution": 4
+      }
+    },
+    "expected": {
+      "overall_score": 0.7518518518518519,
+      "tier": "high",
+      "class_scores": {
+        "ego": 0.6666666666666666,
+        "reciprocity": 0.6666666666666666,
+        "social_pressure": 0.8333333333333334,
+        "cognitive_cue": 0.6666666666666666
+      },
+      "exposure_score": 0.8
+    }
+  },
+  {
+    "module": "self",
+    "input": {
+      "answers": {
+        "ego_flattery_pull": 0,
+        "ego_correct_the_record": 0,
+        "ego_let_challenge_pass": 0,
+        "ego_defend_criticism": 0,
+        "ego_top_the_claim": 0,
+        "ego_decline_expert_frame": 0,
+        "recip_confide_for_confide": 0,
+        "recip_owed_after_favor": 0,
+        "recip_same_limits_with_good_listener": 0,
+        "recip_fast_rapport_disclosure": 0,
+        "recip_unaffected_by_mirroring": 0,
+        "recip_general_obligation_norm": 0,
+        "sp_uncomfortable_declining": 0,
+        "sp_vent_to_outsiders": 0,
+        "sp_same_discretion_offsite": 0,
+        "sp_teach_the_novice": 0,
+        "sp_unverified_recruiter_detail": 0,
+        "sp_answer_every_survey_item": 0,
+        "cc_fill_assumed_gaps": 0,
+        "cc_correct_wrong_estimate": 0,
+        "cc_hold_line_on_hypothetical": 0,
+        "cc_accept_leading_frame": 0,
+        "cc_unaffected_by_echo": 0,
+        "cc_fill_the_public_gap": 0,
+        "exposure_public_footprint": 0,
+        "exposure_unverified_contact": 0,
+        "exposure_conference_questions": 0,
+        "exposure_unfamiliar_survey": 0,
+        "exposure_travel_network_caution": 0
+      }
+    },
+    "expected": {
+      "overall_score": 0.24814814814814815,
+      "tier": "low",
+      "class_scores": {
+        "ego": 0.3333333333333333,
+        "reciprocity": 0.3333333333333333,
+        "social_pressure": 0.16666666666666666,
+        "cognitive_cue": 0.3333333333333333
+      },
+      "exposure_score": 0.2
+    }
+  },
+  {
+    "module": "self",
+    "input": {
+      "answers": {
+        "ego_flattery_pull": 4,
+        "ego_let_challenge_pass": 0,
+        "recip_confide_for_confide": 3,
+        "sp_uncomfortable_declining": 1,
+        "cc_fill_assumed_gaps": 4,
+        "exposure_public_footprint": 4,
+        "exposure_travel_network_caution": 1,
+        "not_a_real_item": 2
+      }
+    },
+    "expected": {
+      "overall_score": 0.8125,
+      "tier": "high",
+      "class_scores": {
+        "ego": 1.0,
+        "reciprocity": 0.75,
+        "social_pressure": 0.25,
+        "cognitive_cue": 1.0
+      },
+      "exposure_score": 0.875
+    }
+  },
+  {
+    "module": "interaction",
+    "input": {
+      "present": []
+    },
+    "expected": {
+      "overall_score": 0.0,
+      "tier": "low",
+      "class_scores": {
+        "ego": 0.0,
+        "reciprocity": 0.0,
+        "social_pressure": 0.0,
+        "cognitive_cue": 0.0
+      },
+      "matched_techniques": [],
+      "reporting_flag": false
+    }
+  },
+  {
+    "module": "interaction",
+    "input": {
+      "present": [
+        "ind_a1_flattery",
+        "ind_a8_quid_pro_quo",
+        "ind_a2_provocation",
+        "ind_a12_assumed_knowledge",
+        "ind_a28_scharff",
+        "ind_a3_false_statement",
+        "ind_a4_criticism",
+        "ind_a5_one_upper",
+        "ind_a6_feigned_ignorance",
+        "ind_a7_confidential_bait",
+        "ind_a9_good_listener",
+        "ind_a10_mutual_interest",
+        "ind_a11_mirroring",
+        "ind_a13_bracketing",
+        "ind_a14_leading_question",
+        "ind_a15_macro_to_micro",
+        "ind_a16_oblique_reference",
+        "ind_a17_quote_reported_facts",
+        "ind_a18_word_repetition",
+        "ind_a19_direct_question",
+        "ind_a20_questionnaire_survey",
+        "ind_a21_ruse_interview",
+        "ind_a22_target_associates",
+        "ind_a23_urge_to_complain",
+        "ind_a24_paper_review",
+        "ind_a25_offering_assistance",
+        "ind_a26_hypothetical_situation",
+        "ind_a27_setting_manipulation",
+        "pattern_disproportionate_interest",
+        "pattern_topic_bridging",
+        "pattern_question_density",
+        "pattern_persistence_circling",
+        "pattern_reformulation",
+        "pattern_steering_mirroring"
+      ]
+    },
+    "expected": {
+      "overall_score": 1.0,
+      "tier": "high",
+      "class_scores": {
+        "ego": 1.0,
+        "reciprocity": 1.0,
+        "social_pressure": 1.0,
+        "cognitive_cue": 1.0
+      },
+      "matched_techniques": [
+        "A1",
+        "A8",
+        "A2",
+        "A12",
+        "A28",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A7",
+        "A9",
+        "A10",
+        "A11",
+        "A13",
+        "A14",
+        "A15",
+        "A16",
+        "A17",
+        "A18",
+        "A19",
+        "A20",
+        "A21",
+        "A22",
+        "A23",
+        "A24",
+        "A25",
+        "A26",
+        "A27"
+      ],
+      "reporting_flag": true
+    }
+  },
+  {
+    "module": "interaction",
+    "input": {
+      "present": [
+        "ind_a1_flattery"
+      ]
+    },
+    "expected": {
+      "overall_score": 0.029069767441860465,
+      "tier": "low",
+      "class_scores": {
+        "ego": 0.2,
+        "reciprocity": 0.0,
+        "social_pressure": 0.0,
+        "cognitive_cue": 0.0
+      },
+      "matched_techniques": [
+        "A1"
+      ],
+      "reporting_flag": false
+    }
+  },
+  {
+    "module": "interaction",
+    "input": {
+      "present": [
+        "ind_a28_scharff"
+      ]
+    },
+    "expected": {
+      "overall_score": 0.04069767441860465,
+      "tier": "low",
+      "class_scores": {
+        "ego": 0.0,
+        "reciprocity": 0.0,
+        "social_pressure": 0.0,
+        "cognitive_cue": 0.0
+      },
+      "matched_techniques": [
+        "A28"
+      ],
+      "reporting_flag": false
+    }
+  },
+  {
+    "module": "interaction",
+    "input": {
+      "present": [
+        "pattern_topic_bridging",
+        "pattern_question_density"
+      ]
+    },
+    "expected": {
+      "overall_score": 0.05813953488372093,
+      "tier": "low",
+      "class_scores": {
+        "ego": 0.0,
+        "reciprocity": 0.0,
+        "social_pressure": 0.0,
+        "cognitive_cue": 0.0
+      },
+      "matched_techniques": [],
+      "reporting_flag": false
+    }
+  },
+  {
+    "module": "interaction",
+    "input": {
+      "present": [
+        "ind_a1_flattery",
+        "ind_a8_quid_pro_quo",
+        "nope",
+        "pattern_reformulation"
+      ]
+    },
+    "expected": {
+      "overall_score": 0.0930232558139535,
+      "tier": "low",
+      "class_scores": {
+        "ego": 0.2,
+        "reciprocity": 0.18181818181818182,
+        "social_pressure": 0.0,
+        "cognitive_cue": 0.0
+      },
+      "matched_techniques": [
+        "A1",
+        "A8"
+      ],
+      "reporting_flag": false
+    }
+  },
+  {
+    "module": "knowledge",
+    "input": {
+      "answers": {},
+      "context": "general"
+    },
+    "expected": {
+      "overall_score": 0.0,
+      "tier": "low",
+      "class_scores": {
+        "ego": 0.0,
+        "reciprocity": 0.0,
+        "social_pressure": 0.0,
+        "cognitive_cue": 0.0
+      },
+      "dimension_scores": {
+        "recognition": 0.0,
+        "countermeasure": 0.0,
+        "response": 0.0
+      }
+    }
+  },
+  {
+    "module": "knowledge",
+    "input": {
+      "answers": {
+        "know_a1_flattery": {
+          "recognition": "rec_praise_precedes_question",
+          "countermeasure": "cm_acknowledge_no_expand",
+          "response": "resp_general_security"
+        },
+        "know_a8_quid_pro_quo": {
+          "recognition": "rec_quid_pro_quo",
+          "countermeasure": "cm_recognize_no_real_debt",
+          "response": "resp_general_security"
+        },
+        "know_a28_scharff": {
+          "recognition": "rec_scharff",
+          "countermeasure": "cm_recognize_trap_belief",
+          "response": "resp_general_security"
+        },
+        "know_a12_assumed_knowledge": {
+          "recognition": "rec_assumed_knowledge",
+          "countermeasure": "cm_verify_before_responding",
+          "response": "resp_general_security"
+        },
+        "know_a2_provocation": {
+          "recognition": "rec_provocation",
+          "countermeasure": "cm_stay_composed",
+          "response": "resp_general_security"
+        },
+        "know_a4_criticism": {
+          "recognition": "rec_criticism",
+          "countermeasure": "cm_decline_defend",
+          "response": "resp_general_security"
+        },
+        "know_a6_feigned_ignorance": {
+          "recognition": "rec_feigned_ignorance",
+          "countermeasure": "cm_refer_public_docs",
+          "response": "resp_general_security"
+        },
+        "know_a7_confidential_bait": {
+          "recognition": "rec_confidential_bait",
+          "countermeasure": "cm_do_not_match",
+          "response": "resp_general_security"
+        },
+        "know_a9_good_listener": {
+          "recognition": "rec_good_listener",
+          "countermeasure": "cm_watch_momentum",
+          "response": "resp_general_security"
+        },
+        "know_a13_bracketing": {
+          "recognition": "rec_bracketing",
+          "countermeasure": "cm_refuse_to_narrow",
+          "response": "resp_general_security"
+        },
+        "know_a14_leading_question": {
+          "recognition": "rec_leading_question",
+          "countermeasure": "cm_reject_the_frame",
+          "response": "resp_general_security"
+        },
+        "know_a19_direct_question": {
+          "recognition": "rec_direct_question",
+          "countermeasure": "cm_pause_and_judge",
+          "response": "resp_general_security"
+        },
+        "know_a21_ruse_interview": {
+          "recognition": "rec_ruse_interview",
+          "countermeasure": "cm_verify_independently",
+          "response": "resp_general_security"
+        },
+        "know_a27_setting_manipulation": {
+          "recognition": "rec_setting_manipulation",
+          "countermeasure": "cm_same_guard_offsite",
+          "response": "resp_general_security"
+        },
+        "know_c1_pretexting": {
+          "recognition": "rec_pretexting",
+          "countermeasure": "cm_verify_independent_channel",
+          "response": "resp_general_security"
+        },
+        "know_d1_requests_for_information": {
+          "recognition": "rec_requests_for_information",
+          "countermeasure": "cm_verify_before_responding_ident",
+          "response": "resp_general_security"
+        }
+      },
+      "context": "general"
+    },
+    "expected": {
+      "overall_score": 1.0,
+      "tier": "high",
+      "class_scores": {
+        "ego": 0.6,
+        "reciprocity": 0.5454545454545454,
+        "social_pressure": 0.5,
+        "cognitive_cue": 0.4
+      },
+      "dimension_scores": {
+        "recognition": 1.0,
+        "countermeasure": 1.0,
+        "response": 1.0
+      }
+    }
+  },
+  {
+    "module": "knowledge",
+    "input": {
+      "answers": {
+        "know_a1_flattery": {
+          "recognition": "rec_praise_precedes_question",
+          "countermeasure": "cm_acknowledge_no_expand",
+          "response": "resp_dod_ci"
+        },
+        "know_a8_quid_pro_quo": {
+          "recognition": "rec_quid_pro_quo",
+          "countermeasure": "cm_recognize_no_real_debt",
+          "response": "resp_dod_ci"
+        },
+        "know_a28_scharff": {
+          "recognition": "rec_scharff",
+          "countermeasure": "cm_recognize_trap_belief",
+          "response": "resp_dod_ci"
+        },
+        "know_a12_assumed_knowledge": {
+          "recognition": "rec_assumed_knowledge",
+          "countermeasure": "cm_verify_before_responding",
+          "response": "resp_dod_ci"
+        },
+        "know_a2_provocation": {
+          "recognition": "rec_provocation",
+          "countermeasure": "cm_stay_composed",
+          "response": "resp_dod_ci"
+        },
+        "know_a4_criticism": {
+          "recognition": "rec_criticism",
+          "countermeasure": "cm_decline_defend",
+          "response": "resp_dod_ci"
+        },
+        "know_a6_feigned_ignorance": {
+          "recognition": "rec_feigned_ignorance",
+          "countermeasure": "cm_refer_public_docs",
+          "response": "resp_dod_ci"
+        },
+        "know_a7_confidential_bait": {
+          "recognition": "rec_confidential_bait",
+          "countermeasure": "cm_do_not_match",
+          "response": "resp_dod_ci"
+        },
+        "know_a9_good_listener": {
+          "recognition": "rec_good_listener",
+          "countermeasure": "cm_watch_momentum",
+          "response": "resp_dod_ci"
+        },
+        "know_a13_bracketing": {
+          "recognition": "rec_bracketing",
+          "countermeasure": "cm_refuse_to_narrow",
+          "response": "resp_dod_ci"
+        },
+        "know_a14_leading_question": {
+          "recognition": "rec_leading_question",
+          "countermeasure": "cm_reject_the_frame",
+          "response": "resp_dod_ci"
+        },
+        "know_a19_direct_question": {
+          "recognition": "rec_direct_question",
+          "countermeasure": "cm_pause_and_judge",
+          "response": "resp_dod_ci"
+        },
+        "know_a21_ruse_interview": {
+          "recognition": "rec_ruse_interview",
+          "countermeasure": "cm_verify_independently",
+          "response": "resp_dod_ci"
+        },
+        "know_a27_setting_manipulation": {
+          "recognition": "rec_setting_manipulation",
+          "countermeasure": "cm_same_guard_offsite",
+          "response": "resp_dod_ci"
+        },
+        "know_c1_pretexting": {
+          "recognition": "rec_pretexting",
+          "countermeasure": "cm_verify_independent_channel",
+          "response": "resp_dod_ci"
+        },
+        "know_d1_requests_for_information": {
+          "recognition": "rec_requests_for_information",
+          "countermeasure": "cm_verify_before_responding_ident",
+          "response": "resp_dod_ci"
+        }
+      },
+      "context": "dod"
+    },
+    "expected": {
+      "overall_score": 1.0,
+      "tier": "high",
+      "class_scores": {
+        "ego": 0.6,
+        "reciprocity": 0.5454545454545454,
+        "social_pressure": 0.5,
+        "cognitive_cue": 0.4
+      },
+      "dimension_scores": {
+        "recognition": 1.0,
+        "countermeasure": 1.0,
+        "response": 1.0
+      }
+    }
+  },
+  {
+    "module": "knowledge",
+    "input": {
+      "answers": {
+        "know_a1_flattery": {
+          "recognition": "rec_praise_precedes_question",
+          "countermeasure": "cm_acknowledge_no_expand",
+          "response": "resp_federal_security"
+        },
+        "know_a8_quid_pro_quo": {
+          "recognition": "rec_quid_pro_quo",
+          "countermeasure": "cm_recognize_no_real_debt",
+          "response": "resp_federal_security"
+        },
+        "know_a28_scharff": {
+          "recognition": "rec_scharff",
+          "countermeasure": "cm_recognize_trap_belief",
+          "response": "resp_federal_security"
+        },
+        "know_a12_assumed_knowledge": {
+          "recognition": "rec_assumed_knowledge",
+          "countermeasure": "cm_verify_before_responding",
+          "response": "resp_federal_security"
+        },
+        "know_a2_provocation": {
+          "recognition": "rec_provocation",
+          "countermeasure": "cm_stay_composed",
+          "response": "resp_federal_security"
+        },
+        "know_a4_criticism": {
+          "recognition": "rec_criticism",
+          "countermeasure": "cm_decline_defend",
+          "response": "resp_federal_security"
+        },
+        "know_a6_feigned_ignorance": {
+          "recognition": "rec_feigned_ignorance",
+          "countermeasure": "cm_refer_public_docs",
+          "response": "resp_federal_security"
+        },
+        "know_a7_confidential_bait": {
+          "recognition": "rec_confidential_bait",
+          "countermeasure": "cm_do_not_match",
+          "response": "resp_federal_security"
+        },
+        "know_a9_good_listener": {
+          "recognition": "rec_good_listener",
+          "countermeasure": "cm_watch_momentum",
+          "response": "resp_federal_security"
+        },
+        "know_a13_bracketing": {
+          "recognition": "rec_bracketing",
+          "countermeasure": "cm_refuse_to_narrow",
+          "response": "resp_federal_security"
+        },
+        "know_a14_leading_question": {
+          "recognition": "rec_leading_question",
+          "countermeasure": "cm_reject_the_frame",
+          "response": "resp_federal_security"
+        },
+        "know_a19_direct_question": {
+          "recognition": "rec_direct_question",
+          "countermeasure": "cm_pause_and_judge",
+          "response": "resp_federal_security"
+        },
+        "know_a21_ruse_interview": {
+          "recognition": "rec_ruse_interview",
+          "countermeasure": "cm_verify_independently",
+          "response": "resp_federal_security"
+        },
+        "know_a27_setting_manipulation": {
+          "recognition": "rec_setting_manipulation",
+          "countermeasure": "cm_same_guard_offsite",
+          "response": "resp_federal_security"
+        },
+        "know_c1_pretexting": {
+          "recognition": "rec_pretexting",
+          "countermeasure": "cm_verify_independent_channel",
+          "response": "resp_federal_security"
+        },
+        "know_d1_requests_for_information": {
+          "recognition": "rec_requests_for_information",
+          "countermeasure": "cm_verify_before_responding_ident",
+          "response": "resp_federal_security"
+        }
+      },
+      "context": "federal"
+    },
+    "expected": {
+      "overall_score": 1.0,
+      "tier": "high",
+      "class_scores": {
+        "ego": 0.6,
+        "reciprocity": 0.5454545454545454,
+        "social_pressure": 0.5,
+        "cognitive_cue": 0.4
+      },
+      "dimension_scores": {
+        "recognition": 1.0,
+        "countermeasure": 1.0,
+        "response": 1.0
+      }
+    }
+  },
+  {
+    "module": "knowledge",
+    "input": {
+      "answers": {
+        "know_a1_flattery": {
+          "recognition": "rec_praise_precedes_question",
+          "countermeasure": "cm_acknowledge_no_expand",
+          "response": "resp_fso"
+        },
+        "know_a8_quid_pro_quo": {
+          "recognition": "rec_quid_pro_quo",
+          "countermeasure": "cm_recognize_no_real_debt",
+          "response": "resp_fso"
+        },
+        "know_a28_scharff": {
+          "recognition": "rec_scharff",
+          "countermeasure": "cm_recognize_trap_belief",
+          "response": "resp_fso"
+        },
+        "know_a12_assumed_knowledge": {
+          "recognition": "rec_assumed_knowledge",
+          "countermeasure": "cm_verify_before_responding",
+          "response": "resp_fso"
+        },
+        "know_a2_provocation": {
+          "recognition": "rec_provocation",
+          "countermeasure": "cm_stay_composed",
+          "response": "resp_fso"
+        },
+        "know_a4_criticism": {
+          "recognition": "rec_criticism",
+          "countermeasure": "cm_decline_defend",
+          "response": "resp_fso"
+        },
+        "know_a6_feigned_ignorance": {
+          "recognition": "rec_feigned_ignorance",
+          "countermeasure": "cm_refer_public_docs",
+          "response": "resp_fso"
+        },
+        "know_a7_confidential_bait": {
+          "recognition": "rec_confidential_bait",
+          "countermeasure": "cm_do_not_match",
+          "response": "resp_fso"
+        },
+        "know_a9_good_listener": {
+          "recognition": "rec_good_listener",
+          "countermeasure": "cm_watch_momentum",
+          "response": "resp_fso"
+        },
+        "know_a13_bracketing": {
+          "recognition": "rec_bracketing",
+          "countermeasure": "cm_refuse_to_narrow",
+          "response": "resp_fso"
+        },
+        "know_a14_leading_question": {
+          "recognition": "rec_leading_question",
+          "countermeasure": "cm_reject_the_frame",
+          "response": "resp_fso"
+        },
+        "know_a19_direct_question": {
+          "recognition": "rec_direct_question",
+          "countermeasure": "cm_pause_and_judge",
+          "response": "resp_fso"
+        },
+        "know_a21_ruse_interview": {
+          "recognition": "rec_ruse_interview",
+          "countermeasure": "cm_verify_independently",
+          "response": "resp_fso"
+        },
+        "know_a27_setting_manipulation": {
+          "recognition": "rec_setting_manipulation",
+          "countermeasure": "cm_same_guard_offsite",
+          "response": "resp_fso"
+        },
+        "know_c1_pretexting": {
+          "recognition": "rec_pretexting",
+          "countermeasure": "cm_verify_independent_channel",
+          "response": "resp_fso"
+        },
+        "know_d1_requests_for_information": {
+          "recognition": "rec_requests_for_information",
+          "countermeasure": "cm_verify_before_responding_ident",
+          "response": "resp_fso"
+        }
+      },
+      "context": "cleared_contractor"
+    },
+    "expected": {
+      "overall_score": 1.0,
+      "tier": "high",
+      "class_scores": {
+        "ego": 0.6,
+        "reciprocity": 0.5454545454545454,
+        "social_pressure": 0.5,
+        "cognitive_cue": 0.4
+      },
+      "dimension_scores": {
+        "recognition": 1.0,
+        "countermeasure": 1.0,
+        "response": 1.0
+      }
+    }
+  },
+  {
+    "module": "knowledge",
+    "input": {
+      "answers": {
+        "know_a1_flattery": {
+          "recognition": "rec_genuine_compliment",
+          "countermeasure": "cm_answer_briefly_comfortable",
+          "response": "resp_ignore_it"
+        },
+        "know_a8_quid_pro_quo": {
+          "recognition": "rec_confidential_bait",
+          "countermeasure": "cm_end_conversation_abruptly",
+          "response": "resp_ignore_it"
+        },
+        "know_a28_scharff": {
+          "recognition": "rec_mutual_interest",
+          "countermeasure": "cm_stay_silent_whole_lunch",
+          "response": "resp_ignore_it"
+        },
+        "know_a12_assumed_knowledge": {
+          "recognition": "rec_bracketing",
+          "countermeasure": "cm_stay_silent_rest_of_meeting",
+          "response": "resp_ignore_it"
+        },
+        "know_a2_provocation": {
+          "recognition": "rec_criticism",
+          "countermeasure": "cm_change_subject_bluntly",
+          "response": "resp_ignore_it"
+        },
+        "know_a4_criticism": {
+          "recognition": "rec_provocation",
+          "countermeasure": "cm_agree_reluctantly",
+          "response": "resp_ignore_it"
+        },
+        "know_a6_feigned_ignorance": {
+          "recognition": "rec_direct_question",
+          "countermeasure": "cm_partial_explanation",
+          "response": "resp_ignore_it"
+        },
+        "know_a7_confidential_bait": {
+          "recognition": "rec_quid_pro_quo",
+          "countermeasure": "cm_walk_away_silently",
+          "response": "resp_ignore_it"
+        },
+        "know_a9_good_listener": {
+          "recognition": "rec_mutual_interest",
+          "countermeasure": "cm_test_them",
+          "response": "resp_ignore_it"
+        },
+        "know_a13_bracketing": {
+          "recognition": "rec_leading_question",
+          "countermeasure": "cm_deflect_rudely",
+          "response": "resp_ignore_it"
+        },
+        "know_a14_leading_question": {
+          "recognition": "rec_assumed_knowledge",
+          "countermeasure": "cm_ignore_the_question",
+          "response": "resp_ignore_it"
+        },
+        "know_a19_direct_question": {
+          "recognition": "rec_ruse_interview",
+          "countermeasure": "cm_walk_away_no_reply",
+          "response": "resp_ignore_it"
+        },
+        "know_a21_ruse_interview": {
+          "recognition": "rec_direct_question",
+          "countermeasure": "cm_ask_for_company_name_only",
+          "response": "resp_ignore_it"
+        },
+        "know_a27_setting_manipulation": {
+          "recognition": "rec_good_listener",
+          "countermeasure": "cm_have_one_drink_only",
+          "response": "resp_ignore_it"
+        },
+        "know_c1_pretexting": {
+          "recognition": "rec_vishing",
+          "countermeasure": "cm_confirm_ticket_number_only",
+          "response": "resp_ignore_it"
+        },
+        "know_d1_requests_for_information": {
+          "recognition": "rec_spear_phishing",
+          "countermeasure": "cm_reply_asking_more_context",
+          "response": "resp_ignore_it"
+        }
+      },
+      "context": "private_industry"
+    },
+    "expected": {
+      "overall_score": 0.3333333333333333,
+      "tier": "low",
+      "class_scores": {
+        "ego": 0.2,
+        "reciprocity": 0.18181818181818182,
+        "social_pressure": 0.16666666666666666,
+        "cognitive_cue": 0.13333333333333333
+      },
+      "dimension_scores": {
+        "recognition": 0.5,
+        "countermeasure": 0.5,
+        "response": 0.0
+      }
+    }
+  },
+  {
+    "module": "knowledge",
+    "input": {
+      "answers": {
+        "know_a1_flattery": {
+          "recognition": "rec_praise_precedes_question",
+          "countermeasure": "cm_shut_down_rude",
+          "response": "resp_general_security"
+        },
+        "know_a8_quid_pro_quo": {
+          "recognition": "rec_quid_pro_quo",
+          "countermeasure": "cm_share_full_timeline",
+          "response": "resp_general_security"
+        },
+        "know_a28_scharff": {
+          "recognition": "rec_scharff",
+          "countermeasure": "cm_challenge_them_directly",
+          "response": "resp_general_security"
+        },
+        "know_a12_assumed_knowledge": {
+          "recognition": "rec_assumed_knowledge",
+          "countermeasure": "cm_agree_to_be_polite",
+          "response": "resp_general_security"
+        },
+        "know_a2_provocation": {
+          "recognition": "rec_provocation",
+          "countermeasure": "cm_get_defensive",
+          "response": "resp_general_security"
+        },
+        "know_a4_criticism": {
+          "recognition": "rec_criticism",
+          "countermeasure": "cm_criticize_back",
+          "response": "resp_general_security"
+        },
+        "know_a6_feigned_ignorance": {
+          "recognition": "rec_feigned_ignorance",
+          "countermeasure": "cm_condescending_dismissal",
+          "response": "resp_general_security"
+        },
+        "know_a7_confidential_bait": {
+          "recognition": "rec_confidential_bait",
+          "countermeasure": "cm_share_something_bigger",
+          "response": "resp_general_security"
+        },
+        "know_a9_good_listener": {
+          "recognition": "rec_good_listener",
+          "countermeasure": "cm_stop_talking_entirely",
+          "response": "resp_general_security"
+        },
+        "know_a13_bracketing": {
+          "recognition": "rec_bracketing",
+          "countermeasure": "cm_give_exact_figure",
+          "response": "resp_general_security"
+        },
+        "know_a14_leading_question": {
+          "recognition": "rec_leading_question",
+          "countermeasure": "cm_explain_the_real_setup",
+          "response": "resp_general_security"
+        },
+        "know_a19_direct_question": {
+          "recognition": "rec_direct_question",
+          "countermeasure": "cm_lie_about_the_number",
+          "response": "resp_general_security"
+        },
+        "know_a21_ruse_interview": {
+          "recognition": "rec_ruse_interview",
+          "countermeasure": "cm_ignore_the_message",
+          "response": "resp_general_security"
+        },
+        "know_a27_setting_manipulation": {
+          "recognition": "rec_setting_manipulation",
+          "countermeasure": "cm_leave_immediately",
+          "response": "resp_general_security"
+        },
+        "know_c1_pretexting": {
+          "recognition": "rec_pretexting",
+          "countermeasure": "cm_provide_full_credentials",
+          "response": "resp_general_security"
+        },
+        "know_d1_requests_for_information": {
+          "recognition": "rec_requests_for_information",
+          "countermeasure": "cm_forward_to_a_coworker",
+          "response": "resp_general_security"
+        }
+      },
+      "context": "general"
+    },
+    "expected": {
+      "overall_score": 0.6666666666666666,
+      "tier": "elevated",
+      "class_scores": {
+        "ego": 0.4,
+        "reciprocity": 0.36363636363636365,
+        "social_pressure": 0.3333333333333333,
+        "cognitive_cue": 0.26666666666666666
+      },
+      "dimension_scores": {
+        "recognition": 1.0,
+        "countermeasure": 0.0,
+        "response": 1.0
+      }
+    }
+  },
+  {
+    "module": "knowledge",
+    "input": {
+      "answers": {
+        "know_a1_flattery": {
+          "recognition": "rec_praise_precedes_question",
+          "countermeasure": "cm_acknowledge_no_expand",
+          "response": "resp_general_security"
+        },
+        "know_a8_quid_pro_quo": {
+          "recognition": "rec_quid_pro_quo",
+          "countermeasure": "cm_recognize_no_real_debt",
+          "response": "resp_general_security"
+        },
+        "know_a28_scharff": {
+          "recognition": "rec_scharff",
+          "countermeasure": "cm_recognize_trap_belief",
+          "response": "resp_general_security"
+        },
+        "know_a12_assumed_knowledge": {
+          "recognition": "rec_assumed_knowledge",
+          "countermeasure": "cm_verify_before_responding",
+          "response": "resp_general_security"
+        },
+        "know_a2_provocation": {
+          "recognition": "rec_provocation",
+          "countermeasure": "cm_stay_composed",
+          "response": "resp_general_security"
+        },
+        "know_a4_criticism": {
+          "recognition": "rec_criticism",
+          "countermeasure": "cm_decline_defend",
+          "response": "resp_general_security"
+        },
+        "know_a6_feigned_ignorance": {
+          "recognition": "rec_feigned_ignorance",
+          "countermeasure": "cm_refer_public_docs",
+          "response": "resp_general_security"
+        },
+        "know_a7_confidential_bait": {
+          "recognition": "rec_confidential_bait",
+          "countermeasure": "cm_do_not_match",
+          "response": "resp_general_security"
+        },
+        "know_a9_good_listener": {
+          "recognition": "rec_good_listener",
+          "countermeasure": "cm_watch_momentum",
+          "response": "resp_general_security"
+        },
+        "know_a13_bracketing": {
+          "recognition": "rec_bracketing",
+          "countermeasure": "cm_refuse_to_narrow",
+          "response": "resp_general_security"
+        },
+        "know_a14_leading_question": {
+          "recognition": "rec_leading_question",
+          "countermeasure": "cm_reject_the_frame",
+          "response": "resp_general_security"
+        },
+        "know_a19_direct_question": {
+          "recognition": "rec_direct_question",
+          "countermeasure": "cm_pause_and_judge",
+          "response": "resp_general_security"
+        },
+        "know_a21_ruse_interview": {
+          "recognition": "rec_ruse_interview",
+          "countermeasure": "cm_verify_independently",
+          "response": "resp_general_security"
+        },
+        "know_a27_setting_manipulation": {
+          "recognition": "rec_setting_manipulation",
+          "countermeasure": "cm_same_guard_offsite",
+          "response": "resp_general_security"
+        },
+        "know_c1_pretexting": {
+          "recognition": "rec_pretexting",
+          "countermeasure": "cm_verify_independent_channel",
+          "response": "resp_general_security"
+        },
+        "know_d1_requests_for_information": {
+          "recognition": "rec_requests_for_information",
+          "countermeasure": "cm_verify_before_responding_ident",
+          "response": "resp_general_security"
+        }
+      },
+      "context": "student"
+    },
+    "expected": {
+      "overall_score": 1.0,
+      "tier": "high",
+      "class_scores": {
+        "ego": 0.6,
+        "reciprocity": 0.5454545454545454,
+        "social_pressure": 0.5,
+        "cognitive_cue": 0.4
+      },
+      "dimension_scores": {
+        "recognition": 1.0,
+        "countermeasure": 1.0,
+        "response": 1.0
+      }
+    }
+  },
+  {
+    "module": "knowledge",
+    "input": {
+      "answers": {
+        "know_a1_flattery": {
+          "recognition": "rec_praise_precedes_question",
+          "countermeasure": "cm_acknowledge_no_expand",
+          "response": "resp_general_security"
+        },
+        "know_a8_quid_pro_quo": {
+          "recognition": "rec_quid_pro_quo",
+          "countermeasure": "cm_recognize_no_real_debt",
+          "response": "resp_general_security"
+        },
+        "know_a28_scharff": {
+          "recognition": "rec_scharff",
+          "countermeasure": "cm_recognize_trap_belief",
+          "response": "resp_general_security"
+        }
+      },
+      "context": "general"
+    },
+    "expected": {
+      "overall_score": 1.0,
+      "tier": "high",
+      "class_scores": {
+        "ego": 0.2,
+        "reciprocity": 0.18181818181818182,
+        "social_pressure": 0.0,
+        "cognitive_cue": 0.0
+      },
+      "dimension_scores": {
+        "recognition": 1.0,
+        "countermeasure": 1.0,
+        "response": 1.0
+      }
+    }
+  }
+]
