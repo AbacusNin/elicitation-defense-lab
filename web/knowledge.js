@@ -128,32 +128,52 @@ const STATUS_LABEL = {
   unanswered: "Not answered",
 };
 
-// One line per dimension: what the user picked and whether it was right,
-// wrong, or partial credit, the correct choice when the pick wasn't it, and
-// the explanation for the choice the user actually made (scoreKnowledge
-// already resolves that; see dimensionFeedback in app.js). Previously this
-// always printed the explanation for the correct choice regardless of what
-// was picked, so a wrong answer still read as "Correct."
-function renderDimensionLine(dim, entry) {
-  const line = document.createElement("p");
-  const label = document.createElement("strong");
-  label.textContent = `${dim}: `;
-  line.appendChild(label);
+const DIMENSION_LABEL = {
+  recognition: "Recognition",
+  countermeasure: "Countermeasure",
+  response: "Response",
+};
 
-  const statusLabel = document.createElement("strong");
-  statusLabel.textContent = `${STATUS_LABEL[entry.status]}. `;
-  line.appendChild(statusLabel);
+// One block per dimension, laid out as separate lines rather than one
+// run-on paragraph: a status line (dimension name and correct / partial /
+// incorrect / unanswered), then the user's own choice, the correct choice
+// when the pick wasn't it, and the explanation for the choice the user
+// actually made (scoreKnowledge already resolves that; see dimensionFeedback
+// in app.js). Previously this always printed the correct choice's
+// explanation regardless of what was picked, so a wrong answer still read
+// as "Correct."
+function renderDimensionLine(dim, entry) {
+  const wrap = document.createElement("div");
+  wrap.className = "dim-feedback";
+
+  const status = document.createElement("p");
+  status.className = "dim-status";
+  status.textContent = `${DIMENSION_LABEL[dim]}: ${STATUS_LABEL[entry.status]}`;
+  wrap.appendChild(status);
 
   if (entry.status === "unanswered") {
-    line.append(`Correct answer: "${entry.correct_text}". `);
+    const correct = document.createElement("p");
+    correct.textContent = `Correct answer: "${entry.correct_text}"`;
+    wrap.appendChild(correct);
   } else {
-    line.append(`You chose: "${entry.chosen_text}". `);
+    const chosen = document.createElement("p");
+    chosen.textContent = `You chose: "${entry.chosen_text}"`;
+    wrap.appendChild(chosen);
     if (entry.status !== "correct") {
-      line.append(`Correct answer: "${entry.correct_text}". `);
+      const correct = document.createElement("p");
+      correct.textContent = `Correct answer: "${entry.correct_text}"`;
+      wrap.appendChild(correct);
     }
   }
-  line.append(entry.explanation ?? "");
-  return line;
+
+  if (entry.explanation) {
+    const explanation = document.createElement("p");
+    explanation.className = "dim-explanation";
+    explanation.textContent = entry.explanation;
+    wrap.appendChild(explanation);
+  }
+
+  return wrap;
 }
 
 // One card per scored item: the scenario text plus the recognition,

@@ -82,3 +82,8 @@ pre { background: #f2f2f0; border: 1px solid var(--line); border-radius: 4px; pa
   margin: .9rem 0;
 }
 .item-group summary { cursor: pointer; font-weight: 600; padding: .7rem 0; font-size: 1.05rem; }
+.dim-feedback { margin: 1rem 0; padding-top: .8rem; border-top: 1px solid var(--line); }
+.dim-feedback:first-of-type { border-top: 0; padding-top: 0; }
+.dim-feedback p { margin: .3rem 0; }
+.dim-feedback .dim-status { font-weight: 600; margin-bottom: .4rem; }
+.dim-feedback .dim-explanation { color: var(--muted); }
