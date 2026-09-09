@@ -1,8 +1,9 @@
 // Page script for knowledge.html. Draws a random subset of the knowledge
 // bank on each load, renders it, and scores it with scoreKnowledge from
 // app.js against exactly that shown subset. Also owns the reporting-context
-// selector, since context only changes which response choice scores as
-// correct on this module.
+// selector: context changes which response choice scores as correct, and
+// (see responseChoicesForContext below) which response options are shown at
+// all, so switching it re-renders the drawn items without resampling.
 
 import { DIMENSIONS, scoreKnowledge } from "./app.js";
 import { renderCompetencyScorecard, sampleBank, shuffle, showResult } from "./ui.js";
@@ -46,9 +47,38 @@ function saveContext(context) {
 
 const state = loadState();
 
+// The response dimension's option list, filtered to the selected reporting
+// context: the correct channel for this context (item.report_paths[context],
+// falling back to general the same way scoreKnowledge does) plus whichever
+// choices aren't anyone's reporting channel at all (the confront/let-it-go
+// distractors). Every other context's channel (AR 381-12, FSO, agency IG,
+// and so on) is dropped, so a private-industry taker never sees a military
+// or cleared-contractor option and vice versa. Grading is untouched: it
+// still compares the chosen id to report_paths[context] in scoreKnowledge.
+function responseChoicesForContext(item, context) {
+  const correctId = item.report_paths[context] ?? item.report_paths.general;
+  const otherChannelIds = new Set(Object.values(item.report_paths));
+  otherChannelIds.delete(correctId);
+  return item.choices.response.filter((choice) => !otherChannelIds.has(choice.id));
+}
+
 const contextSelect = el("context");
 contextSelect.value = loadContext();
-contextSelect.addEventListener("change", () => saveContext(contextSelect.value));
+
+let shownItems = null;
+
+contextSelect.addEventListener("change", () => {
+  saveContext(contextSelect.value);
+  if (!shownItems) return;
+  // The response options just changed out from under any prior pick; drop
+  // it rather than leave a now-hidden choice scored against the new
+  // context's correct id.
+  for (const item of shownItems) {
+    if (state[item.id]) delete state[item.id].response;
+  }
+  saveState(state);
+  renderItems(shownItems, contextSelect.value);
+});
 
 Promise.all([
   fetch("data/config.json").then((r) => r.json()),
@@ -65,12 +95,32 @@ Promise.all([
 
 function render(config, techniques, knowledgeBank) {
   const shown = sampleBank(knowledgeBank, { count: SAMPLE_COUNT });
+  shownItems = shown;
 
   const sampleNote = el("sample-note");
   if (sampleNote) {
     sampleNote.textContent = `Showing ${shown.length} of ${knowledgeBank.length} scenarios, drawn fresh each visit.`;
   }
 
+  renderItems(shown, contextSelect.value);
+
+  el("knowledge-run").addEventListener("click", () => {
+    const context = contextSelect.value;
+    // Normalize over exactly what was shown, not the full bank.
+    const result = scoreKnowledge(state, config, techniques, shown, context);
+    const summary = document.createElement("div");
+    summary.appendChild(renderCompetencyScorecard(result, config, techniques));
+    summary.appendChild(renderItemFeedback(result.feedback, shown));
+    showResult("knowledge", result, context, config, techniques, summary);
+  });
+}
+
+// Builds the scenario blocks for the drawn subset into #knowledge-items.
+// Runs on initial load and again whenever the reporting context changes, off
+// the same drawn subset, so switching context doesn't redraw the sample;
+// only the response dimension's option list (responseChoicesForContext)
+// depends on context.
+function renderItems(shown, context) {
   const container = el("knowledge-items");
   container.textContent = "";
   for (const item of shown) {
@@ -86,11 +136,12 @@ function render(config, techniques, knowledgeBank) {
       const legend = document.createElement("legend");
       legend.textContent = dim;
       group.appendChild(legend);
+      const choices = dim === "response" ? responseChoicesForContext(item, context) : item.choices[dim];
       // Shuffle the choice order per dimension per render so the correct
       // answer isn't predictably in the same slot every time (it's always
       // choice 0 in the bank data). Scoring compares chosen id to correct
       // id, so this has no effect on grading.
-      for (const choice of shuffle(item.choices[dim])) {
+      for (const choice of shuffle(choices)) {
         const label = document.createElement("label");
         label.className = "choice";
         const input = document.createElement("input");
@@ -110,15 +161,6 @@ function render(config, techniques, knowledgeBank) {
     }
     container.appendChild(block);
   }
-  el("knowledge-run").addEventListener("click", () => {
-    const context = contextSelect.value;
-    // Normalize over exactly what was shown, not the full bank.
-    const result = scoreKnowledge(state, config, techniques, shown, context);
-    const summary = document.createElement("div");
-    summary.appendChild(renderCompetencyScorecard(result, config, techniques));
-    summary.appendChild(renderItemFeedback(result.feedback, shown));
-    showResult("knowledge", result, context, config, techniques, summary);
-  });
 }
 
 const STATUS_LABEL = {
