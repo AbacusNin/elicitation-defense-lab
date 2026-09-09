@@ -1,0 +1,31 @@
+// elicitation-defense-lab: self-assessment awareness and interaction reporting.
+//
+// Three views over the ElicitationAssessment table (one row per emitted
+// event, schema in elicitation_defense_lab/schema.py). They mirror
+// elicitation_defense_lab.detections_ref.flag_events exactly:
+//   - high-tier self-assessments
+//   - interaction events where the subject affirmed they would report
+//   - a per-subject trend of overall_score over time
+//
+// The fast CI gate validates this logic through the stdlib reference
+// implementation (flag_events), since CI has no KQL engine. Phase 2
+// validates these queries directly against a real engine (Kustainer).
+//
+// This is a reference query, not a deployable rule. See
+// detections/deployable/ for a version against a real ingestion schema.
+
+// View 1: subjects whose self-assessment landed in the high tier.
+ElicitationAssessment
+| where module == "self" and tier == "high"
+| project timestamp, subject_id, tier, overall_score, class_scores;
+
+// View 2: interaction events where the subject said they would report the contact.
+ElicitationAssessment
+| where module == "interaction" and reporting_flag == true
+| project timestamp, subject_id, tier, overall_score, class_scores;
+
+// View 3: per-subject trend of overall_score across all modules, oldest first.
+ElicitationAssessment
+| where isnotempty(subject_id)
+| project subject_id, module, timestamp, overall_score
+| sort by subject_id asc, timestamp asc

@@ -1,0 +1,30 @@
+// DEPLOYABLE TEMPLATE. Microsoft Sentinel custom log table. Not run in CI.
+// Confirm the table and column names against your workspace before use.
+//
+// Assumes emitted events (elicitation_defense_lab schema.py, or the
+// equivalent JSON the static page's event view produces) are shipped to
+// Sentinel through a Data Collection Rule into a custom table named
+// ElicitationAssessment_CL. Custom Log Analytics tables append a type
+// suffix per column (_s string, _d real, _b bool) and always carry the
+// built-in TimeGenerated; there is no elicitation-defense-lab backend that
+// does this shipping today, so an org adopting this tool would need to
+// stand up that pipeline first. See docs/limitations.md.
+//
+// Same three views as detections/kql/awareness_and_reporting.kql, against
+// the real ingested schema instead of the reference table name.
+
+// View 1: subjects whose self-assessment landed in the high tier.
+ElicitationAssessment_CL
+| where Module_s == "self" and Tier_s == "high"
+| project TimeGenerated, SubjectId_s, Tier_s, OverallScore_d, ClassScores_s = parse_json(ClassScores_s);
+
+// View 2: interaction events where the subject said they would report the contact.
+ElicitationAssessment_CL
+| where Module_s == "interaction" and ReportingFlag_b == true
+| project TimeGenerated, SubjectId_s, Tier_s, OverallScore_d, ClassScores_s = parse_json(ClassScores_s);
+
+// View 3: per-subject trend of OverallScore_d across all modules, oldest first.
+ElicitationAssessment_CL
+| where isnotempty(SubjectId_s)
+| project SubjectId_s, Module_s, TimeGenerated, OverallScore_d
+| sort by SubjectId_s asc, TimeGenerated asc

@@ -1,0 +1,38 @@
+// elicitation-defense-lab x insider-access-drift: cross-feed correlation.
+//
+// OPTIONAL. Requires BOTH feeds in the same workspace: this project's
+// ElicitationAssessment table and the insider-access-drift flagship's
+// restricted-access feed (its AccessEvents table, see
+// insider-access-drift/detections/kql/repository_access_drift.kql). Do not
+// enable this rule unless both are actually ingested; it is a hypothesis,
+// not a standing detection, and produces no rows without the second feed.
+//
+// Rationale: a subject who scores high on the self-assessment (weak
+// self-reported resistance to elicitation) AND shows restricted-access
+// drift above their peer-group baseline is a stronger combined signal than
+// either alone. Neither project claims this correlation is validated; see
+// docs/limitations.md.
+//
+// The fast CI gate validates the elicitation-side logic through the stdlib
+// reference implementation (elicitation_defense_lab.detections_ref.flag_events).
+// This query itself is validated in phase 2 against a real engine, and only
+// once both feeds exist in a shared workspace.
+
+let high_self_assessment =
+    ElicitationAssessment
+    | where module == "self" and tier == "high"
+    | project subject_id, self_tier = tier, self_score = overall_score, self_timestamp = timestamp;
+let restricted_access_drift =
+    AccessEvents
+    | summarize restricted_touches = countif(resource_sensitivity >= 2) by user_id, peer_group
+    | join kind=inner (
+        AccessEvents
+        | summarize restricted_touches = countif(resource_sensitivity >= 2) by user_id, peer_group
+        | summarize med = percentile(restricted_touches, 50) by peer_group
+    ) on peer_group
+    | where restricted_touches >= 3 and restricted_touches > med * 3
+    | project user_id, peer_group, restricted_touches, med;
+high_self_assessment
+| join kind=inner restricted_access_drift on $left.subject_id == $right.user_id
+| project subject_id, self_tier, self_score, self_timestamp, peer_group, restricted_touches, med
+| sort by restricted_touches desc

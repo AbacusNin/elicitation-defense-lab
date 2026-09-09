@@ -1,0 +1,37 @@
+``` DEPLOYABLE TEMPLATE. Splunk, JSON-sourced index. Not run in CI.
+    Confirm the index, sourcetype, and field extraction against your
+    deployment before use.
+
+    Assumes emitted events (elicitation_defense_lab schema.py, or the
+    equivalent JSON the static page's event view produces) are shipped to
+    Splunk via HEC into index=elicitation_assessment,
+    sourcetype=elicitation:assessment:json. There is no elicitation-defense-lab
+    backend that does this shipping today; an org adopting this tool would
+    need to stand up that pipeline first. See docs/limitations.md.
+
+    spath pulls the fields out explicitly rather than assuming
+    INDEXED_EXTRACTIONS=json is set in props.conf for the sourcetype; drop
+    the spath calls if your deployment already extracts fields at index
+    time.
+
+    Same three views as detections/spl/awareness_and_reporting.spl, against
+    the real ingested schema instead of the reference index name. ```
+
+``` View 1: subjects whose self-assessment landed in the high tier. ```
+index=elicitation_assessment sourcetype="elicitation:assessment:json"
+| spath
+| where module="self" AND tier="high"
+| table _time subject_id tier overall_score class_scores
+
+``` View 2: interaction events where the subject said they would report the contact. ```
+index=elicitation_assessment sourcetype="elicitation:assessment:json"
+| spath
+| where module="interaction" AND reporting_flag="true"
+| table _time subject_id tier overall_score class_scores
+
+``` View 3: per-subject trend of overall_score across all modules, oldest first. ```
+index=elicitation_assessment sourcetype="elicitation:assessment:json"
+| spath
+| where isnotnull(subject_id)
+| table subject_id module _time overall_score
+| sort 0 subject_id, _time
