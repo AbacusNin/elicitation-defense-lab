@@ -512,6 +512,76 @@
           "recognition": "rec_requests_for_information",
           "countermeasure": "cm_verify_before_responding_ident",
           "response": "resp_general_security"
+        },
+        "know_a3_false_statement": {
+          "recognition": "rec_false_statement",
+          "countermeasure": "cm_resist_correct",
+          "response": "resp_general_security"
+        },
+        "know_a5_one_upper": {
+          "recognition": "rec_one_upper",
+          "countermeasure": "cm_no_reciprocate",
+          "response": "resp_general_security"
+        },
+        "know_a10_mutual_interest": {
+          "recognition": "rec_mutual_interest",
+          "countermeasure": "cm_question_shared_interest",
+          "response": "resp_general_security"
+        },
+        "know_a11_mirroring": {
+          "recognition": "rec_mirroring",
+          "countermeasure": "cm_note_synchrony",
+          "response": "resp_general_security"
+        },
+        "know_a25_offering_assistance": {
+          "recognition": "rec_offering_assistance",
+          "countermeasure": "cm_recognize_obligation_chain",
+          "response": "resp_general_security"
+        },
+        "know_a15_macro_to_micro": {
+          "recognition": "rec_macro_to_micro",
+          "countermeasure": "cm_notice_funnel_redirect",
+          "response": "resp_general_security"
+        },
+        "know_a16_oblique_reference": {
+          "recognition": "rec_oblique_reference",
+          "countermeasure": "cm_no_comparative_analysis",
+          "response": "resp_general_security"
+        },
+        "know_a17_quote_reported_facts": {
+          "recognition": "rec_quote_reported_facts",
+          "countermeasure": "cm_no_gap_past_public",
+          "response": "resp_general_security"
+        },
+        "know_a26_hypothetical": {
+          "recognition": "rec_hypothetical",
+          "countermeasure": "cm_no_engage_hypothetical",
+          "response": "resp_general_security"
+        },
+        "know_a20_questionnaires_surveys": {
+          "recognition": "rec_questionnaires_surveys",
+          "countermeasure": "cm_answer_public_refer_security",
+          "response": "resp_general_security"
+        },
+        "know_a22_target_associates": {
+          "recognition": "rec_target_associates",
+          "countermeasure": "cm_protect_third_party_info",
+          "response": "resp_general_security"
+        },
+        "know_a23_urge_to_complain": {
+          "recognition": "rec_urge_to_complain",
+          "countermeasure": "cm_no_schedule_staffing_detail",
+          "response": "resp_general_security"
+        },
+        "know_a24_paper_review": {
+          "recognition": "rec_paper_review",
+          "countermeasure": "cm_consult_security_authorized_only",
+          "response": "resp_general_security"
+        },
+        "know_c3_spear_phishing": {
+          "recognition": "rec_spear_phishing",
+          "countermeasure": "cm_verify_out_of_band",
+          "response": "resp_general_security"
         }
       },
       "context": "general"
@@ -520,10 +590,10 @@
       "overall_score": 1.0,
       "tier": "high",
       "class_scores": {
-        "ego": 0.6,
-        "reciprocity": 0.5454545454545454,
-        "social_pressure": 0.5,
-        "cognitive_cue": 0.4
+        "ego": 1.0,
+        "reciprocity": 1.0,
+        "social_pressure": 1.0,
+        "cognitive_cue": 0.8666666666666667
       },
       "dimension_scores": {
         "recognition": 1.0,
@@ -614,6 +684,76 @@
         "know_d1_requests_for_information": {
           "recognition": "rec_requests_for_information",
           "countermeasure": "cm_verify_before_responding_ident",
+          "response": "resp_dod_ci"
+        },
+        "know_a3_false_statement": {
+          "recognition": "rec_false_statement",
+          "countermeasure": "cm_resist_correct",
+          "response": "resp_dod_ci"
+        },
+        "know_a5_one_upper": {
+          "recognition": "rec_one_upper",
+          "countermeasure": "cm_no_reciprocate",
+          "response": "resp_dod_ci"
+        },
+        "know_a10_mutual_interest": {
+          "recognition": "rec_mutual_interest",
+          "countermeasure": "cm_question_shared_interest",
+          "response": "resp_dod_ci"
+        },
+        "know_a11_mirroring": {
+          "recognition": "rec_mirroring",
+          "countermeasure": "cm_note_synchrony",
+          "response": "resp_dod_ci"
+        },
+        "know_a25_offering_assistance": {
+          "recognition": "rec_offering_assistance",
+          "countermeasure": "cm_recognize_obligation_chain",
+          "response": "resp_dod_ci"
+        },
+        "know_a15_macro_to_micro": {
+          "recognition": "rec_macro_to_micro",
+          "countermeasure": "cm_notice_funnel_redirect",
+          "response": "resp_dod_ci"
+        },
+        "know_a16_oblique_reference": {
+          "recognition": "rec_oblique_reference",
+          "countermeasure": "cm_no_comparative_analysis",
+          "response": "resp_dod_ci"
+        },
+        "know_a17_quote_reported_facts": {
+          "recognition": "rec_quote_reported_facts",
+          "countermeasure": "cm_no_gap_past_public",
+          "response": "resp_dod_ci"
+        },
+        "know_a26_hypothetical": {
+          "recognition": "rec_hypothetical",
+          "countermeasure": "cm_no_engage_hypothetical",
+          "response": "resp_dod_ci"
+        },
+        "know_a20_questionnaires_surveys": {
+          "recognition": "rec_questionnaires_surveys",
+          "countermeasure": "cm_answer_public_refer_security",
+          "response": "resp_dod_ci"
+        },
+        "know_a22_target_associates": {
+          "recognition": "rec_target_associates",
+          "countermeasure": "cm_protect_third_party_info",
+          "response": "resp_dod_ci"
+        },
+        "know_a23_urge_to_complain": {
+          "recognition": "rec_urge_to_complain",
+          "countermeasure": "cm_no_schedule_staffing_detail",
+          "response": "resp_dod_ci"
+        },
+        "know_a24_paper_review": {
+          "recognition": "rec_paper_review",
+          "countermeasure": "cm_consult_security_authorized_only",
+          "response": "resp_dod_ci"
+        },
+        "know_c3_spear_phishing": {
+          "recognition": "rec_spear_phishing",
+          "countermeasure": "cm_verify_out_of_band",
           "response": "resp_dod_ci"
         }
       },
@@ -623,10 +763,10 @@
       "overall_score": 1.0,
       "tier": "high",
       "class_scores": {
-        "ego": 0.6,
-        "reciprocity": 0.5454545454545454,
-        "social_pressure": 0.5,
-        "cognitive_cue": 0.4
+        "ego": 1.0,
+        "reciprocity": 1.0,
+        "social_pressure": 1.0,
+        "cognitive_cue": 0.8666666666666667
       },
       "dimension_scores": {
         "recognition": 1.0,
@@ -717,6 +857,76 @@
         "know_d1_requests_for_information": {
           "recognition": "rec_requests_for_information",
           "countermeasure": "cm_verify_before_responding_ident",
+          "response": "resp_federal_security"
+        },
+        "know_a3_false_statement": {
+          "recognition": "rec_false_statement",
+          "countermeasure": "cm_resist_correct",
+          "response": "resp_federal_security"
+        },
+        "know_a5_one_upper": {
+          "recognition": "rec_one_upper",
+          "countermeasure": "cm_no_reciprocate",
+          "response": "resp_federal_security"
+        },
+        "know_a10_mutual_interest": {
+          "recognition": "rec_mutual_interest",
+          "countermeasure": "cm_question_shared_interest",
+          "response": "resp_federal_security"
+        },
+        "know_a11_mirroring": {
+          "recognition": "rec_mirroring",
+          "countermeasure": "cm_note_synchrony",
+          "response": "resp_federal_security"
+        },
+        "know_a25_offering_assistance": {
+          "recognition": "rec_offering_assistance",
+          "countermeasure": "cm_recognize_obligation_chain",
+          "response": "resp_federal_security"
+        },
+        "know_a15_macro_to_micro": {
+          "recognition": "rec_macro_to_micro",
+          "countermeasure": "cm_notice_funnel_redirect",
+          "response": "resp_federal_security"
+        },
+        "know_a16_oblique_reference": {
+          "recognition": "rec_oblique_reference",
+          "countermeasure": "cm_no_comparative_analysis",
+          "response": "resp_federal_security"
+        },
+        "know_a17_quote_reported_facts": {
+          "recognition": "rec_quote_reported_facts",
+          "countermeasure": "cm_no_gap_past_public",
+          "response": "resp_federal_security"
+        },
+        "know_a26_hypothetical": {
+          "recognition": "rec_hypothetical",
+          "countermeasure": "cm_no_engage_hypothetical",
+          "response": "resp_federal_security"
+        },
+        "know_a20_questionnaires_surveys": {
+          "recognition": "rec_questionnaires_surveys",
+          "countermeasure": "cm_answer_public_refer_security",
+          "response": "resp_federal_security"
+        },
+        "know_a22_target_associates": {
+          "recognition": "rec_target_associates",
+          "countermeasure": "cm_protect_third_party_info",
+          "response": "resp_federal_security"
+        },
+        "know_a23_urge_to_complain": {
+          "recognition": "rec_urge_to_complain",
+          "countermeasure": "cm_no_schedule_staffing_detail",
+          "response": "resp_federal_security"
+        },
+        "know_a24_paper_review": {
+          "recognition": "rec_paper_review",
+          "countermeasure": "cm_consult_security_authorized_only",
+          "response": "resp_federal_security"
+        },
+        "know_c3_spear_phishing": {
+          "recognition": "rec_spear_phishing",
+          "countermeasure": "cm_verify_out_of_band",
           "response": "resp_federal_security"
         }
       },
@@ -726,10 +936,10 @@
       "overall_score": 1.0,
       "tier": "high",
       "class_scores": {
-        "ego": 0.6,
-        "reciprocity": 0.5454545454545454,
-        "social_pressure": 0.5,
-        "cognitive_cue": 0.4
+        "ego": 1.0,
+        "reciprocity": 1.0,
+        "social_pressure": 1.0,
+        "cognitive_cue": 0.8666666666666667
       },
       "dimension_scores": {
         "recognition": 1.0,
@@ -821,6 +1031,76 @@
           "recognition": "rec_requests_for_information",
           "countermeasure": "cm_verify_before_responding_ident",
           "response": "resp_fso"
+        },
+        "know_a3_false_statement": {
+          "recognition": "rec_false_statement",
+          "countermeasure": "cm_resist_correct",
+          "response": "resp_fso"
+        },
+        "know_a5_one_upper": {
+          "recognition": "rec_one_upper",
+          "countermeasure": "cm_no_reciprocate",
+          "response": "resp_fso"
+        },
+        "know_a10_mutual_interest": {
+          "recognition": "rec_mutual_interest",
+          "countermeasure": "cm_question_shared_interest",
+          "response": "resp_fso"
+        },
+        "know_a11_mirroring": {
+          "recognition": "rec_mirroring",
+          "countermeasure": "cm_note_synchrony",
+          "response": "resp_fso"
+        },
+        "know_a25_offering_assistance": {
+          "recognition": "rec_offering_assistance",
+          "countermeasure": "cm_recognize_obligation_chain",
+          "response": "resp_fso"
+        },
+        "know_a15_macro_to_micro": {
+          "recognition": "rec_macro_to_micro",
+          "countermeasure": "cm_notice_funnel_redirect",
+          "response": "resp_fso"
+        },
+        "know_a16_oblique_reference": {
+          "recognition": "rec_oblique_reference",
+          "countermeasure": "cm_no_comparative_analysis",
+          "response": "resp_fso"
+        },
+        "know_a17_quote_reported_facts": {
+          "recognition": "rec_quote_reported_facts",
+          "countermeasure": "cm_no_gap_past_public",
+          "response": "resp_fso"
+        },
+        "know_a26_hypothetical": {
+          "recognition": "rec_hypothetical",
+          "countermeasure": "cm_no_engage_hypothetical",
+          "response": "resp_fso"
+        },
+        "know_a20_questionnaires_surveys": {
+          "recognition": "rec_questionnaires_surveys",
+          "countermeasure": "cm_answer_public_refer_security",
+          "response": "resp_fso"
+        },
+        "know_a22_target_associates": {
+          "recognition": "rec_target_associates",
+          "countermeasure": "cm_protect_third_party_info",
+          "response": "resp_fso"
+        },
+        "know_a23_urge_to_complain": {
+          "recognition": "rec_urge_to_complain",
+          "countermeasure": "cm_no_schedule_staffing_detail",
+          "response": "resp_fso"
+        },
+        "know_a24_paper_review": {
+          "recognition": "rec_paper_review",
+          "countermeasure": "cm_consult_security_authorized_only",
+          "response": "resp_fso"
+        },
+        "know_c3_spear_phishing": {
+          "recognition": "rec_spear_phishing",
+          "countermeasure": "cm_verify_out_of_band",
+          "response": "resp_fso"
         }
       },
       "context": "cleared_contractor"
@@ -829,10 +1109,10 @@
       "overall_score": 1.0,
       "tier": "high",
       "class_scores": {
-        "ego": 0.6,
-        "reciprocity": 0.5454545454545454,
-        "social_pressure": 0.5,
-        "cognitive_cue": 0.4
+        "ego": 1.0,
+        "reciprocity": 1.0,
+        "social_pressure": 1.0,
+        "cognitive_cue": 0.8666666666666667
       },
       "dimension_scores": {
         "recognition": 1.0,
@@ -924,6 +1204,76 @@
           "recognition": "rec_spear_phishing",
           "countermeasure": "cm_reply_asking_more_context",
           "response": "resp_ignore_it"
+        },
+        "know_a3_false_statement": {
+          "recognition": "rec_assumed_knowledge",
+          "countermeasure": "cm_change_subject_bluntly",
+          "response": "resp_ignore_it"
+        },
+        "know_a5_one_upper": {
+          "recognition": "rec_flattery",
+          "countermeasure": "cm_ignore_them",
+          "response": "resp_ignore_it"
+        },
+        "know_a10_mutual_interest": {
+          "recognition": "rec_good_listener",
+          "countermeasure": "cm_test_the_claim",
+          "response": "resp_ignore_it"
+        },
+        "know_a11_mirroring": {
+          "recognition": "rec_good_listener",
+          "countermeasure": "cm_call_it_out",
+          "response": "resp_ignore_it"
+        },
+        "know_a25_offering_assistance": {
+          "recognition": "rec_quid_pro_quo",
+          "countermeasure": "cm_give_minimal_context",
+          "response": "resp_ignore_it"
+        },
+        "know_a15_macro_to_micro": {
+          "recognition": "rec_oblique_reference",
+          "countermeasure": "cm_answer_only_the_specific",
+          "response": "resp_ignore_it"
+        },
+        "know_a16_oblique_reference": {
+          "recognition": "rec_macro_to_micro",
+          "countermeasure": "cm_note_differences_only",
+          "response": "resp_ignore_it"
+        },
+        "know_a17_quote_reported_facts": {
+          "recognition": "rec_leading_question",
+          "countermeasure": "cm_repeat_press_release",
+          "response": "resp_ignore_it"
+        },
+        "know_a26_hypothetical": {
+          "recognition": "rec_leading_question",
+          "countermeasure": "cm_answer_in_general_terms",
+          "response": "resp_ignore_it"
+        },
+        "know_a20_questionnaires_surveys": {
+          "recognition": "rec_direct_question",
+          "countermeasure": "cm_answer_vaguely_throughout",
+          "response": "resp_ignore_it"
+        },
+        "know_a22_target_associates": {
+          "recognition": "rec_setting_manipulation",
+          "countermeasure": "cm_warn_spouse_after_the_fact",
+          "response": "resp_ignore_it"
+        },
+        "know_a23_urge_to_complain": {
+          "recognition": "rec_good_listener",
+          "countermeasure": "cm_vent_about_feelings_only",
+          "response": "resp_ignore_it"
+        },
+        "know_a24_paper_review": {
+          "recognition": "rec_requests_for_information",
+          "countermeasure": "cm_review_using_public_only",
+          "response": "resp_ignore_it"
+        },
+        "know_c3_spear_phishing": {
+          "recognition": "rec_requests_for_information",
+          "countermeasure": "cm_forward_to_it_only",
+          "response": "resp_ignore_it"
         }
       },
       "context": "private_industry"
@@ -932,10 +1282,10 @@
       "overall_score": 0.3333333333333333,
       "tier": "low",
       "class_scores": {
-        "ego": 0.2,
-        "reciprocity": 0.18181818181818182,
-        "social_pressure": 0.16666666666666666,
-        "cognitive_cue": 0.13333333333333333
+        "ego": 0.3333333333333333,
+        "reciprocity": 0.3333333333333333,
+        "social_pressure": 0.3333333333333333,
+        "cognitive_cue": 0.28888888888888886
       },
       "dimension_scores": {
         "recognition": 0.5,
@@ -1027,6 +1377,76 @@
           "recognition": "rec_requests_for_information",
           "countermeasure": "cm_forward_to_a_coworker",
           "response": "resp_general_security"
+        },
+        "know_a3_false_statement": {
+          "recognition": "rec_false_statement",
+          "countermeasure": "cm_agree_wrong_claim",
+          "response": "resp_general_security"
+        },
+        "know_a5_one_upper": {
+          "recognition": "rec_one_upper",
+          "countermeasure": "cm_downplay_own_team",
+          "response": "resp_general_security"
+        },
+        "know_a10_mutual_interest": {
+          "recognition": "rec_mutual_interest",
+          "countermeasure": "cm_avoid_them_entirely",
+          "response": "resp_general_security"
+        },
+        "know_a11_mirroring": {
+          "recognition": "rec_mirroring",
+          "countermeasure": "cm_relax_into_rapport",
+          "response": "resp_general_security"
+        },
+        "know_a25_offering_assistance": {
+          "recognition": "rec_offering_assistance",
+          "countermeasure": "cm_decline_the_help",
+          "response": "resp_general_security"
+        },
+        "know_a15_macro_to_micro": {
+          "recognition": "rec_macro_to_micro",
+          "countermeasure": "cm_stop_talking_entirely",
+          "response": "resp_general_security"
+        },
+        "know_a16_oblique_reference": {
+          "recognition": "rec_oblique_reference",
+          "countermeasure": "cm_change_subject_bluntly",
+          "response": "resp_general_security"
+        },
+        "know_a17_quote_reported_facts": {
+          "recognition": "rec_quote_reported_facts",
+          "countermeasure": "cm_deny_flatly",
+          "response": "resp_general_security"
+        },
+        "know_a26_hypothetical": {
+          "recognition": "rec_hypothetical",
+          "countermeasure": "cm_deflect_with_joke",
+          "response": "resp_general_security"
+        },
+        "know_a20_questionnaires_surveys": {
+          "recognition": "rec_questionnaires_surveys",
+          "countermeasure": "cm_skip_the_survey_entirely",
+          "response": "resp_general_security"
+        },
+        "know_a22_target_associates": {
+          "recognition": "rec_target_associates",
+          "countermeasure": "cm_confront_at_the_event",
+          "response": "resp_general_security"
+        },
+        "know_a23_urge_to_complain": {
+          "recognition": "rec_urge_to_complain",
+          "countermeasure": "cm_shut_down_the_conversation",
+          "response": "resp_general_security"
+        },
+        "know_a24_paper_review": {
+          "recognition": "rec_paper_review",
+          "countermeasure": "cm_decline_without_reporting",
+          "response": "resp_general_security"
+        },
+        "know_c3_spear_phishing": {
+          "recognition": "rec_spear_phishing",
+          "countermeasure": "cm_reply_asking_who_they_are",
+          "response": "resp_general_security"
         }
       },
       "context": "general"
@@ -1035,10 +1455,10 @@
       "overall_score": 0.6666666666666666,
       "tier": "elevated",
       "class_scores": {
-        "ego": 0.4,
-        "reciprocity": 0.36363636363636365,
-        "social_pressure": 0.3333333333333333,
-        "cognitive_cue": 0.26666666666666666
+        "ego": 0.6666666666666666,
+        "reciprocity": 0.6666666666666666,
+        "social_pressure": 0.6666666666666666,
+        "cognitive_cue": 0.5777777777777777
       },
       "dimension_scores": {
         "recognition": 1.0,
@@ -1130,6 +1550,76 @@
           "recognition": "rec_requests_for_information",
           "countermeasure": "cm_verify_before_responding_ident",
           "response": "resp_general_security"
+        },
+        "know_a3_false_statement": {
+          "recognition": "rec_false_statement",
+          "countermeasure": "cm_resist_correct",
+          "response": "resp_general_security"
+        },
+        "know_a5_one_upper": {
+          "recognition": "rec_one_upper",
+          "countermeasure": "cm_no_reciprocate",
+          "response": "resp_general_security"
+        },
+        "know_a10_mutual_interest": {
+          "recognition": "rec_mutual_interest",
+          "countermeasure": "cm_question_shared_interest",
+          "response": "resp_general_security"
+        },
+        "know_a11_mirroring": {
+          "recognition": "rec_mirroring",
+          "countermeasure": "cm_note_synchrony",
+          "response": "resp_general_security"
+        },
+        "know_a25_offering_assistance": {
+          "recognition": "rec_offering_assistance",
+          "countermeasure": "cm_recognize_obligation_chain",
+          "response": "resp_general_security"
+        },
+        "know_a15_macro_to_micro": {
+          "recognition": "rec_macro_to_micro",
+          "countermeasure": "cm_notice_funnel_redirect",
+          "response": "resp_general_security"
+        },
+        "know_a16_oblique_reference": {
+          "recognition": "rec_oblique_reference",
+          "countermeasure": "cm_no_comparative_analysis",
+          "response": "resp_general_security"
+        },
+        "know_a17_quote_reported_facts": {
+          "recognition": "rec_quote_reported_facts",
+          "countermeasure": "cm_no_gap_past_public",
+          "response": "resp_general_security"
+        },
+        "know_a26_hypothetical": {
+          "recognition": "rec_hypothetical",
+          "countermeasure": "cm_no_engage_hypothetical",
+          "response": "resp_general_security"
+        },
+        "know_a20_questionnaires_surveys": {
+          "recognition": "rec_questionnaires_surveys",
+          "countermeasure": "cm_answer_public_refer_security",
+          "response": "resp_general_security"
+        },
+        "know_a22_target_associates": {
+          "recognition": "rec_target_associates",
+          "countermeasure": "cm_protect_third_party_info",
+          "response": "resp_general_security"
+        },
+        "know_a23_urge_to_complain": {
+          "recognition": "rec_urge_to_complain",
+          "countermeasure": "cm_no_schedule_staffing_detail",
+          "response": "resp_general_security"
+        },
+        "know_a24_paper_review": {
+          "recognition": "rec_paper_review",
+          "countermeasure": "cm_consult_security_authorized_only",
+          "response": "resp_general_security"
+        },
+        "know_c3_spear_phishing": {
+          "recognition": "rec_spear_phishing",
+          "countermeasure": "cm_verify_out_of_band",
+          "response": "resp_general_security"
         }
       },
       "context": "student"
@@ -1138,10 +1628,10 @@
       "overall_score": 1.0,
       "tier": "high",
       "class_scores": {
-        "ego": 0.6,
-        "reciprocity": 0.5454545454545454,
-        "social_pressure": 0.5,
-        "cognitive_cue": 0.4
+        "ego": 1.0,
+        "reciprocity": 1.0,
+        "social_pressure": 1.0,
+        "cognitive_cue": 0.8666666666666667
       },
       "dimension_scores": {
         "recognition": 1.0,

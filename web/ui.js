@@ -1,10 +1,11 @@
 // Shared UI helpers for the three module pages: sampling banks down to a
-// shown subset, and rendering a scored result. self.js is the first page
-// wired to these; interaction.js and knowledge.js are expected to move onto
-// shuffle/sampleBank/renderScorecard next, so the two below are kept generic
-// rather than self-specific.
+// shown subset, and rendering a scored result. All three pages (self.js,
+// interaction.js, knowledge.js) draw their shown items with sampleBank and
+// render through showResult; knowledge.js supplies its own competency
+// scorecard (renderCompetencyScorecard) in place of the default one, since
+// its three dimensions score correctness, not susceptibility.
 
-import { BASE_CLASSES, buildEvent, detectionQueries, tierFor } from "./app.js";
+import { BASE_CLASSES, DIMENSIONS, buildEvent, detectionQueries, tierFor } from "./app.js";
 
 function pct(x) {
   return `${(x * 100).toFixed(1)}%`;
@@ -110,6 +111,113 @@ function riskFor(score, config) {
   return tierFor(score, config);
 }
 
+// Knowledge-check dimension labels and readings. These are a distinct set from
+// TIER_READING/CLASS_INFO above: on self and interaction a high class score
+// means the technique pulls disclosure out of you (bad), but on the knowledge
+// check a high dimension score means you answered correctly (good). Reusing
+// the susceptibility wording here would tell a weak scorer they look safe, so
+// the knowledge scorecard gets its own reading text instead.
+const DIMENSION_LABELS = {
+  recognition: "Recognition",
+  countermeasure: "Countermeasure",
+  response: "Response",
+};
+
+const OVERALL_COMPETENCY_READING = {
+  low: "Weak overall competency: recognition, countermeasure, or reporting-response answers are missing the mark across these scenarios. Treat this as a training priority.",
+  elevated:
+    "Moderate overall competency: some of these scenarios land correctly, but not consistently across recognition, countermeasure, and response.",
+  high: "Strong overall competency: you are reliably naming the technique, picking the taught countermeasure, and reporting through the right channel.",
+};
+
+// One line per dimension per tier: what a low, elevated, or high score in
+// that dimension means in practice. The low line is the headline case the
+// scorecard is built to surface (weak recognition = missing the pattern,
+// weak countermeasure = no practiced response, weak response = wrong or no
+// report), per the module's design brief.
+const DIMENSION_INFO = {
+  recognition: {
+    low: "You are not reliably spotting these techniques as they happen; the pattern is going unnoticed in the moment.",
+    elevated:
+      "You catch some of these techniques but miss others, especially close look-alikes from the same class.",
+    high: "You are reliably naming the technique in play, including telling close look-alikes apart.",
+  },
+  countermeasure: {
+    low: "Even when you notice a technique, you are not reaching for the taught response; the technique would likely still get the detail it's after.",
+    elevated:
+      "You sometimes reach for a softer, instinctive reaction instead of the practiced response, such as going quiet or leaving rather than declining while staying in the conversation.",
+    high: "You are reliably applying the taught countermeasure, not just an instinctive workaround.",
+  },
+  response: {
+    low: "You would say the wrong thing or not report at all; the reporting channel for your selected context is not landing.",
+    elevated: "You partially get the reporting response right, but not consistently for this context.",
+    high: "You are reliably reporting through the correct channel for your selected context.",
+  },
+};
+
+// Color-code by performance, not by the risk-tier direction the CSS classes
+// were named for: a high knowledge score is the good outcome, so it borrows
+// the green risk-low styling, and a low score borrows the flagged risk-high
+// styling. The label text still prints the literal low/elevated/high tier.
+function competencyStyleClass(tier) {
+  if (tier === "high") return "risk-low";
+  if (tier === "low") return "risk-high";
+  return "risk-elevated";
+}
+
+// Render the knowledge check's competency scorecard: an overall competency
+// tier, then the three scored dimensions (recognition, countermeasure,
+// response) each with their own low/elevated/high indicator and a line on
+// what that means. The four-class technique profile is included as a
+// secondary, unscored breakdown (correct-answer rate per class) rather than
+// through renderScorecard, since renderScorecard's class readings are
+// written for susceptibility, not correctness, and would read backwards
+// here. Returns a detached DOM node; the caller inserts it into the page.
+export function renderCompetencyScorecard(result, config) {
+  const wrap = document.createElement("div");
+  wrap.className = "scorecard";
+
+  const overall = document.createElement("p");
+  const tierStrong = document.createElement("strong");
+  tierStrong.textContent = `${result.tier} (${pct(result.overall_score)})`;
+  overall.append("Overall competency: ", tierStrong, ". ", OVERALL_COMPETENCY_READING[result.tier] ?? "");
+  wrap.appendChild(overall);
+
+  const list = document.createElement("ul");
+  list.className = "scorecard-classes";
+  for (const dim of DIMENSIONS) {
+    const score = result.dimension_scores[dim];
+    const tier = riskFor(score, config);
+    const li = document.createElement("li");
+    li.className = competencyStyleClass(tier);
+    const head = document.createElement("strong");
+    head.textContent = `${DIMENSION_LABELS[dim]}: ${tier} (${pct(score)})`;
+    li.appendChild(head);
+    const line = document.createElement("p");
+    line.textContent = DIMENSION_INFO[dim][tier];
+    li.appendChild(line);
+    list.appendChild(li);
+  }
+  wrap.appendChild(list);
+
+  const secondary = document.createElement("details");
+  secondary.className = "class-profile";
+  const summary = document.createElement("summary");
+  summary.textContent = "Technique-class breakdown (secondary)";
+  secondary.appendChild(summary);
+  const classList = document.createElement("ul");
+  classList.className = "scorecard-classes";
+  for (const cls of BASE_CLASSES) {
+    const li = document.createElement("li");
+    li.textContent = `${CLASS_LABELS[cls]}: ${pct(result.class_scores[cls])} correct`;
+    classList.appendChild(li);
+  }
+  secondary.appendChild(classList);
+  wrap.appendChild(secondary);
+
+  return wrap;
+}
+
 // Who to report to, by reporting context. Mirrors the response choices in
 // taxonomy/banks/knowledge.json (report_paths -> resp_* text) so the two
 // modules describe the same channels the same way.
@@ -194,14 +302,19 @@ export function renderScorecard(result, config, context, techniques) {
 // without it this falls back to a plain score list, so pages that have not
 // moved onto renderScorecard yet still work unchanged. `techniques` is
 // optional and only used to name matched_techniques ids in the scorecard.
-export function showResult(module, result, context, config, techniques) {
+// `customSummary`, if given, is a prebuilt DOM node (e.g. from
+// renderCompetencyScorecard) used in place of the default scorecard, for
+// modules whose result shape needs its own summary layout.
+export function showResult(module, result, context, config, techniques, customSummary) {
   const el = (id) => document.getElementById(id);
   el("result").hidden = false;
 
   const summary = el("result-summary");
   summary.textContent = "";
 
-  if (config) {
+  if (customSummary) {
+    summary.appendChild(customSummary);
+  } else if (config) {
     summary.appendChild(renderScorecard(result, config, context, techniques));
   } else {
     const head = document.createElement("p");
