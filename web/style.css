@@ -71,3 +71,4 @@ pre { background: #f2f2f0; border: 1px solid var(--line); border-radius: 4px; pa
 .scorecard-classes li.risk-elevated { border-left-color: var(--risk-elevated); }
 .scorecard-classes li.risk-high { border-left-color: var(--flag); }
 .scorecard-classes p { margin: .3rem 0 0; color: var(--muted); }
+.matched-techniques { margin-top: .8rem; }

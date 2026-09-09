@@ -10,9 +10,26 @@
 <main>
   <p><a class="back-link" href="index.html">&larr; Elicitation Defense Lab</a></p>
   <h1>Interaction indicators</h1>
-  <p class="note">Check every indicator you noticed in the conversation you are reviewing.</p>
+  <p class="note">Walk through a conversation you are reviewing. For each item, answer whether it happened, then score the run. <span id="sample-note"></span></p>
+
+  <div class="privacy">
+    Everything here runs in your browser. The drawn items and your answers are
+    scored locally and never leave the page. In-progress answers are kept only
+    in this browser's local storage.
+  </div>
 
   <p id="load-error" hidden></p>
+
+  <div class="context-row">
+    <label for="context"><strong>Reporting context</strong> (sets who the reporting flag names):</label><br>
+    <select id="context">
+      <option value="general">General</option>
+      <option value="dod">DoD</option>
+      <option value="federal">Federal civilian</option>
+      <option value="cleared_contractor">Cleared contractor</option>
+      <option value="private_industry">Private industry</option>
+    </select>
+  </div>
 
   <div id="interaction-items"></div>
   <button id="interaction-run">Score interaction</button>

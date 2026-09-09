@@ -110,12 +110,28 @@ function riskFor(score, config) {
   return tierFor(score, config);
 }
 
+// Who to report to, by reporting context. Mirrors the response choices in
+// taxonomy/banks/knowledge.json (report_paths -> resp_* text) so the two
+// modules describe the same channels the same way.
+const REPORT_TO = {
+  general: "Report it through your organization's designated security or CI reporting channel.",
+  dod: "Report it to your supporting CI office (iSALUTE) within 24 hours, per AR 381-12 TARP.",
+  federal: "Report it to your agency's security officer or Inspector General hotline.",
+  cleared_contractor: "Report the contact to your Facility Security Officer, per NISPOM (32 CFR Part 117).",
+  private_industry: "Report it to your company's security, compliance, or corporate security team.",
+};
+
 // Render a scored result as a scorecard: the overall tier with a
 // plain-language reading, and each of the four classes with its own risk
 // indicator (low / elevated / high) plus one line on what that means and
 // which countermeasures to drill. Returns a detached DOM node; the caller
-// inserts it wherever the page wants it.
-export function renderScorecard(result, config) {
+// inserts it wherever the page wants it. `context` is optional and only
+// changes the reporting-flag line: when it names a known reporting context
+// the flag names who to report to, otherwise it falls back to the generic
+// wording. `techniques` is optional and only changes how matched_techniques
+// (module results that carry it, e.g. interaction) render: with it, ids are
+// shown as "A1 Flattery"; without it, as bare ids.
+export function renderScorecard(result, config, context, techniques) {
   const wrap = document.createElement("div");
   wrap.className = "scorecard";
 
@@ -124,6 +140,19 @@ export function renderScorecard(result, config) {
   tierStrong.textContent = `${result.tier} (${pct(result.overall_score)})`;
   overall.append("Overall: ", tierStrong, ". ", TIER_READING[result.tier] ?? "");
   wrap.appendChild(overall);
+
+  // The reporting flag is the headline risk indicator: it goes right under
+  // the overall tier, ahead of the per-class breakdown, and names who to
+  // report to when the context is known.
+  if (result.reporting_flag) {
+    const flag = document.createElement("p");
+    flag.className = "flag";
+    const reportTo = REPORT_TO[context];
+    flag.textContent = reportTo
+      ? `Reporting threshold met: this interaction meets the bar to report. ${reportTo}`
+      : "Reporting threshold met: this interaction meets the bar to report.";
+    wrap.appendChild(flag);
+  }
 
   const list = document.createElement("ul");
   list.className = "scorecard-classes";
@@ -142,11 +171,19 @@ export function renderScorecard(result, config) {
   }
   wrap.appendChild(list);
 
-  if (result.reporting_flag) {
-    const flag = document.createElement("p");
-    flag.className = "flag";
-    flag.textContent = "Reporting threshold met: this run would raise a reporting flag.";
-    wrap.appendChild(flag);
+  if (result.matched_techniques && result.matched_techniques.length) {
+    const byId = new Map((techniques ?? []).map((t) => [t.id, t]));
+    const matchedWrap = document.createElement("div");
+    matchedWrap.className = "matched-techniques";
+    const heading = document.createElement("strong");
+    heading.textContent = "Matched techniques: ";
+    matchedWrap.appendChild(heading);
+    const names = result.matched_techniques.map((id) => {
+      const t = byId.get(id);
+      return t ? `${id} ${t.name}` : id;
+    });
+    matchedWrap.append(names.join(", "));
+    wrap.appendChild(matchedWrap);
   }
 
   return wrap;
@@ -155,8 +192,9 @@ export function renderScorecard(result, config) {
 // Fill in the result/event-JSON/KQL/SPL panels every module page shares.
 // Pass config to get the scorecard rendering (per-class risk indicators);
 // without it this falls back to a plain score list, so pages that have not
-// moved onto renderScorecard yet still work unchanged.
-export function showResult(module, result, context, config) {
+// moved onto renderScorecard yet still work unchanged. `techniques` is
+// optional and only used to name matched_techniques ids in the scorecard.
+export function showResult(module, result, context, config, techniques) {
   const el = (id) => document.getElementById(id);
   el("result").hidden = false;
 
@@ -164,7 +202,7 @@ export function showResult(module, result, context, config) {
   summary.textContent = "";
 
   if (config) {
-    summary.appendChild(renderScorecard(result, config));
+    summary.appendChild(renderScorecard(result, config, context, techniques));
   } else {
     const head = document.createElement("p");
     const scoreStrong = document.createElement("strong");
