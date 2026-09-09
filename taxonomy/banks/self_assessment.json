@@ -1,0 +1,100 @@
+[
+  {
+    "id": "ego_flattery_pull",
+    "prompt": "When someone praises my expertise more than the situation calls for, I notice a pull to prove it by sharing more detail than I meant to.",
+    "technique_class": "ego",
+    "reverse": false,
+    "source": "cdse_elicitation_flattery_a1"
+  },
+  {
+    "id": "ego_correct_the_record",
+    "prompt": "If someone states something wrong about my work, I feel a strong urge to correct them with the accurate details.",
+    "technique_class": "ego",
+    "reverse": false,
+    "source": "cdse_elicitation_false_statement_a3"
+  },
+  {
+    "id": "ego_let_challenge_pass",
+    "prompt": "I can let a skeptical or dismissive comment about my work go unanswered without feeling the need to defend it in detail.",
+    "technique_class": "ego",
+    "reverse": true,
+    "source": "cdse_elicitation_provocation_a2"
+  },
+  {
+    "id": "recip_confide_for_confide",
+    "prompt": "When someone shares something that feels confidential with me first, I feel some obligation to offer something similarly candid in return.",
+    "technique_class": "reciprocity",
+    "reverse": false,
+    "source": "van_der_kleij_2023_reciprocity"
+  },
+  {
+    "id": "recip_owed_after_favor",
+    "prompt": "If a new acquaintance does me an unprompted favor, I feel I owe them something in return, including information about my work.",
+    "technique_class": "reciprocity",
+    "reverse": false,
+    "source": "cdse_elicitation_offering_assistance_a25"
+  },
+  {
+    "id": "recip_same_limits_with_good_listener",
+    "prompt": "Even when someone is unusually attentive and easy to talk to, I keep the same limits on what I share about my work as I would with anyone else.",
+    "technique_class": "reciprocity",
+    "reverse": true,
+    "source": "cdse_elicitation_good_listener_a9"
+  },
+  {
+    "id": "sp_uncomfortable_declining",
+    "prompt": "When someone asks me a direct, specific question about my work, I feel uncomfortable declining to answer even when I am not sure I should.",
+    "technique_class": "social_pressure",
+    "reverse": false,
+    "source": "cdse_elicitation_direct_question_a19"
+  },
+  {
+    "id": "sp_vent_to_outsiders",
+    "prompt": "In an informal setting, I sometimes vent about deadlines, staffing, or project setbacks to people outside my organization.",
+    "technique_class": "social_pressure",
+    "reverse": false,
+    "source": "cdse_elicitation_urge_to_complain_a23"
+  },
+  {
+    "id": "sp_same_discretion_offsite",
+    "prompt": "I hold the same discretion about work topics in a relaxed, off-site setting that I do in the office.",
+    "technique_class": "social_pressure",
+    "reverse": true,
+    "source": "cdse_elicitation_setting_manipulation_a27"
+  },
+  {
+    "id": "cc_fill_assumed_gaps",
+    "prompt": "If someone speaks as though they already know details about my work, I tend to confirm or fill in the gaps rather than question how they know.",
+    "technique_class": "cognitive_cue",
+    "reverse": false,
+    "source": "cdse_elicitation_assumed_knowledge_a12"
+  },
+  {
+    "id": "cc_correct_wrong_estimate",
+    "prompt": "When someone offers a rough estimate or range about my work that is off, I feel the urge to correct it with the more accurate figure.",
+    "technique_class": "cognitive_cue",
+    "reverse": false,
+    "source": "cdse_elicitation_bracketing_a13"
+  },
+  {
+    "id": "cc_hold_line_on_hypothetical",
+    "prompt": "I can discuss a hypothetical scenario related to my work without letting it lead me into specifics I would not otherwise share.",
+    "technique_class": "cognitive_cue",
+    "reverse": true,
+    "source": "cdse_elicitation_hypothetical_situation_a26"
+  },
+  {
+    "id": "exposure_public_footprint",
+    "prompt": "My public-facing profiles (professional networking sites, conference bios, social media) describe my current project or technical focus in enough detail that a stranger could tailor questions around it.",
+    "exposure": true,
+    "reverse": false,
+    "source": "enisa_threat_landscape_social_engineering"
+  },
+  {
+    "id": "exposure_unverified_contact",
+    "prompt": "In the past year, I have discussed work specifics with a new contact I could not independently verify, at a conference, online forum, or social event.",
+    "exposure": true,
+    "reverse": false,
+    "source": "cdse_foreign_collection_methods_2024"
+  }
+]
