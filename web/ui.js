@@ -170,15 +170,44 @@ function competencyStyleClass(tier) {
   return "risk-elevated";
 }
 
+// Per-class hit rate for the items actually shown and answered this round,
+// derived straight from result.feedback (each entry already carries the
+// per-dimension 0/0.5/1 score against the user's own choice). This is
+// deliberately not result.class_scores: that figure is normalized against
+// the full technique catalog (matching the Python scorer's ceiling), so a
+// 9-of-30 sample leaves most classes far short of their ceiling even on a
+// perfect run, and a class with nothing drawn this round reads as 0%
+// instead of untested. Returns null for a class with no items this round so
+// the caller can print "not tested" instead of a misleading zero.
+function classPerformance(feedback, techniques) {
+  const classById = new Map(techniques.map((t) => [t.id, t.technique_class]));
+  const sums = {};
+  const counts = {};
+  for (const entry of feedback) {
+    const cls = classById.get(entry.technique_id);
+    if (!BASE_CLASSES.includes(cls)) continue;
+    const itemScore = DIMENSIONS.reduce((acc, dim) => acc + entry[dim].score, 0) / DIMENSIONS.length;
+    sums[cls] = (sums[cls] ?? 0) + itemScore;
+    counts[cls] = (counts[cls] ?? 0) + 1;
+  }
+  const out = {};
+  for (const cls of BASE_CLASSES) {
+    out[cls] = counts[cls] ? { score: sums[cls] / counts[cls], count: counts[cls] } : null;
+  }
+  return out;
+}
+
 // Render the knowledge check's competency scorecard: an overall competency
 // tier, then the three scored dimensions (recognition, countermeasure,
 // response) each with their own low/elevated/high indicator and a line on
 // what that means. The four-class technique profile is included as a
-// secondary, unscored breakdown (correct-answer rate per class) rather than
+// secondary breakdown of hit rate per class, scoped to what was actually
+// drawn and answered this round (see classPerformance above) rather than
 // through renderScorecard, since renderScorecard's class readings are
 // written for susceptibility, not correctness, and would read backwards
-// here. Returns a detached DOM node; the caller inserts it into the page.
-export function renderCompetencyScorecard(result, config) {
+// here. `techniques` is used to map each fed-back item's technique_id to its
+// class. Returns a detached DOM node; the caller inserts it into the page.
+export function renderCompetencyScorecard(result, config, techniques) {
   const wrap = document.createElement("div");
   wrap.className = "scorecard";
 
@@ -212,9 +241,13 @@ export function renderCompetencyScorecard(result, config) {
   secondary.appendChild(summary);
   const classList = document.createElement("ul");
   classList.className = "scorecard-classes";
+  const perf = classPerformance(result.feedback, techniques);
   for (const cls of BASE_CLASSES) {
     const li = document.createElement("li");
-    li.textContent = `${CLASS_LABELS[cls]}: ${pct(result.class_scores[cls])} correct`;
+    const clsPerf = perf[cls];
+    li.textContent = clsPerf
+      ? `${CLASS_LABELS[cls]}: ${pct(clsPerf.score)} correct (${clsPerf.count} scenario${clsPerf.count === 1 ? "" : "s"} this round)`
+      : `${CLASS_LABELS[cls]}: not tested this round`;
     classList.appendChild(li);
   }
   secondary.appendChild(classList);

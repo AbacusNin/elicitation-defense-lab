@@ -5,6 +5,12 @@
 // and banks that build_data.py froze into web/data/, and tests/test_parity.py
 // pins them to the Python numbers so the two implementations cannot drift.
 // Sums run in the same order as Python so the floating-point results match.
+// The one deliberate divergence is scoreKnowledge's feedback array: the
+// Python version keys each dimension's explanation to the correct choice
+// only, but that array is dropped before the parity comparison (see
+// tests/parity/run_js.mjs), so the JS side builds a richer per-dimension
+// object here (chosen vs. correct id/text, score, status) for the page to
+// render what the user actually picked.
 //
 // Pure module: no DOM access, no side effects on import. tests/parity/run_js.mjs
 // and each page's own module script (self.js, interaction.js, knowledge.js) both
@@ -147,6 +153,40 @@ function dimensionScore(item, dimension, chosen, correctId) {
   return 0.0;
 }
 
+// Text for a choice id within one dimension of one item. Used to render what
+// the user actually picked, not just the correct choice.
+function choiceText(item, dimension, choiceId) {
+  if (choiceId === undefined || choiceId === null) return null;
+  const choice = item.choices[dimension].find((c) => c.id === choiceId);
+  return choice ? choice.text : choiceId;
+}
+
+// Per-dimension feedback for one scored item: what the user chose (id and
+// text), the correct choice (id and text), the 0/0.5/1 score already computed
+// for it, a correct/partial/incorrect/unanswered status, and the explanation
+// text for the choice the user actually made (falling back to the correct
+// choice's explanation when nothing was chosen). This is what lets the page
+// show "you picked X, which was wrong; the correct answer was Y" instead of
+// always printing the correct answer's explanation.
+function dimensionFeedback(item, dimension, chosenId, correctId, score) {
+  let status;
+  if (chosenId === undefined || chosenId === null) status = "unanswered";
+  else if (score === 1.0) status = "correct";
+  else if (score === 0.5) status = "partial";
+  else status = "incorrect";
+
+  const explanationId = chosenId ?? correctId;
+  return {
+    chosen_id: chosenId ?? null,
+    chosen_text: choiceText(item, dimension, chosenId),
+    correct_id: correctId,
+    correct_text: choiceText(item, dimension, correctId),
+    score,
+    status,
+    explanation: item.feedback[dimension][explanationId] ?? null,
+  };
+}
+
 export function scoreKnowledge(answers, config, techniques, bank, context) {
   const dimSums = {};
   const dimCounts = {};
@@ -168,20 +208,22 @@ export function scoreKnowledge(answers, config, techniques, bank, context) {
     };
 
     let itemTotal = 0.0;
+    const perDimension = {};
     for (const dim of DIMENSIONS) {
-      const score = dimensionScore(item, dim, answer[dim], correctIds[dim]);
+      const chosen = answer[dim];
+      const score = dimensionScore(item, dim, chosen, correctIds[dim]);
       itemTotal += score;
       dimSums[dim] += score;
       dimCounts[dim] += 1;
+      perDimension[dim] = dimensionFeedback(item, dim, chosen, correctIds[dim], score);
     }
 
     hits[item.technique_id] = itemTotal / DIMENSIONS.length;
 
     feedback.push({
       item_id: item.id,
-      recognition: item.feedback.recognition[correctIds.recognition],
-      countermeasure: item.feedback.countermeasure[correctIds.countermeasure],
-      response: item.feedback.response[correctIds.response],
+      technique_id: item.technique_id,
+      ...perDimension,
     });
   }
 
