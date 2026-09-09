@@ -4,55 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Elicitation Defense Lab</title>
-  <style>
-    :root {
-      --fg: #1a1a1a;
-      --muted: #555;
-      --bg: #fbfbfa;
-      --card: #fff;
-      --line: #ddd;
-      --accent: #2a5d84;
-      --flag: #8a3324;
-    }
-    body {
-      margin: 0;
-      font: 16px/1.55 system-ui, sans-serif;
-      color: var(--fg);
-      background: var(--bg);
-    }
-    main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.2rem 4rem; }
-    h1 { margin-bottom: .2rem; }
-    h2 { margin-top: 2.4rem; border-bottom: 1px solid var(--line); padding-bottom: .3rem; }
-    .note { color: var(--muted); }
-    .privacy {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-left: 3px solid var(--accent);
-      padding: .8rem 1rem;
-      margin: 1.2rem 0;
-    }
-    fieldset.item { border: 1px solid var(--line); border-radius: 4px; margin: .8rem 0; padding: .6rem .9rem; }
-    fieldset.item legend { font-weight: 600; padding: 0 .3rem; }
-    label.likert, label.check, label.choice { display: block; margin: .2rem 0; cursor: pointer; }
-    .scenario { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: .8rem 1rem; margin: 1rem 0; }
-    .scenario > p:first-child { font-weight: 600; }
-    button {
-      font: inherit;
-      background: var(--accent);
-      color: #fff;
-      border: 0;
-      border-radius: 4px;
-      padding: .5rem 1.1rem;
-      margin-top: .6rem;
-      cursor: pointer;
-    }
-    select { font: inherit; padding: .3rem; }
-    #result { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 1rem 1.2rem; margin-top: 1.5rem; }
-    .flag { color: var(--flag); font-weight: 600; }
-    pre { background: #f2f2f0; border: 1px solid var(--line); border-radius: 4px; padding: .7rem; overflow-x: auto; font-size: .85rem; }
-    #load-error { color: var(--flag); }
-    .context-row { margin: 1rem 0; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
@@ -66,46 +18,20 @@
     reload does not lose them.
   </div>
 
-  <p id="load-error" hidden></p>
-
-  <div class="context-row">
-    <label for="context"><strong>Reporting context</strong> (sets the correct reporting channel in the knowledge check):</label><br>
-    <select id="context">
-      <option value="general">General</option>
-      <option value="dod">DoD</option>
-      <option value="federal">Federal civilian</option>
-      <option value="cleared_contractor">Cleared contractor</option>
-      <option value="private_industry">Private industry</option>
-    </select>
-  </div>
-
-  <h2>Self-assessment</h2>
-  <p class="note">Rate each statement from 0 (strongly disagree) to 4 (strongly agree).</p>
-  <div id="self-items"></div>
-  <button id="self-run">Score self-assessment</button>
-
-  <h2>Interaction indicators</h2>
-  <p class="note">Check every indicator you noticed in the conversation you are reviewing.</p>
-  <div id="interaction-items"></div>
-  <button id="interaction-run">Score interaction</button>
-
-  <h2>Knowledge check</h2>
-  <p class="note">For each scenario, pick the recognition, countermeasure, and reporting response you would use.</p>
-  <div id="knowledge-items"></div>
-  <button id="knowledge-run">Score knowledge check</button>
-
-  <section id="result" hidden>
-    <h2>Result</h2>
-    <div id="result-summary"></div>
-    <h3>Emitted event</h3>
-    <p class="note">The event a scoring run produces. On a deployment this is what a security team would receive; here it stays in the page.</p>
-    <pre id="event-json"></pre>
-    <h3>What a defender would query</h3>
-    <p class="note">The same event, seen from the detection side. These are the KQL and SPL a defender would run over the assessment feed.</p>
-    <pre id="kql"></pre>
-    <pre id="spl"></pre>
-  </section>
+  <ul class="modules">
+    <li>
+      <h3><a href="self.html">Self-assessment</a></h3>
+      <p class="note">Rate how much conversational pressure and flattery tend to pull answers out of you.</p>
+    </li>
+    <li>
+      <h3><a href="interaction.html">Interaction indicators</a></h3>
+      <p class="note">Check the indicators you noticed in a conversation you are reviewing.</p>
+    </li>
+    <li>
+      <h3><a href="knowledge.html">Knowledge check</a></h3>
+      <p class="note">Walk through scenarios and pick the recognition, countermeasure, and reporting response you would use.</p>
+    </li>
+  </ul>
 </main>
-<script type="module" src="app.js"></script>
 </body>
 </html>

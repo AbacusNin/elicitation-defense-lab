@@ -20,7 +20,7 @@ Each module emits the same event shape (`schema.py`). The detections and the cro
 
 ## The static page
 
-`web/index.html` runs all three modules client-side, no backend, no analytics, no transmission of any kind. Answers are scored locally and never leave the browser; in-progress state lives only in `localStorage`, wrapped so the page still works when storage is unavailable. The page's data is generated from the same taxonomy, banks, and default config the Python package uses (`web/build_data.py`), and a parity test checks the JavaScript and Python scorers agree.
+`web/index.html` is a landing page linking to the three module pages, `web/self.html`, `web/interaction.html`, and `web/knowledge.html`. Each runs client-side, no backend, no analytics, no transmission of any kind. Answers are scored locally and never leave the browser; in-progress state lives only in `localStorage`, wrapped so the page still works when storage is unavailable. All three share the scoring functions in `web/app.js`. The page's data is generated from the same taxonomy, banks, and default config the Python package uses (`web/build_data.py`), and a parity test checks the JavaScript and Python scorers agree.
 
 ## Detections and the SIEM path, stated honestly
 

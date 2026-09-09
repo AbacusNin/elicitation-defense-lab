@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knowledge check - Elicitation Defense Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <p><a class="back-link" href="index.html">&larr; Elicitation Defense Lab</a></p>
+  <h1>Knowledge check</h1>
+  <p class="note">For each scenario, pick the recognition, countermeasure, and reporting response you would use.</p>
+
+  <p id="load-error" hidden></p>
+
+  <div class="context-row">
+    <label for="context"><strong>Reporting context</strong> (sets the correct reporting channel):</label><br>
+    <select id="context">
+      <option value="general">General</option>
+      <option value="dod">DoD</option>
+      <option value="federal">Federal civilian</option>
+      <option value="cleared_contractor">Cleared contractor</option>
+      <option value="private_industry">Private industry</option>
+    </select>
+  </div>
+
+  <div id="knowledge-items"></div>
+  <button id="knowledge-run">Score knowledge check</button>
+
+  <section id="result" hidden>
+    <h2>Result</h2>
+    <div id="result-summary"></div>
+    <h3>Emitted event</h3>
+    <p class="note">The event a scoring run produces. On a deployment this is what a security team would receive; here it stays in the page.</p>
+    <pre id="event-json"></pre>
+    <h3>What a defender would query</h3>
+    <p class="note">The same event, seen from the detection side. These are the KQL and SPL a defender would run over the assessment feed.</p>
+    <pre id="kql"></pre>
+    <pre id="spl"></pre>
+  </section>
+</main>
+<script type="module" src="knowledge.js"></script>
+</body>
+</html>
