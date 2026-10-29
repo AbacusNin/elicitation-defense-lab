@@ -47,3 +47,9 @@ ruff check .
 - `docs/sources.md` - the consolidated bibliography and confidence marks.
 - `docs/limitations.md` - the grounded-not-validated posture, in full, and the open verification items.
 - `docs/validation-research-proposal.md` - the study that would validate this instrument.
+
+## License
+
+Apache License 2.0 with the Commons Clause. Anyone, including a company or a government agency, may use, change, and share elicitation-defense-lab free of charge, for example to train and assess its own staff. Nobody may sell it, host it for a fee, or sell a product or service, including consulting or support, whose value comes entirely or substantially from it. This makes it source-available rather than OSI open source. See `LICENSE` and `NOTICE`.
+
+I'm not accepting outside contributions.
